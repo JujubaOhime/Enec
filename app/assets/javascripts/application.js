@@ -14,3 +14,33 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+    $(".hamburguer").click(function(){
+        lockScroll();
+      $("nav").toggleClass("open");  
+      $(this).toggleClass("toggle");
+    });
+    $(".form-edit-campo .actions input").val('Atualizar');
+  });
+  $(window).on('scroll', function() {
+      if ($(this).scrollTop() > 10) {
+        $(".home header").addClass("ativo");
+      } else {
+        $("header").removeClass("ativo");
+      }
+      if ($(this).scrollTop() > 200) {
+        $(".icon-scroll").addClass("icon-scroll-gone");
+      } else {
+        $(".icon-scroll").removeClass("icon-scroll-gone");
+      }
+  });
+  
+  function lockScroll() {
+    if ($('body').hasClass('lock-scroll')) {
+        $('body').removeClass('lock-scroll');
+    }
+    else {
+        $('body').addClass('lock-scroll');
+    }
+  }
