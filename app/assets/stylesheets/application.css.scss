@@ -1,0 +1,49 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+    *= require_self
+    *= require_tree .
+ *
+ */
+
+/*
+##     ##    ###    ########  ####    ###    ##     ## ######## ####  ######  
+##     ##   ## ##   ##     ##  ##    ## ##   ##     ## ##        ##  ##    ## 
+##     ##  ##   ##  ##     ##  ##   ##   ##  ##     ## ##        ##  ##       
+##     ## ##     ## ########   ##  ##     ## ##     ## ######    ##   ######  
+ ##   ##  ######### ##   ##    ##  #########  ##   ##  ##        ##        ## 
+  ## ##   ##     ## ##    ##   ##  ##     ##   ## ##   ##        ##  ##    ## 
+   ###    ##     ## ##     ## #### ##     ##    ###    ######## ####  ######  
+*/
+
+:root{
+    --white: #ffffff;
+    --green: #1d6b3e;
+    --dark-green: #0c5800;
+    --orange: #d49600;
+    --yellow: #ecc13c;
+    --red: #eb5757;
+    --dark-red: #b96161;
+    --green-hover: #093f00;
+    --green-input: #318f59;
+    --green-input-stroke: #8bb76c;
+    --yellow-hover: #eeb400;
+    --green-footer: #0a4021;
+    --black: #252525;
+    --white-pink: #FCF2F2;
+    }
+    
+    
+    
+   
+//    @import "bootstrap-sprockets";
+//   @import "bootstrap";
+    

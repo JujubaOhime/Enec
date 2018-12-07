@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Airfares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Phrase</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airfares.each do |airfare| %>
+      <tr>
+        <td><%= airfare.title %></td>
+        <td><%= airfare.phrase %></td>
+        <td><%= link_to 'Show', airfare %></td>
+        <td><%= link_to 'Edit', edit_airfare_path(airfare) %></td>
+        <td><%= link_to 'Destroy', airfare, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Airfare', new_airfare_path %>

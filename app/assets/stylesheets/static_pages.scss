@@ -1,0 +1,824 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*
+
+##     ##  #######  ##     ## ######## 
+##     ## ##     ## ###   ### ##       
+##     ## ##     ## #### #### ##       
+######### ##     ## ## ### ## ######   
+##     ## ##     ## ##     ## ##       
+##     ## ##     ## ##     ## ##       
+##     ##  #######  ##     ## ######## 
+
+*/
+
+
+button{
+    cursor: pointer;
+    outline: none;
+}
+
+input{
+    outline: none;
+}
+
+.home .logo-enec{
+    float: left;
+}
+.home .after-header{
+    clear: none;
+}
+
+.home .links-de-login{
+    display: none;
+}
+
+.home header{
+    position: fixed;
+    background: none;
+    width: 100%
+}
+
+.home .ativo{
+    position: fixed;
+    background: var(--green-hover);
+}
+.main-session{
+    background-image: image-url('morro_santa_teresa.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.evento-session{
+    height: 553px;
+    background-color: var(--green);
+
+}
+
+.home-esquerda{
+    width: 49vw;
+    clear: both;
+    display: table-cell;
+    vertical-align: middle;
+    //margin-left: 4vw;
+}
+
+.icon-scroll,
+.icon-scroll:before{
+  position: absolute;
+  left: 50%
+}
+.icon-scroll{
+  width: 40px;
+  height: 70px;
+  margin-left: -20px;
+  top: 92%;
+  margin-top: -35px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+}
+
+.icon-scroll:before{
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  animation-duration: 1.7s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+}
+
+.icon-scroll-gone{
+    display: none;
+}
+@keyframes scroll{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(46px);
+  }
+}
+.home-direita{
+    width: 49vw;
+    //margin-left: 4vw;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.home-middle{
+    width: 100vw;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container-home{
+    height: 100vh;
+    display: inline-table;
+}
+
+.sections-home-table-cell{
+    display: inline-table;
+    width: 100%;
+}
+.main-session h1{
+    font-size: 6em;
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Palanquin Dark', sans-serif;
+    margin-bottom: 35px;
+    text-shadow: 0px 4px 4px #00000061;
+}
+
+.main-session h2{
+    font-size: 3em;
+    text-align: center;
+    color: var(--yellow);
+    text-transform: uppercase;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: bold;
+    margin-bottom: 35px;
+    letter-spacing: 5px;
+    text-shadow: 0px 4px 4px #00000061;
+}
+
+
+.main-session h3{
+    line-height: 30px;
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--white);
+    text-transform: uppercase;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0px 4px 4px #00000061;
+}
+
+
+.main-session .inscreva-se-button{
+    background: var(--yellow);
+    border: 0px;
+    border-radius: 100px;
+    color: var(--white);
+    font-weight: bold;
+    padding: 5px 75px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 52px;
+    font-family: 'Palanquin Dark', sans-serif;
+    letter-spacing: 4px;
+    box-shadow: 0 4px 4px #00000061;
+}
+.main-session .inscreva-se-button:hover{
+    transition: 0.3s;
+    background: var(--yellow-hover);
+    box-shadow: none;
+}
+.main-session .area-do-congressista-button{
+    background: var(--green);
+    border: 0px;
+    border-radius: 100px;
+    color: var(--white);
+    padding: 2px 40px;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+}
+.main-session .area-do-congressista-button:hover{
+    transition: 0.3s;
+    background: var(--green-hover);
+    box-shadow: none;
+}
+
+.main-session p{
+    text-align: center;
+}
+
+.evento-session h4{
+    color: var(--white);
+    font-size: 4em;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-align: center;
+    margin-bottom: 60px;
+    text-shadow: 0px 4px 4px #00000061;
+}
+
+.evento-session p{
+    font-family: 'Bitter', serif;
+    letter-spacing: 1px;
+    color: var(--white);
+    font-size: 1.125em;
+    margin-left: 5vw;
+    max-height: 420px;
+}
+
+.evento-session h2{
+    font-size: 6.875em;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: bold;
+    color: var(--yellow);
+    text-shadow: 0px 4px 4px #00000061;
+    display: block;
+    margin-left: 5vw;
+}
+
+.evento-session h3{
+    font-size: 3.6em;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: bold;
+    color: var(--yellow);
+    letter-spacing: 2px;
+    text-shadow: 0px 4px 4px #00000061;
+    display: inline-block;
+}
+
+.evento-session span{
+    font-size: 2em;    
+    color: var(--yellow);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Palanquin Dark', sans-serif;
+    margin-left: 5vw;
+}
+.evento-session .home-direita div{
+    margin-top: 2em;
+}
+
+.palestrantes-session .home-direita{
+    background-image: image-url('parque_farroupilha1.jpg');
+    background-size: cover;
+    background-position-x: center;
+    height: 438px;
+    
+}
+.palestrantes-session {
+    background: var(--yellow);
+    
+    height: 512px;
+}
+
+.palestrantes-session h2{
+    font-size: 3em;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-align: right;
+    margin-right: 3vw;
+    color: var(--dark-green);
+    text-shadow: 0px 4px 4px #00000061;
+    letter-spacing: 1px;
+    margin-bottom: 1.7em;
+}
+
+.palestrantes-session p{
+    color: var(--dark-green);
+    clear: both;
+    font-family: 'Bitter', serif;
+    font-size: 1em;
+    text-align: right;
+    margin-right: 3vw;
+    line-height: 22px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    float: right;
+    max-width: 40vw;
+}
+
+.palestrantes-session .confira-ja-button{
+    background: var(--green);
+    border: 0px;
+    border-radius: 100px;
+    color: var(--white);
+    padding: 6px 85px;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    margin-top: 5.5em;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.palestrantes-session .confira-ja-button:hover{
+    transition: 0.3s;
+    background: var(--green-hover);
+    box-shadow: none;
+}
+.editais-session {
+    height: 500px;
+    background: var(--green);
+
+    
+}
+
+.editais-session .home-esquerda{
+    background-image: image-url('parque_farroupilha2.jpg');
+    background-size: cover;
+    background-position: bottom;
+    height: 425px;
+}
+
+.editais-session h2{
+    font-size: 3em;
+    font-family: 'Palanquin Dark', sans-serif;
+    margin-left: 3vw;
+    color: var(--white);
+    text-shadow: 0px 4px 4px #00000061;
+    letter-spacing: 1px;
+    margin-bottom: 1.7em;
+}
+
+.editais-session p{
+    color: var(--white);
+    clear: both;
+    font-family: 'Bitter', serif;
+    font-size: 1em;
+    text-align: left;
+    line-height: 22px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    max-width: 40vw;
+    margin-left: 3vw;
+}
+
+.editais-session .confira-ja-button{
+    background: var(--yellow);
+    border: 0px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    color: var(--white);
+    padding: 6px 85px;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    margin-top: 5.5em;
+    float: left;
+}
+
+.editais-session .confira-ja-button:hover{
+    transition: 0.3s;
+    background: var(--yellow-hover);
+    box-shadow: none;
+}
+
+.patrocinadores-session{
+    height: 488px;
+    background-color:  var(--red);
+}
+
+.patrocinadores-session .logo-patrocinador{
+    margin-top: 2em;
+    cursor: pointer;
+    width: 95px;
+    flex-basis: auto;
+    height: 86px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.patrocinadores-session .logo-patrocinador:first-of-type{
+    margin-left: 15px;
+}
+
+.patrocinadores-session h2{
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Palanquin Dark', sans-serif;
+    color: var(--white);
+    text-shadow: 0px 4px 4px #00000061;
+    letter-spacing: 1px;
+}
+
+
+
+.patrocinadores-session h2:last-of-type{
+    margin-bottom: 2em;
+}
+
+.patrocinadores-session .logos-patrocinadores{
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contato-session{
+    background-color: var(--green);
+    height: 619px;
+}
+
+.contato-session h2{
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Palanquin Dark', sans-serif;
+    color: var(--white);
+    text-shadow: 0px 4px 4px #00000061;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.contato-session form{
+    text-align: center;
+    margin-top: 2em;
+}
+.contato-session .input{
+    border-radius: 15px;
+    padding: 1em 1em;
+    width: 60vw;
+    border: none;
+    margin-bottom: 2em;
+    background: var(--green-input);
+    border: solid 2px var(--green-input-stroke);
+    outline: none;
+
+}
+
+.contato-session .input::placeholder{
+    color: var(--green-input-stroke);
+    font-family: 'Palanquin Dark', sans-serif;
+
+}
+
+.contato-session .mensagem{
+    padding: 5em 1em;
+}
+
+.contato-session textarea{
+    max-width: 60vw;
+    min-width: 60vw;
+}
+textarea{
+    overflow: auto;
+    outline: none;
+    text-decoration: none;
+}
+
+.contato-session input[type="submit"]{
+    background: var(--yellow);
+    border: 0px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    color: var(--white);
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    width: 15em;
+    cursor: pointer;
+    padding: 5px 0px;
+}
+
+.contato-session input[type="submit"]:hover{
+    background: var(--yellow-hover);
+    transition: 0.3s
+}
+
+.passport-session{
+    height: 500px;
+}
+
+.passport-left{
+    float: left;
+    width: 50vw;
+    clear: both;
+    //border-right-color: var(--yellow);
+    //border-right-style: solid;
+    //border-right-width: 2px;
+    height: 500px;
+}
+
+.passport-right{
+    width: 49.8vw;
+    float: right;
+}
+
+.passport-session h2{
+    font-size: 1.75em;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    color: var(--dark-green);
+    text-shadow: 0px 4px 4px #00000061;
+    letter-spacing: 1px;
+    margin-bottom: 1.7em;
+    width: 450px;
+    margin-top: 120px;
+}
+
+.passport-session p{
+    color: var(--dark-green);
+    clear: both;
+    font-family: 'Bitter', serif;
+    font-size: 1em;
+    text-align: center;
+    margin-right: 17vw;
+    line-height: 22px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    float: right;
+    max-width: 40vw;
+}
+
+.passport-session .price-button{
+    background: var(--orange);
+    border: 0px;
+    border-radius: 100px;
+    color: var(--white);
+    padding: 6px 85px;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    margin-top: 5.5em;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-left: 13.2vw;
+    }
+
+.home-esquerda .logo-passport{
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    margin-left: 19%;
+    margin-top: 14%;
+}
+
+/*.passport-circle{
+    border-radius:50%;
+    border: 10px solid var(--yellow);
+    width:40px;
+    height:40px;
+    background-color: var(--yellow);
+    box-shadow: inherit 25px 25px var(--white);  
+}
+
+.passport-white-circle{
+    border-radius:50%;
+    border: 10px solid var(--white);
+    width:60px;
+    height:60px;
+    background-color: var(--white);
+    z-index: 0;
+}
+
+#white1{
+    position: relative;
+    left: 50.5%;
+    transform: translateX(-50.5%);
+    top: -21.5%;
+
+}
+
+#white2{
+    position: relative;
+    left: 50.5%;
+    transform: translateX(-50.5%);
+    top: 80%;
+}
+
+#circle1{
+    position: relative;
+    left: 50.5%;
+    transform: translateX(-50.5%);
+    top: -2.5%;
+    z-index: 1;
+}
+
+#circle2{
+    position: relative;
+    left: 50.5%;
+    transform: translateX(-50.5%);
+    z-index: 1;
+}
+
+@media (max-width: 1300px){
+    #white1{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -21.5%;
+    
+    }
+    
+    #white2{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
+    }
+    
+    #circle1{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -2.5%;
+        z-index: 1;
+    }
+    
+    #circle2{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    @media (max-width: 990px){
+        .passport-left .logo-passport{
+            width: 397px;
+            height: 300px;
+            text-align: center;
+            margin-left: 19%;
+            margin-top: 14%;
+            border-right-color: var(--yellow);
+            border-right-style: solid;
+            border-right-width: 2px;
+        }
+    }
+}*/
+
+
+
+.revolucao-session{
+    height: 500px;
+    background-color:  var(--red);
+}
+
+.revolucao-session h2{
+    font-size: 3em;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 0px 4px 4px #00000061;
+    letter-spacing: 1px;
+    padding-top: 76px;
+}
+
+.revolucao-video {
+    margin-top: 70px;
+}
+
+.revolucao-centro {
+    width: 410px;
+    margin: 0 auto;
+}
+
+.realizadores-session{
+    height: 500px;
+}
+
+.realizadores-left{
+    width: 50vw;
+    float: left;
+    //border-right-color: var(--yellow);
+    //border-right-style: solid;
+    //border-right-width: 2px;
+    height: 430px;
+    margin-top: 15px;
+}
+
+.realizadores-right{
+    width: 49.5vw;
+    float: right;
+    height: 430px;
+}
+
+.realizadores-session h2{
+    font-size: 2em;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: bold;
+    color: var(--dark-green);
+    letter-spacing: 3px;
+    text-shadow: 0px 2px 2px #00000061;
+    text-align: center;
+    margin-top: 70px;
+}
+
+/*.realizadores-circle{
+    border-radius:50%;
+    border: 10px solid var(--yellow);
+    width:20px;
+    height:20px;
+    background-color: var(--yellow);
+    box-shadow: inherit 25px 25px var(--white);  
+}
+
+.realizadores-white-circle{
+    border-radius:50%;
+    border: 10px solid var(--white);
+    width:45px;
+    height:45px;
+    background-color: var(--white);
+    z-index: 0;
+}
+
+#rwhite1{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 42.7%;
+}
+
+#rwhite2{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#rcircle1{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#rcircle2{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}*/
+
+.realizadores-divisao{
+    margin-top: 60px;
+    margin-right: 20px;
+    margin-left: 60px;
+    width: 38vw;
+    height: 120px;
+    position: relative;
+}
+
+.realizadores-divisao .logo-enec{
+    width: 150px;
+    height: 120x;
+    float: right;
+    position: absolute;
+    top: -8%;
+    right: 8%;
+}
+
+.realizadores-divisao p {
+    color: var(--green);
+    width: 300px;
+    font-family: sans-serif;
+    margin-left: 60px;
+    font-size: 1.15em;
+    padding-top: 20px;
+    font-weight: 400;
+}
+
+.realizadores-divisao::after{
+    content: "";
+    background: var(--dark-green);
+    display: block;
+    width: 450px;
+    height: 2.5px;
+    margin: 20px auto 0 auto;
+}
+
+.afenec {
+    width: 400px;
+    height: 40px;
+}
+
+.afenec h3 {
+    color: var(--yellow);
+    text-transform: uppercase;
+    float: right;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.afenec h4 {
+    color: var(--green);
+    text-transform: uppercase;
+    float: right;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+}
+
+@media (max-width: 990px) {
+    .realizadores-divisao .logo-enec{
+        width: 100px;
+        height: 75px;
+        float: right;
+        position: absolute;
+        right: -25%;
+        top: 7%;
+
+    }
+}
+
+

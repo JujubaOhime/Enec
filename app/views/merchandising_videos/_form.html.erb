@@ -1,0 +1,27 @@
+<%= form_with(model: merchandising_video, local: true) do |form| %>
+  <% if merchandising_video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(merchandising_video.errors.count, "error") %> prohibited this merchandising_video from being saved:</h2>
+
+      <ul>
+      <% merchandising_video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :video %>
+    <%= form.text_field :video %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

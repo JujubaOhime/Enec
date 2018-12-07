@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  delegation: MyString
+  lot: one
+  name: MyString
+  cpf: MyString
+  rg: MyString
+  rg_issuing_body: MyString
+  birth_date: 2018-12-07 08:12:31
+  gender: 1
+  address: MyString
+  city: MyString
+  state: MyString
+  IES_name: MyString
+  IES_city: MyString
+  IES_state: MyString
+  IES_course: MyString
+  IES_period: MyString
+  IES_registration_proof: MyString
+
+two:
+  email: MyString
+  delegation: MyString
+  lot: two
+  name: MyString
+  cpf: MyString
+  rg: MyString
+  rg_issuing_body: MyString
+  birth_date: 2018-12-07 08:12:31
+  gender: 1
+  address: MyString
+  city: MyString
+  state: MyString
+  IES_name: MyString
+  IES_city: MyString
+  IES_state: MyString
+  IES_course: MyString
+  IES_period: MyString
+  IES_registration_proof: MyString

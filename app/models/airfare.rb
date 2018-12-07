@@ -1,0 +1,2 @@
+class Airfare < ApplicationRecord
+end

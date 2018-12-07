@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Merchandising Videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Video</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @merchandising_videos.each do |merchandising_video| %>
+      <tr>
+        <td><%= merchandising_video.title %></td>
+        <td><%= merchandising_video.video %></td>
+        <td><%= link_to 'Show', merchandising_video %></td>
+        <td><%= link_to 'Edit', edit_merchandising_video_path(merchandising_video) %></td>
+        <td><%= link_to 'Destroy', merchandising_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Merchandising Video', new_merchandising_video_path %>

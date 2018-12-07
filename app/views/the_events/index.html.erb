@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>The Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Days</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @the_events.each do |the_event| %>
+      <tr>
+        <td><%= the_event.title %></td>
+        <td><%= the_event.days %></td>
+        <td><%= the_event.content %></td>
+        <td><%= link_to 'Show', the_event %></td>
+        <td><%= link_to 'Edit', edit_the_event_path(the_event) %></td>
+        <td><%= link_to 'Destroy', the_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New The Event', new_the_event_path %>

@@ -1,0 +1,157 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.show-user header{
+    background: none;
+}
+
+.show-user .perfil{
+
+}
+
+.show-user .links-de-login{
+    display: none;
+}
+
+.show-user .after-header{
+    clear: none;
+}
+
+.show-user header{
+    position: absolute;
+}
+.show-user{
+    height: 100vh;
+}
+
+.retangulo-esquerdo{
+    width: 50%;
+    height: 95px;
+    background: var(--red);
+    float: left;
+}
+
+.retangulo-direito{
+    width: 50%;
+    height: 95px;
+    float: right;
+    background: var(--yellow);
+}
+
+.triangulo-esquerdo{
+    float:left;
+    width:0; 
+    height:0; 
+    border-right:49vw solid var(--red);
+    border-bottom:70px solid transparent;
+    margin-top: -1px;
+
+}
+
+.triangulo-direito{
+    float: right;
+    width: 50%;
+    width: 0px;
+    height: 0;
+    margin-top: -1px;
+    border-left: 49vw solid var(--yellow);
+    border-bottom: 70px solid transparent;
+
+}
+
+.buraco{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    height: 150px;
+
+}
+
+.img-perfil{
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 160px;
+    margin-top: 87px;
+    position: absolute;
+    left: 50%;
+    border: 8px white solid;
+    transform: translateX(-50%);
+}
+
+.container-perfil{
+    padding-top: 17em;
+}
+
+.show-user h2{
+    text-transform: uppercase;
+    color: var(--green-hover);
+    font-weight: bold;
+    font-size: 3em;
+    font-family: 'Palanquin Dark', sans-serif;
+    letter-spacing: 3px;
+    text-shadow: 0px 4px 4px #00000061;
+    text-align: center;
+}
+
+.show-user h3{
+    text-transform: uppercase;
+    color: var(--green-hover);
+    font-weight: bold;
+    font-size: 2em;
+    font-family: 'Palanquin Dark', sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 2em;
+}
+
+.show-user h3 span{
+    font-size: 0.6em;
+    color: var(--green);
+    text-transform: initial;
+    padding-left: 1.5em;
+}
+
+.informações-perfil{
+    margin: 0 auto;
+    display: table;
+    margin-top: 4em;
+}
+.perfil-links{
+    margin: 3em 0;
+}
+.perfil-links a{
+    text-decoration: none;
+    font-family: 'Palanquin Dark', sans-serif;
+    color: var(--white);
+    font-size: 1.125em;
+}
+
+
+
+.perfil-links button{
+    margin-top: 0.5em;
+    background: var(--yellow);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    padding: 6px 85px;
+    box-shadow: 0 4px 4px 0px #00000061;
+    text-decoration: none;  
+    border: none;
+    width: 292px;   
+}
+
+.perfil-links button:first-of-type{
+    margin-right: 2em;
+}
+
+.perfil-links button:hover{
+    background: var(--yellow-hover);
+    transition: 0.3s;
+    box-shadow: 0 0px 0px 0px #00000061;
+}
+
+.show-user #notice{
+    display: none;
+}

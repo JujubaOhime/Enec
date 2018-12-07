@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Showcases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Phrase</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @showcases.each do |showcase| %>
+      <tr>
+        <td><%= showcase.title %></td>
+        <td><%= showcase.subtitle %></td>
+        <td><%= showcase.phrase %></td>
+        <td><%= link_to 'Show', showcase %></td>
+        <td><%= link_to 'Edit', edit_showcase_path(showcase) %></td>
+        <td><%= link_to 'Destroy', showcase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Showcase', new_showcase_path %>

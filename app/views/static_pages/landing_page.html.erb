@@ -1,0 +1,106 @@
+<body class="home">
+<section class="main-session">
+    <div class="container-home">
+        <div class="home-esquerda">
+            <h2><%=@showcase.title%> </h2>
+            <h1><%=@showcase.subtitle%></h1>
+            <h3><%=@showcase.phrase%></h3>
+        </div>
+        <div class="home-direita ">
+            <p><%=link_to "Área do congressista", login_path, class: "area-do-congressista-button"%></p>
+        </div>
+    </div>
+    <div class='icon-scroll'></div>
+</section>
+<section class="evento-session sections-home-table-cell">
+    <div class="home-esquerda">
+        <h4><%=@the_event.title%></h4>
+        <p><%=@the_event.content%></p>
+    </div>
+    <div class="home-direita">
+        <h2><%=@the_event.days%></h2>
+        <div><span>de </span><h3> Janeiro</h3></div>
+        <div><span>em </span><h3> Porto Alegre</h3></div>
+    </div>
+</section>
+
+<section class="passport-session">
+    <div class="home-esquerda">
+        <%= image_tag("passaporte.png", :alt => "logo da plataforma de passaporte", :class => "logo-passport") %>
+    </div>
+    <div class="home-direita">
+        <h2><%=@airfare.title%></h2>
+        <p><%=@airfare.phrase%></p>
+        <h5><button class="price-button">Confira os preços </button></h5>
+    </div>
+</section>
+
+<section class="palestrantes-session sections-home-table-cell">
+    <div class="home-esquerda">
+        <h3><%=@the_speakers.title%></h3>
+        <p><%=@the_speakers.description%></p>
+        <p><button class="confira-ja-button">Confira Já</button></p>
+    </div>
+    <div class="home-direita">
+    </div>
+    
+</section>
+<section class="editais-session sections-home-table-cell">
+    <div class="home-esquerda">
+    </div>
+    <div class="home-direita">
+        <h2><%=@event_notices.title%></h2>
+        <p><%=@event_notices.content%></p>
+        <p><button class="confira-ja-button">Confira Já</button></p>
+    </div>
+</section>
+
+<section class ="revolucao-session">
+    <h2><%=@video.title%></h2>
+    <div class="revolucao-centro" style="position: relative; width: 400px;">
+        <div class="revolucao-video" controls width=400 height=220>
+        <%= video_tag @video.video, class: "revolucao-video" , width: 400 ,height: 220%>
+        </div>
+    </div>
+</section>
+
+<section class="realizadores-session">
+    <h2>Realizadores do Evento</h2>
+        <%@event_realizers.each do |event|%>
+            <div class="home-esquerda">
+                <div class="realizadores-divisao">
+                    <p><%=event.description%></p>
+
+                    
+                        <%= link_to (image_tag("enec2019.png", alt: "logo do enec", class: "logo-enec")), "http://#{event.link}" %>
+                    
+                </div>
+                <div class="afenec">
+                    <h3><%=event.name%></h3>
+                </div>
+            </div>
+        <%end%>
+</section>
+
+<section class="patrocinadores-session sections-home-table-cell">
+    <div class="home-middle">
+    <h2>Patrocinadores</h2><h2>e Apoiadores</h2>
+    <div class="logos-patrocinadores">
+        <% 5.times do |campo| %>
+            <%= image_tag("patrocinador.png", :alt => "logo do patrocinador", :class => "logo-patrocinador") %>
+        <% end %>
+    </div>
+    </div>
+</section>
+<section class="contato-session sections-home-table-cell">
+    <div class="home-middle">
+    <h2>Contato</h2>
+    <form>
+        <p><input type="text" name="Nome" placeholder="Nome" class="input"></p>
+        <p><input type="email" name="email" placeholder="E-mail" class="input"></p>
+        <p><textarea align="top" placeholder="Mensagem" class="input mensagem"></textarea></p> 
+        <input type="submit" value="Enviar"><br>
+    </form>
+    </div>
+</section>
+</body>

@@ -1,0 +1,2 @@
+class EventNotice < ApplicationRecord
+end

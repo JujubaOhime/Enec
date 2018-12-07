@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @airfare.title %>
+</p>
+
+<p>
+  <strong>Phrase:</strong>
+  <%= @airfare.phrase %>
+</p>
+
+<%= link_to 'Edit', edit_airfare_path(@airfare) %> |
+<%= link_to 'Back', airfares_path %>

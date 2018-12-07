@@ -1,0 +1,2 @@
+class TheSpeaker < ApplicationRecord
+end

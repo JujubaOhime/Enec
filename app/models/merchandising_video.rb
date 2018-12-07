@@ -1,0 +1,2 @@
+class MerchandisingVideo < ApplicationRecord
+end

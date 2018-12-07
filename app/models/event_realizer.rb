@@ -1,0 +1,2 @@
+class EventRealizer < ApplicationRecord
+end

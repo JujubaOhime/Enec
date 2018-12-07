@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @event_realizer.image %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event_realizer.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event_realizer.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @event_realizer.link %>
+</p>
+
+<%= link_to 'Edit', edit_event_realizer_path(@event_realizer) %> |
+<%= link_to 'Back', event_realizers_path %>

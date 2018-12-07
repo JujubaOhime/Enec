@@ -1,0 +1,2 @@
+module MerchandisingVideosHelper
+end

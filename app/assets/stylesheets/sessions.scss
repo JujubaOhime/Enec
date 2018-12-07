@@ -1,0 +1,121 @@
+.sessions {
+    background: var(--green);
+}
+
+.sessions header{
+    background: var(--green);
+}
+
+.container-sessions-vertical-middle{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container-sessions{
+    display: table;
+    height: calc(100vh - 230px);
+    margin: 0 auto;
+}
+
+.sessions h2{
+    font-size: 4em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0px 4px 4px #00000061;
+    color: var(--white);
+    margin-bottom: 65px;
+    font-weight: bold;
+}
+
+.sessions p{
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0 4px 4px 0px #00000061;   
+    color: var(--white);
+}
+
+.sessions .actions input{
+    background: var(--yellow);
+    border: 0px;
+    text-align: center;
+    border-radius: 100px;
+    color: var(--white);
+    padding: 6px 0px;
+    width: 10.72em;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    margin-top: 1em;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.sessions .actions input:hover{
+    background: var(--yellow-hover);
+    transition: 0.3s;
+    box-shadow: none;
+}
+.sessions .field input{
+    width: 426px;
+    border-radius: 15px;
+    border: none;
+    padding: 13px 0px;
+    background: var(--green-input);
+    border: 2px solid var(--green-input-stroke);
+    margin-bottom: 20px;
+}
+
+.sessions .actions{
+    text-align: center;
+}
+
+.container-sessions .links-login a{
+    margin-top: 15px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 1.125em;
+    text-decoration:none;
+    color: var(--white);
+    text-align: center;
+    cursor: pointer;
+}
+.container-sessions .links-login{
+    text-align:center;
+    margin-top: 10px
+}
+.container-sessions .links-login a:hover{
+    color: var(--green-input-stroke);
+}
+
+.container-sessions .links-login p{
+    font-size: 1em;
+    text-transform: none;
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+.container-sessions input::placeholder{
+    font-family: 'Palanquin Dark', sans-serif;
+    color: var(--green-input-stroke);
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 1.3em;
+
+}
+
+.container-sessions input{
+    font-family: 'Palanquin Dark', sans-serif;
+    color: var(--white);
+    font-size: 1.3em;
+    padding-left: 10px;
+}
+
+.container-sessions .field{
+    display: table;
+    margin: 0 auto;
+}

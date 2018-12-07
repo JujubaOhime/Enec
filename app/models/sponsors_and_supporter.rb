@@ -1,0 +1,2 @@
+class SponsorsAndSupporter < ApplicationRecord
+end

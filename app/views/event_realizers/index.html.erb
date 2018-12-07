@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Event Realizers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_realizers.each do |event_realizer| %>
+      <tr>
+        <td><%= event_realizer.image %></td>
+        <td><%= event_realizer.name %></td>
+        <td><%= event_realizer.description %></td>
+        <td><%= event_realizer.link %></td>
+        <td><%= link_to 'Show', event_realizer %></td>
+        <td><%= link_to 'Edit', edit_event_realizer_path(event_realizer) %></td>
+        <td><%= link_to 'Destroy', event_realizer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event Realizer', new_event_realizer_path %>

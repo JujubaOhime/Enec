@@ -1,0 +1,232 @@
+// Place all the styles related to the campos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+#### ##    ## ########  ######## ##     ## 
+ ##  ###   ## ##     ## ##        ##   ##  
+ ##  ####  ## ##     ## ##         ## ##   
+ ##  ## ## ## ##     ## ######      ###    
+ ##  ##  #### ##     ## ##         ## ##   
+ ##  ##   ### ##     ## ##        ##   ##  
+#### ##    ## ########  ######## ##     ## 
+*/
+
+.links-de-login{
+    display: none;
+}
+
+.index-campos{
+    height: calc(100vh - 95px - 135px);
+    display: table;
+    margin: 0 auto;
+    button{
+        margin-top: 25px;
+        background: var(--yellow);
+        border: 0px;
+        border-radius: 100px;
+        color: var(--white);
+        font-weight: bold;
+        padding: 3px 40px;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        text-align: center;
+        margin-bottom: 25px;
+        font-family: 'Palanquin Dark', sans-serif;
+        letter-spacing: 4px;
+        box-shadow: 0 4px 4px #00000061;
+        }
+        button:hover{
+            transition: 0.3s;
+            background: var(--yellow-hover);
+            box-shadow: none;
+        }
+        a{
+            text-decoration: none;
+            color: var(--white);
+        }
+        h1{
+            font-size: 2.250em;
+            color: var(--green-footer);
+            font-family: 'Palanquin Dark', sans-serif;
+        }
+}
+
+
+.container-table{
+    //border: 1px solid #0A4021;
+    border-radius: 9px;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0 auto;
+    overflow: hidden;
+    //width: 51%;
+}
+
+
+.table{
+    border: 2px solid var(--green-footer);
+    border-radius: 20px;
+    overflow: hidden;
+    table{
+        width: 70vw;
+    }
+    thead{
+        background: var(--dark-red);
+        font-family: 'Bitter', serif;
+        font-weight: bold;
+        border-radius: 20px;
+    }
+    th{
+        color: var(--white);
+        font-size: 24px;
+        padding: 10px 0px;
+        background-color: var(--dark-red);
+        border-bottom: 2px solid var(--green-footer);
+    }
+    tr{
+        border-top: 2px solid var(--green-footer);
+        background: var(--white-pink);
+    }
+    tr:first-of-type{
+        border-top: 0px;
+    }
+    td{
+        color: var(--green-footer);
+        font-size: 18px;
+        padding: 15px 0px 15px 30px;
+        font-family: 'Bitter', serif;
+    }
+    .td-ações{
+        width: 130px;
+    }
+    .img-table{
+        width: 25px;
+        display: inline-table;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    .td-excluir a{
+        font-family: 'Bitter', serif;
+        color: var(--red);
+        text-decoration: none;
+    }
+    .td-editar a{
+        font-family: 'Bitter', serif;
+        color: var(--yellow);
+        text-decoration: none;
+    }
+
+}
+
+
+.edit-campos{
+    height: calc(100vh - 95px - 135px);
+    display: table;
+    margin: 0 auto;
+    h1{
+        font-size: 64px;
+        color: var(--green-input);
+        font-family: 'Palanquin Dark', sans-serif;
+        font-weight: bold;
+        margin-bottom: 27px;
+        text-align: center;
+    }
+    label{
+        font-family: 'Palanquin Dark', sans-serif;
+        font-weight: bold;
+        line-height: normal;
+        font-size: 1.125em;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--green-input);
+    }
+    .form-edit-campo{
+        margin: 0 auto;
+        display: table;
+        #campo_nome, #campo_conteudo, #campo_section_id{
+            width: 426px;
+            height: 42px;
+            border: 2px solid var(--green-input-stroke);
+            box-sizing: border-box;
+            border-radius: 10px;
+            letter-spacing: 0px;
+            background: none;
+            text-transform: none;
+            box-shadow: 0 0 0 #000000;
+            margin-left: 0px;
+        }
+        input[type=text], select{
+            font-family: 'Palanquin', sans-serif;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 1.125em;
+            text-align: justify;
+            color: var(--green-input-stroke);
+        }
+        select{
+            margin-bottom: 42px;
+        }
+        select option{
+            font-family: 'Palanquin', sans-serif;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 1.125em;
+            text-align: justify;
+            color: var(--green-input-stroke);
+            border-radius: 25px;
+        }
+        a{
+            text-decoration: none;
+            font-family: 'Palanquin Dark', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            line-height: normal;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+        button, input{
+            float: right;
+            text-transform: none;
+            text-decoration: none;
+        }
+        button{
+            background: var(--yellow);
+            border: 0px;
+            border-radius: 100px;
+            color: var(--white);
+            font-weight: bold;
+            width: 126px;
+            text-transform: uppercase;
+            font-size: 1.5em;
+            text-align: center;
+            letter-spacing: 4px;
+            box-shadow: 0 4px 4px #00000061;
+        }
+        input{
+            background: var(--yellow);
+            border: 0px;
+            border-radius: 100px;
+            color: var(--white);
+            font-weight: bold;
+            width: 200px;
+            text-transform: uppercase;
+            font-size: 1.5em;
+            text-align: center;
+            font-family: 'Palanquin Dark', sans-serif;
+            letter-spacing: 4px;
+            box-shadow: 0 4px 4px #00000061;
+            font-size: 1.125em;
+            margin-left: 15px;
+        }
+    }
+}
+

@@ -1,0 +1,15 @@
+.soon-session{
+    background-image: image-url('pulando.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.soon-session h2 {
+    font-size: 6em;
+    color: var(--white);
+    text-align: center;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0px 4px 4px #00000061;
+    padding-top: 15%;
+}
