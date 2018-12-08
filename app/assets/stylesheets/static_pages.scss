@@ -50,6 +50,7 @@ input{
 .main-session{
     background-image: image-url('morro_santa_teresa.jpg');
     height: 100vh;
+    width: 100vw;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -62,7 +63,7 @@ input{
 }
 
 .home-esquerda{
-    width: 49vw;
+    width: 50vw;
     clear: both;
     display: table-cell;
     vertical-align: middle;
@@ -110,7 +111,7 @@ input{
   }
 }
 .home-direita{
-    width: 49vw;
+    width: 50vw;
     //margin-left: 4vw;
     display: table-cell;
     vertical-align: middle;
@@ -129,7 +130,7 @@ input{
 
 .sections-home-table-cell{
     display: inline-table;
-    width: 100%;
+    width: 100vw;
 }
 .main-session h1{
     font-size: 6em;
@@ -579,8 +580,6 @@ input{
     //}
 
 }
-
-
 
 .revolucao-session{
     background-color:  var(--red);
