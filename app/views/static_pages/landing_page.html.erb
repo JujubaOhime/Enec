@@ -25,19 +25,28 @@
 </section>
 
 <section class="passport-session">
-    <div class="home-esquerda">
-        <%= image_tag("passaporte.png", :alt => "logo da plataforma de passaporte", :class => "logo-passport") %>
+    <div class="container-passport">
+        <div class="passport-left">
+            <%= image_tag("passaporte.png", :alt => "logo da plataforma de passaporte", :class => "logo-passport") %>
+        </div>
+        <div class="amarelo-redondo-passport-antes"></div>
     </div>
-    <div class="home-direita">
-        <h2><%=@airfare.title%></h2>
-        <p><%=@airfare.phrase%></p>
-        <h5><button class="price-button">Confira os preços </button></h5>
+    
+    <div class="container-passport">
+        <div class="passport-right">
+            <div class="amarelo-redondo-passport-depois"></div>
+                <div class="text-passport">
+                    <h2><%=@airfare.title%></h2>
+                    <p><%=@airfare.phrase%></p>
+                    <button class="price-button">Confira os preços </button>
+                </div>
+        </div>
     </div>
 </section>
 
 <section class="palestrantes-session sections-home-table-cell">
     <div class="home-esquerda">
-        <h3><%=@the_speakers.title%></h3>
+        <h2><%=@the_speakers.title%></h2>
         <p><%=@the_speakers.description%></p>
         <p><button class="confira-ja-button">Confira Já</button></p>
     </div>
@@ -59,24 +68,25 @@
     <h2><%=@video.title%></h2>
     <div class="revolucao-centro" style="position: relative; width: 400px;">
         <div class="revolucao-video" controls width=400 height=220>
-        <%= video_tag @video.video, class: "revolucao-video" , width: 400 ,height: 220, controls: true%>
+        <%= video_tag @video.video, class: "revolucao-video" , controls: true%>
         </div>
     </div>
 </section>
 
+
 <section class="realizadores-session">
-    <h2><%=@event_realizers_title%></h2>
-        <%@event_realizers.each do |event|%>
-            <div class="home-esquerda">
-                <div class="realizadores-divisao">
-                    <p><%=event.description%></p>
-                    <%= link_to (image_tag(event.image, alt: "logo do enec", class: "logo-enec")), "http://#{event.link}" %>
+    <div class="realizadores-middle">
+        <h2><%= @event_realizers_title %></h2>
+        <div id="realizadorslider" class="owl-carousel owl-theme">
+            <% @event_realizers.each do |event|%>
+                <div class="item">
+                    <%= link_to (image_tag(event.image, alt: "logo do enec", class: "logo-enec-owl")), "http://#{event.link}" %>
+                    <p><%= event.description %></p>
+                    <h3><%= event.name %></h3>
                 </div>
-                <div class="afenec">
-                    <h3><%=event.name%></h3>
-                </div>
-            </div>
-        <%end%>
+            <% end %>
+        </div>
+    </div>
 </section>
 
 <section class="patrocinadores-session sections-home-table-cell">
@@ -92,26 +102,12 @@
 <section class="contato-session sections-home-table-cell">
     <div class="home-middle">
     <h2>Contato</h2>
-
     <%=form_with(url: send_contact_email_path, remote: true)  do |f| %>
-
-        <div class="input-form">
-            <h4>Nome</h4>
-            <%= f.text_field :name, placeholder: "Nome", class: "input" %>
-        </div>
-
-        <div class="input-form">
-            <h4>Email</h4>
-            <%= f.text_field :email,placeholder: "E-mail",  class: "input" %>
-        </div> 
-
-        <div class="input-form">
-            <h4>Mensagem</h4>
-            <%= f.text_area :message,placeholder: "Mensagem", class: "input mensagem" %>
-        </div>  
-
-        <input type="submit" value="enviar" class="form-button" />
-    
+        <p><%= f.text_field :name, placeholder: "Nome", class: "input" %></p>
+        <p><%= f.text_field :email,placeholder: "E-mail",  class: "input" %></p>
+        <p><%= f.text_area :message,placeholder: "Mensagem", class: "input mensagem" %></p>
+        <input type="submit" value="Enviar" class="form-button">
     <% end %>
+    </div>
 </section>
 </body>

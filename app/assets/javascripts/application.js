@@ -44,3 +44,28 @@ $(document).ready(function() {
         $('body').addClass('lock-scroll');
     }
   }
+
+
+/*  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+        loop:false,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            700:{
+                items:2,
+            },
+            1050:{
+                items:3,
+            },
+            1350:{
+                items:4,
+            }
+        }
+    })
+});
+
+
+*/
