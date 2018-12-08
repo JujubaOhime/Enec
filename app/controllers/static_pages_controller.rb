@@ -8,6 +8,8 @@ class StaticPagesController < ApplicationController
         @video = MerchandisingVideo.all.first
         @event_realizers = EventRealizer.all
         @sponsors_and_supporters = SponsorsAndSupporter.all
+    end
+    def send_email
         
     end
 end

@@ -70,10 +70,7 @@
             <div class="home-esquerda">
                 <div class="realizadores-divisao">
                     <p><%=event.description%></p>
-
-                    
-                        <%= link_to (image_tag("enec2019.png", alt: "logo do enec", class: "logo-enec")), "http://#{event.link}" %>
-                    
+                    <%= link_to (image_tag(event.image, alt: "logo do enec", class: "logo-enec")), "http://#{event.link}" %>
                 </div>
                 <div class="afenec">
                     <h3><%=event.name%></h3>
@@ -84,23 +81,37 @@
 
 <section class="patrocinadores-session sections-home-table-cell">
     <div class="home-middle">
-    <h2>Patrocinadores</h2><h2>e Apoiadores</h2>
-    <div class="logos-patrocinadores">
-        <% 5.times do |campo| %>
-            <%= image_tag("patrocinador.png", :alt => "logo do patrocinador", :class => "logo-patrocinador") %>
-        <% end %>
-    </div>
+        <h2>Patrocinadores</h2><h2>e Apoiadores</h2>
+        <div class="logos-patrocinadores">
+            <% @sponsors_and_supporters.each do |ss| %>
+                <%= link_to (image_tag(ss.image,alt: "logo do patrocinador", class: "logo-patrocinador")), "http://#{ss.link}" %>
+            <% end %>
+        </div>
     </div>
 </section>
 <section class="contato-session sections-home-table-cell">
     <div class="home-middle">
     <h2>Contato</h2>
-    <form>
-        <p><input type="text" name="Nome" placeholder="Nome" class="input"></p>
-        <p><input type="email" name="email" placeholder="E-mail" class="input"></p>
-        <p><textarea align="top" placeholder="Mensagem" class="input mensagem"></textarea></p> 
-        <input type="submit" value="Enviar"><br>
-    </form>
-    </div>
+
+    <%=form_with(url: send_contact_email_path, remote: true)  do |f| %>
+
+        <div class="input-form">
+            <h4>Nome</h4>
+            <%= f.text_field :name, placeholder: "Nome", class: "input" %>
+        </div>
+
+        <div class="input-form">
+            <h4>Email</h4>
+            <%= f.text_field :email,placeholder: "E-mail",  class: "input" %>
+        </div> 
+
+        <div class="input-form">
+            <h4>Mensagem</h4>
+            <%= f.text_area :message,placeholder: "Mensagem", class: "input mensagem" %>
+        </div>  
+
+        <input type="submit" value="enviar" class="form-button" />
+    
+    <% end %>
 </section>
 </body>
