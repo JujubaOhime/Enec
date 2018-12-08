@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User College Informations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Ies</th>
+      <th>Course</th>
+      <th>Period</th>
+      <th>Registration proof</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_college_informations.each do |user_college_information| %>
+      <tr>
+        <td><%= user_college_information.user %></td>
+        <td><%= user_college_information.IES %></td>
+        <td><%= user_college_information.course %></td>
+        <td><%= user_college_information.period %></td>
+        <td><%= user_college_information.registration_proof %></td>
+        <td><%= link_to 'Show', user_college_information %></td>
+        <td><%= link_to 'Edit', edit_user_college_information_path(user_college_information) %></td>
+        <td><%= link_to 'Destroy', user_college_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User College Information', new_user_college_information_path %>

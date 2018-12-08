@@ -1,0 +1,2 @@
+module EventRealizersTitlesHelper
+end

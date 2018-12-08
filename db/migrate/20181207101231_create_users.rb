@@ -14,12 +14,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :state
       t.string :password_digest
-      t.string :IES_name
-      t.string :IES_city
-      t.string :IES_state
-      t.string :IES_course
-      t.string :IES_period
-      t.string :IES_registration_proof
 
       t.timestamps
     end

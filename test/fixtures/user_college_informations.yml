@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  IES: one
+  course: MyString
+  period: MyString
+  registration_proof: MyString
+
+two:
+  user: two
+  IES: two
+  course: MyString
+  period: MyString
+  registration_proof: MyString

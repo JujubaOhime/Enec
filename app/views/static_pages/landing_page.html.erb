@@ -19,8 +19,8 @@
     </div>
     <div class="home-direita">
         <h2><%=@the_event.days%></h2>
-        <div><span>de </span><h3> Janeiro</h3></div>
-        <div><span>em </span><h3> Porto Alegre</h3></div>
+        <div><span>de </span><h3> <%=@the_event.mounth%></h3></div>
+        <div><span>em </span><h3> <%=@the_event.locality%></h3></div>
     </div>
 </section>
 
@@ -59,13 +59,13 @@
     <h2><%=@video.title%></h2>
     <div class="revolucao-centro" style="position: relative; width: 400px;">
         <div class="revolucao-video" controls width=400 height=220>
-        <%= video_tag @video.video, class: "revolucao-video" , width: 400 ,height: 220%>
+        <%= video_tag @video.video, class: "revolucao-video" , width: 400 ,height: 220, controls: true%>
         </div>
     </div>
 </section>
 
 <section class="realizadores-session">
-    <h2>Realizadores do Evento</h2>
+    <h2><%=@event_realizers_title%></h2>
         <%@event_realizers.each do |event|%>
             <div class="home-esquerda">
                 <div class="realizadores-divisao">
@@ -81,7 +81,7 @@
 
 <section class="patrocinadores-session sections-home-table-cell">
     <div class="home-middle">
-        <h2>Patrocinadores</h2><h2>e Apoiadores</h2>
+        <h2><%=@sponsor_and_supporters_title%>  </h2>
         <div class="logos-patrocinadores">
             <% @sponsors_and_supporters.each do |ss| %>
                 <%= link_to (image_tag(ss.image,alt: "logo do patrocinador", class: "logo-patrocinador")), "http://#{ss.link}" %>

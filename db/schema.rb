@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_104148) do
+ActiveRecord::Schema.define(version: 2018_12_08_024349) do
 
   create_table "airfares", force: :cascade do |t|
     t.string "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_104148) do
     t.string "title"
     t.text "content"
     t.string "image"
+    t.string "document"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +33,19 @@ ActiveRecord::Schema.define(version: 2018_12_07_104148) do
     t.string "name"
     t.text "description"
     t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_realizers_titles", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ies", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,6 +70,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_104148) do
     t.string "title"
     t.string "subtitle"
     t.string "phrase"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,9 +82,17 @@ ActiveRecord::Schema.define(version: 2018_12_07_104148) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sponsors_and_supporters_titles", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "the_events", force: :cascade do |t|
     t.string "title"
     t.string "days"
+    t.string "mounth"
+    t.string "locality"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,8 +102,21 @@ ActiveRecord::Schema.define(version: 2018_12_07_104148) do
     t.string "title"
     t.text "description"
     t.string "image"
+    t.string "document"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_college_informations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "IES_id"
+    t.string "course"
+    t.string "period"
+    t.string "registration_proof"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["IES_id"], name: "index_user_college_informations_on_IES_id"
+    t.index ["user_id"], name: "index_user_college_informations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,12 +133,6 @@ ActiveRecord::Schema.define(version: 2018_12_07_104148) do
     t.string "city"
     t.string "state"
     t.string "password_digest"
-    t.string "IES_name"
-    t.string "IES_city"
-    t.string "IES_state"
-    t.string "IES_course"
-    t.string "IES_period"
-    t.string "IES_registration_proof"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lot_id"], name: "index_users_on_lot_id"

@@ -1,0 +1,22 @@
+<%= form_with(model: sponsors_and_supporters_title, local: true) do |form| %>
+  <% if sponsors_and_supporters_title.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sponsors_and_supporters_title.errors.count, "error") %> prohibited this sponsors_and_supporters_title from being saved:</h2>
+
+      <ul>
+      <% sponsors_and_supporters_title.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

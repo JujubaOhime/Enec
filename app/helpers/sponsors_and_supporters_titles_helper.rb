@@ -1,0 +1,2 @@
+module SponsorsAndSupportersTitlesHelper
+end

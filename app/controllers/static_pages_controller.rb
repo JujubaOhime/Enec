@@ -8,8 +8,17 @@ class StaticPagesController < ApplicationController
         @video = MerchandisingVideo.all.first
         @event_realizers = EventRealizer.all
         @sponsors_and_supporters = SponsorsAndSupporter.all
+        @event_realizers_title = EventRealizersTitle.all.first.title
+        @sponsor_and_supporters_title = SponsorsAndSupportersTitle.all.first.title
     end
     def send_email
-        
+        form = {
+            name: params[:name],
+            email: params[:email],
+            message: params[:message]
+          }
+          ContactMailer.contact_email(form).deliver_later
+    end
+    def sections_edit
     end
 end

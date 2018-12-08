@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sponsors And Supporters Titles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sponsors_and_supporters_titles.each do |sponsors_and_supporters_title| %>
+      <tr>
+        <td><%= sponsors_and_supporters_title.title %></td>
+        <td><%= link_to 'Show', sponsors_and_supporters_title %></td>
+        <td><%= link_to 'Edit', edit_sponsors_and_supporters_title_path(sponsors_and_supporters_title) %></td>
+        <td><%= link_to 'Destroy', sponsors_and_supporters_title, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sponsors And Supporters Title', new_sponsors_and_supporters_title_path %>

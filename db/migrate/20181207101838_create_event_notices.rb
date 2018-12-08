@@ -4,6 +4,7 @@ class CreateEventNotices < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :content
       t.string :image
+      t.string :document
       t.timestamps
     end
   end
