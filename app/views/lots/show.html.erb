@@ -20,5 +20,10 @@
   <%= @lot.status %>
 </p>
 
+<p>
+  <strong>Termo:</strong>
+  <%= link_to 'PDF', @lot.term.url, target: :_blank %>
+</p>
+
 <%= link_to 'Edit', edit_lot_path(@lot) %> |
 <%= link_to 'Back', lots_path %>
