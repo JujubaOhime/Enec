@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @user.email = @user.email.downcase
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'Usuário criado com sucesso.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
         if admin_user_logged?
           redirect_to root_path
         else
-          format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          format.html { redirect_to @user, notice: 'Usuário atualizado com sucesso.' }
           format.json { render :show, status: :ok, location: @user }
         end
       else
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'Usuário excluído com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_name, :IES_city, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation)
+      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_name, :IES_city, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation, :use_term_accepted, :lot_term_accepted)
     end
 end
