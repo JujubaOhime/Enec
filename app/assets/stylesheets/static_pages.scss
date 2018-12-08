@@ -649,6 +649,34 @@ input{
     margin-bottom: 40px;
 }
 
+.amarelo-redondo-passport-antes{
+    display: block;
+    background-color: var(--yellow);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 5;
+    border-radius: 50%;
+    border: 10px solid #ffffff;
+}
+
+.amarelo-redondo-passport-depois{
+    content: '';
+    display: block;
+    background-color: var(--yellow);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    transform: translateY(50%) translateX(50%);
+    z-index: 5;
+    border-radius: 50%;
+    border: 10px solid #ffffff;
+}
+
 .item p {
     color: var(--green);
     width: 350px;

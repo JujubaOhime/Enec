@@ -25,13 +25,20 @@
 </section>
 
 <section class="passport-session">
-    <div class="passport-left">
-        <%= image_tag("passaporte.png", :alt => "logo da plataforma de passaporte", :class => "logo-passport") %>
+    <div class="container-passport">
+        <div class="passport-left">
+            <%= image_tag("passaporte.png", :alt => "logo da plataforma de passaporte", :class => "logo-passport") %>
+        </div>
+        <div class="amarelo-redondo-passport-antes"></div>
     </div>
-    <div class="passport-right">
-        <h2><%=@airfare.title%></h2>
-        <p><%=@airfare.phrase%></p>
-        <button class="price-button">Confira os preços </button>
+    
+    <div class="container-passport">
+        <div class="passport-right">
+            <div class="amarelo-redondo-passport-depois"></div>
+            <h2><%=@airfare.title%></h2>
+            <p><%=@airfare.phrase%></p>
+            <button class="price-button">Confira os preços </button>
+        </div>
     </div>
 </section>
 
@@ -57,7 +64,7 @@
 
 <section class ="revolucao-session">
     <h2><%=@video.title%></h2>
-    <div class="revolucao-centro" style="position: relative; width: 400px;">
+    <div class="revolucao-centro">
         <video class="revolucao-video" controls width=400 height=220>
         <%= video_tag @video.video, class: "revolucao-video" , width: 400 ,height: 220%>
         </video>
