@@ -371,6 +371,11 @@ input{
     box-shadow: none;
 }
 
+.container-passport{
+    position: relative;
+    min-height: 500px;
+}
+
 .passport-session{
     min-height: 500px;
 }
@@ -444,7 +449,6 @@ input{
     color: var(--dark-green);
     text-shadow: 0px 4px 4px #00000061;
     letter-spacing: 1px;
-    width: 450px;
 }
 
 .passport-session p{
@@ -482,45 +486,47 @@ input{
     object-fit: contain;
 }
 
+@media(max-width:1050px){
+    .logo-passport{
+        max-width: 70%;
+    }
+}
+
 @media(max-width:620px){
     .logo-passport{
-        width: 300px;
-        height: auto;
-        float:right;
-        position: relative;
-        left: 150px;
+        height: 80%;
+        top: 0;
+        transform: translateX(-50%) translateY(0);
+        margin-top: 2em;
     }
 
     .passport-left{
         position: absolute;
-        width: 49.95%;
-        left: 0;
-        min-height:500px; 
+        width: 100%;
+        min-height: 50%; 
         border-right-style: solid;
         border-right-width: 0px;
+        
       }
     
     .passport-session h2 {
-        margin-top: 230px;
-        float: left;
-        margin-left: 0px;
-        position: relative;
-        right: 230px;
+        // float: left;
         font-size: 1.6em;
+        margin-top: 1em;
     }
 
     .passport-session p {
-        float: left;
-        margin-left: 0px;
-        position: relative;
-        right: 35%;
+        // float: left;
+        // margin-left: 0px;
+        // position: relative;
+        // right: 35%;
     }
 
     .passport-session button {
-        float: left;
-        position: relative;
-        right: 168px;
-        width: 200px;
+        // float: left;
+        // position: relative;
+        // right: 168px;
+        // width: 200px;
         text-align: center;
     }
 
@@ -530,6 +536,20 @@ input{
 
     .passport-left::after{
         display: none;
+    }
+
+    .passport-right{
+        width: 100%;
+        min-height: 50%;
+        bottom: 0;
+    }
+
+    .text-passport{
+        position: absolute;
+        height: 100%;
+        margin-left: 0;
+        bottom: 0;
+        width: 100%;
     }
 
     @media(max-width: 400px){
@@ -563,8 +583,9 @@ input{
 
 
 .revolucao-session{
-    min-height: 500px;
     background-color:  var(--red);
+    display: inline-table;
+    width: 100vw;
 }
 
 .revolucao-session h2{
@@ -574,19 +595,19 @@ input{
     color: var(--white);
     text-shadow: 0px 4px 4px #00000061;
     letter-spacing: 1px;
-    padding-top: 76px;
+    padding-top: 1em;
 }
 
 .revolucao-video {
-    margin-top: 70px;
-    width: 33vw;
-    height: 24vw;
-    margin-bottom: 70px;
+    width: 35vw;
+    margin: 30px auto;
 }
 
 .revolucao-centro {
-    width: 450px;
-    margin: 0 auto;
+    width: 100vw;
+    margin: 30px auto;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 

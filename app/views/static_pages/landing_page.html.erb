@@ -29,9 +29,7 @@
         <div class="passport-left">
             <%= image_tag("passaporte.png", :alt => "logo da plataforma de passaporte", :class => "logo-passport") %>
         </div>
-    </div>
-    
-    <div class="container-passport">
+
         <div class="passport-right">
                 <div class="text-passport">
                     <h2><%=@airfare.title%></h2>
@@ -63,9 +61,9 @@
 </section>
 
 <section class ="revolucao-session">
-    <h2><%=@video.title%></h2>
-    <div class="revolucao-centro" style="position: relative; width: 400px;">
-        <div class="revolucao-video" controls width=400 height=220>
+    <div class="revolucao-centro">
+        <h2><%=@video.title%></h2>
+        <div class="revolucao-video" controls>
         <%= video_tag @video.video, class: "revolucao-video" , controls: true%>
         </div>
     </div>
