@@ -28,7 +28,7 @@ class EventRealizersController < ApplicationController
 
     respond_to do |format|
       if @event_realizer.save
-        format.html { redirect_to @event_realizer, notice: 'Event realizer was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'Event realizer was successfully created.' }
         format.json { render :show, status: :created, location: @event_realizer }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EventRealizersController < ApplicationController
   def update
     respond_to do |format|
       if @event_realizer.update(event_realizer_params)
-        format.html { redirect_to @event_realizer, notice: 'Event realizer was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'Event realizer was successfully updated.' }
         format.json { render :show, status: :ok, location: @event_realizer }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class EventRealizersController < ApplicationController
   def destroy
     @event_realizer.destroy
     respond_to do |format|
-      format.html { redirect_to event_realizers_url, notice: 'Event realizer was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'Event realizer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

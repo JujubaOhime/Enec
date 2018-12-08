@@ -28,7 +28,7 @@ class TheSpeakersController < ApplicationController
 
     respond_to do |format|
       if @the_speaker.save
-        format.html { redirect_to @the_speaker, notice: 'The speaker was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'The speaker was successfully created.' }
         format.json { render :show, status: :created, location: @the_speaker }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TheSpeakersController < ApplicationController
   def update
     respond_to do |format|
       if @the_speaker.update(the_speaker_params)
-        format.html { redirect_to @the_speaker, notice: 'The speaker was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'The speaker was successfully updated.' }
         format.json { render :show, status: :ok, location: @the_speaker }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TheSpeakersController < ApplicationController
   def destroy
     @the_speaker.destroy
     respond_to do |format|
-      format.html { redirect_to the_speakers_url, notice: 'The speaker was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'The speaker was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

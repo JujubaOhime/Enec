@@ -28,7 +28,7 @@ class SponsorsAndSupportersTitlesController < ApplicationController
 
     respond_to do |format|
       if @sponsors_and_supporters_title.save
-        format.html { redirect_to @sponsors_and_supporters_title, notice: 'Sponsors and supporters title was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'Sponsors and supporters title was successfully created.' }
         format.json { render :show, status: :created, location: @sponsors_and_supporters_title }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SponsorsAndSupportersTitlesController < ApplicationController
   def update
     respond_to do |format|
       if @sponsors_and_supporters_title.update(sponsors_and_supporters_title_params)
-        format.html { redirect_to @sponsors_and_supporters_title, notice: 'Sponsors and supporters title was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'Sponsors and supporters title was successfully updated.' }
         format.json { render :show, status: :ok, location: @sponsors_and_supporters_title }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SponsorsAndSupportersTitlesController < ApplicationController
   def destroy
     @sponsors_and_supporters_title.destroy
     respond_to do |format|
-      format.html { redirect_to sponsors_and_supporters_titles_url, notice: 'Sponsors and supporters title was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'Sponsors and supporters title was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

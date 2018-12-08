@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :user_college_informations
   resources :ies
   root to: 'static_pages#landing_page'
-  get '/sections_edit', to: 'static_pages#sections_edit'
+  get '/sections_edit', to: 'static_pages#sections_edit', as: 'sections_edit'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

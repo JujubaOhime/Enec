@@ -28,7 +28,7 @@ class ShowcasesController < ApplicationController
 
     respond_to do |format|
       if @showcase.save
-        format.html { redirect_to @showcase, notice: 'Showcase was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'Vitrine foi criada com sucesso.' }
         format.json { render :show, status: :created, location: @showcase }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ShowcasesController < ApplicationController
   def update
     respond_to do |format|
       if @showcase.update(showcase_params)
-        format.html { redirect_to @showcase, notice: 'Showcase was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'Vitrine foi atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @showcase }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ShowcasesController < ApplicationController
   def destroy
     @showcase.destroy
     respond_to do |format|
-      format.html { redirect_to showcases_url, notice: 'Showcase was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'Vitrine foi destruída com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class ShowcasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def showcase_params
-      params.require(:showcase).permit(:title, :subtitle, :phrase)
+      params.require(:showcase).permit(:title, :subtitle, :phrase, :image)
     end
 end

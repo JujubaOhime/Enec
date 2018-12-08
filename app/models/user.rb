@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   belongs_to :lot
   # Returns the hash digest of the given string.
-
+  mount_uploader :image, ImageUploader
+  
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
 

@@ -1,4 +1,4 @@
-<body class="home">
+<body class="home"> <!-- TODO Remover body, essa tag deveria ser única e ela já é usada no app.html.erb -->
 <section class="main-session">
     <div class="container-home">
         <div class="home-esquerda">
@@ -59,32 +59,36 @@
     <h2><%=@video.title%></h2>
     <div class="revolucao-centro" style="position: relative; width: 400px;">
         <div class="revolucao-video" controls width=400 height=220>
-        <%= video_tag @video.video, class: "revolucao-video" , width: 400 ,height: 220, controls: true%>
+            <%= video_tag @video.video.url, class: "revolucao-video", width: 400, height: 220, controls: true %>
         </div>
     </div>
 </section>
 
 <section class="realizadores-session">
     <h2><%=@event_realizers_title%></h2>
-        <%@event_realizers.each do |event|%>
+        <% @event_realizers.each do |event| %>
             <div class="home-esquerda">
                 <div class="realizadores-divisao">
                     <p><%=event.description%></p>
-                    <%= link_to (image_tag(event.image, alt: "logo do enec", class: "logo-enec")), "http://#{event.link}" %>
+                    <%= link_to "http://#{event.link}" do %>
+                        <%= image_tag(event.image.url, alt: "logo do enec", class: "logo-enec") %>
+                    <% end %>
                 </div>
                 <div class="afenec">
                     <h3><%=event.name%></h3>
                 </div>
-            </div>
-        <%end%>
+            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+        <% end %>                                                                                                                                                                                                                                       
 </section>
 
-<section class="patrocinadores-session sections-home-table-cell">
+<section class="patrocinadores-session sections-home-table-cell">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
     <div class="home-middle">
         <h2><%=@sponsor_and_supporters_title%>  </h2>
         <div class="logos-patrocinadores">
             <% @sponsors_and_supporters.each do |ss| %>
-                <%= link_to (image_tag(ss.image,alt: "logo do patrocinador", class: "logo-patrocinador")), "http://#{ss.link}" %>
+                <%= link_to "http://#{ss.link}" do %>
+                    <%= image_tag(ss.image.url, alt: "logo do patrocinador", class: "logo-patrocinador") %>
+                <% end %>
             <% end %>
         </div>
     </div>

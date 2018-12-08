@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Image</th>
       <th>Name</th>
       <th>Description</th>
       <th>Link</th>
@@ -16,13 +15,10 @@
   <tbody>
     <% @event_realizers.each do |event_realizer| %>
       <tr>
-        <td><%= event_realizer.image %></td>
         <td><%= event_realizer.name %></td>
         <td><%= event_realizer.description %></td>
         <td><%= event_realizer.link %></td>
-        <td><%= link_to 'Show', event_realizer %></td>
-        <td><%= link_to 'Edit', edit_event_realizer_path(event_realizer) %></td>
-        <td><%= link_to 'Destroy', event_realizer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_event_realizer_path(event_realizer) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Event Realizer', new_event_realizer_path %>
+

@@ -31,22 +31,27 @@ TheSpeaker.create!(title: "Os palestrantes",
         luctus interd.",
     image: "parque_farroupilha2.jpg")
 
-    MerchandisingVideo.create!(title: "Conheça a Revolução", 
-    video: "sample.mp4")
+    mv = MerchandisingVideo.create!(title: "Conheça a Revolução")
+    mv.video = Rails.root.join("app/assets/images/sample.mp4").open
+    mv.save!
 
-    EventRealizersTitle.create!(title: "Realizadores doo Evento")
+    EventRealizersTitle.create!(title: "Realizadores do Evento")
 
 4.times do
-    EventRealizer.create!(image: "enec2019.png" , name:"A FENEC",
+    e = EventRealizer.create!(image: "enec2019.png" , name:"A FENEC",
         description: "Lorem ipsum dolor sit amet,
         consectur adipiscing elit. Praesent
         nunc elit, feugiat et tellus quis,
         luctus interd.", link: "www.google.com" )
+    e.image = Rails.root.join("app/assets/images/enec2019.png").open
+    e.save!
 end
 
 SponsorsAndSupportersTitle.create!(title: "Patrocinadores e Apoiadores")
 5.times do
-    SponsorsAndSupporter.create!(image: "patrocinador.png", link: "www.google.com")
+    ss = SponsorsAndSupporter.create!(image: "patrocinador.png", link: "www.google.com")
+    ss.image = Rails.root.join("app/assets/images/patrocinador.png").open
+    ss.save!
 end
 
 Lot.create!(name:"1º Lote", description: "Com Hospedagem Federado", value:"200", status:"Ativo")

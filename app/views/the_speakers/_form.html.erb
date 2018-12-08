@@ -21,6 +21,11 @@
     <%= form.text_area :description %>
   </div>
 
+  imagem
+  <%= form.file_field :image, multiple: true %>
+
+  documento pra landing page (pdf)
+  <%= form.file_field :document, multiple: true %>
   <div class="actions">
     <%= form.submit %>
   </div>
