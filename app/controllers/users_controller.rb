@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    
   end
 
   # GET /users/1
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @lots = Lot.all
   end
 
   # GET /users/1/edit
@@ -26,6 +28,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.email = @user.email.downcase
+    @lots = Lot.all
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
