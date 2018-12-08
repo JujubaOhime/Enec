@@ -552,31 +552,31 @@ input{
         width: 100%;
     }
 
-    @media(max-width: 400px){
-        .passport-session button {
-            float: left;
-            margin-left: 0px;
-            position: relative;
-            right: 165px;
-            padding: 0px;
+    // @media(max-width: 400px){
+    //     .passport-session button {
+    //         float: left;
+    //         margin-left: 0px;
+    //         position: relative;
+    //         right: 165px;
+    //         padding: 0px;
     
-        }
-        .logo-passport{
-            width: 300px;
-            height: auto;
-            float:right;
-            position: relative;
-            left: 150px;
-        }
-        .passport-session button {
-            float: left;
-            position: relative;
-            right: 160px;
-            width: 200px;
-            text-align: center;
-        }
+    //     }
+    //     .logo-passport{
+    //         width: 300px;
+    //         height: auto;
+    //         float:right;
+    //         position: relative;
+    //         left: 150px;
+    //     }
+    //     .passport-session button {
+    //         float: left;
+    //         position: relative;
+    //         right: 160px;
+    //         width: 200px;
+    //         text-align: center;
+    //     }
     
-    }
+    //}
 
 }
 
@@ -650,7 +650,8 @@ input{
     height: 185px;
     margin-left: 20px;
     margin-right: 20px;
-    width: 367px;
+    width: 80%;
+    max-width: 350px;
 }
 
 
@@ -695,7 +696,6 @@ input{
 
 .item p {
     color: var(--green);
-    width: 350px;
     font-family: sans-serif;
     font-size: 1.15em;
     font-weight: 400;
@@ -777,7 +777,6 @@ input{
     flex-wrap: wrap;
     justify-content: center;
 }
-
 
 
 .contato-session{
