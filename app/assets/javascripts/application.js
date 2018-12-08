@@ -22,14 +22,14 @@
             lockScroll();
         $("nav").toggleClass("open");  
         $(this).toggleClass("toggle");
-        $(".home header").addClass("ativo");
-        if ($(this).scrollTop() > 10) {
-            $(".home header").addClass("ativo") };
+        //$(".home header").addClass("ativo");
+        //if ($('scroll').scrollTop() > 10) {
+        //    $(".home header").addClass("ativo")};
         });
         $(".form-edit-campo .actions input").val('Atualizar');
     });
 
-
+$(document).ready(function(){
 $(window).on('scroll', function() {
     if ($(this).scrollTop() > 10) {
     $(".home header").addClass("ativo");
@@ -42,14 +42,15 @@ $(window).on('scroll', function() {
     $(".icon-scroll").removeClass("icon-scroll-gone");
     }
 });
+});
 
 function lockScroll() {
-if ($('body').hasClass('lock-scroll')) {
-    $('body').removeClass('lock-scroll');
-}
-else {
-    $('body').addClass('lock-scroll');
-}
+    if ($('body').hasClass('lock-scroll')) {
+        $('body').removeClass('lock-scroll');
+    }
+    else {
+        $('body').addClass('lock-scroll');
+    }
 };
 
 
