@@ -1,25 +1,51 @@
-Edição de Sessões
-<br>
-Sessão Principal
-<%= link_to  "Editar" , edit_showcase_path(@showcase)%>
-<br>
-Sessão "O Evento"
-<%= link_to "Editar", edit_the_event_path(@the_event)%>
-<br>
-Sessão "Passaporte"
-<%= link_to "Editar", edit_airfare_path(@airfare)%>
-<br>
-Sessão "Os Palestrantes"
-<%= link_to "Editar", edit_the_speaker_path(@the_speakers)%>
-<br>
-Sessão "Editais do Evento"
-<%= link_to "Editar", edit_event_notice_path(@event_notices)%>
-<br>
-Sessão de Video
-<%= link_to "Editar", edit_merchandising_video_path(@video)%>
-<br>
-Sessão "Realizadores do Evento"
-<%= link_to "Editar", event_realizers_path%>
-<br>
-Sessão "Patrocinadores e Apoiadores"
-<%= link_to "Editar", sponsors_and_supporters_path%>
+
+  <section class="index-sections">
+    <div class="container-table">
+      <h1>Lista de Seções</h1>
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Section</th>
+              <th colspan="1">Ações</th>
+            </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                <td>Sessão Principal</td>
+                <td class="td-ações td-editar"><%= link_to 'Editar', edit_showcase_path(@showcase) %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %></td>
+              <tr>
+                <td>Sessão "O Evento"</td>
+                <td class="td-ações td-editar"><%= link_to 'Editar', edit_the_event_path(@the_event) %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %></td>
+              <tr>
+                <td>Sessão "Passaporte"</td>
+                <td class="td-ações td-editar"><%= link_to 'Editar', edit_airfare_path(@airfare) %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %></td>
+              </tr>
+              <tr>
+                <td>Sessão "Os Palestrantes"</td>
+                <td class="td-ações td-editar"><%= link_to 'Editar', edit_the_speaker_path(@the_speakers) %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %></td>
+              </tr>
+              <tr>
+                <td>Sessão "Editais do Evento"</td>
+                <td class="td-ações td-editar"><%= link_to 'Editar', edit_event_notice_path(@event_notices) %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %></td>
+              </tr>
+              <tr>
+                <td>Sessão de Video</td>
+                <td class="td-ações td-editar"><%= link_to 'Editar', edit_merchandising_video_path(@video) %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %></td>
+              </tr>
+              <tr>
+                <td>Sessão "Realizadores do Evento"</td>
+                <td class="td-ações td-editar"><%= link_to 'Editar', event_realizers_path %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %></td>
+              </tr>
+              <tr>
+                <td>Sessão "Patrocinadores e Apoiadores"</td>
+                <td class="td-ações td-editar"><%= link_to 'Editar', sponsors_and_supporters_path %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
