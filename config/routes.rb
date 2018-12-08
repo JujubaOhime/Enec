@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :showcases
   resources :users
   resources :lots
+
+  post '/contato/enviar-email', to: 'static_pages#send_email', as: 'send_contact_email'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
