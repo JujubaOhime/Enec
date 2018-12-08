@@ -20,5 +20,11 @@ class StaticPagesController < ApplicationController
           ContactMailer.contact_email(form).deliver_later
     end
     def sections_edit
+        @showcase = Showcase.all.first
+        @the_event = TheEvent.all.first
+        @airfare = Airfare.all.first
+        @the_speakers = TheSpeaker.all.first
+        @event_notices = EventNotice.all.first
+        @video = MerchandisingVideo.all.first
     end
 end
