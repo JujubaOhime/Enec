@@ -39,7 +39,8 @@ input{
 .home header{
     position: fixed;
     background: none;
-    width: 100%
+    width: 100%;
+    z-index: 999;
 }
 
 .home .ativo{
@@ -185,6 +186,7 @@ input{
     box-shadow: none;
 }
 .main-session .area-do-congressista-button{
+    text-decoration: none;
     background: var(--green);
     border: 0px;
     border-radius: 100px;
@@ -369,6 +371,318 @@ input{
     box-shadow: none;
 }
 
+.passport-session{
+    height: 500px;
+}
+
+.passport-left{
+  position: absolute;
+  width: 49.95%;
+  left: 0;
+  min-height:500px; 
+  border-right-color: var(--yellow);
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+.passport-left::after{
+  content: '';
+  display: block;
+  background-color: var(--yellow);
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 5;
+  border-radius: 50%;
+  border: 10px solid #ffffff;
+  }
+
+.passport-right{
+    width: 49.95%;
+    right: 0;
+    position: absolute;
+    min-height: 500px;
+}
+
+.passport-right::before{
+    content: '';
+    display: block;
+    background-color: var(--yellow);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    transform: translateY(50%) translateX(50%);
+    z-index: 5;
+    border-radius: 50%;
+    border: 10px solid #ffffff;
+}
+
+
+.passport-session h2{
+    font-size: 1.75em;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    color: var(--dark-green);
+    text-shadow: 0px 4px 4px #00000061;
+    letter-spacing: 1px;
+    margin-bottom: 1.7em;
+    width: 450px;
+    margin-top: 120px;
+}
+
+.passport-session p{
+    color: var(--dark-green);
+    clear: both;
+    font-family: 'Bitter', serif;
+    font-size: 1em;
+    text-align: center;
+    margin-right: 17vw;
+    line-height: 22px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    float: right;
+    max-width: 40vw;
+}
+
+.passport-session .price-button{
+    background: var(--orange);
+    border: 0px;
+    border-radius: 100px;
+    color: var(--white);
+    padding: 4px 35px;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    margin-top: 5.5em;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-left: 15.5vw;
+    }
+
+.logo-passport{
+    margin-left: 7%;
+    margin-top: 11%;
+}
+
+@media(max-width:620px){
+    .logo-passport{
+        width: 300px;
+        height: auto;
+        float:right;
+        position: relative;
+        left: 150px;
+    }
+
+    .passport-left{
+        position: absolute;
+        width: 49.95%;
+        left: 0;
+        min-height:500px; 
+        border-right-style: solid;
+        border-right-width: 0px;
+      }
+    
+    .passport-session h2 {
+        margin-top: 230px;
+        float: left;
+        margin-left: 0px;
+        position: relative;
+        right: 230px;
+        font-size: 1.6em;
+    }
+
+    .passport-session p {
+        float: left;
+        margin-left: 0px;
+        position: relative;
+        right: 35%;
+    }
+
+    .passport-session button {
+        float: left;
+        position: relative;
+        right: 168px;
+        width: 200px;
+        text-align: center;
+    }
+
+    .passport-right::before{
+        display: none;
+    }
+
+    .passport-left::after{
+        display: none;
+    }
+
+    @media(max-width: 400px){
+        .passport-session button {
+            float: left;
+            margin-left: 0px;
+            position: relative;
+            right: 165px;
+            padding: 0px;
+    
+        }
+        .logo-passport{
+            width: 300px;
+            height: auto;
+            float:right;
+            position: relative;
+            left: 150px;
+        }
+        .passport-session button {
+            float: left;
+            position: relative;
+            right: 160px;
+            width: 200px;
+            text-align: center;
+        }
+    
+    }
+
+}
+
+
+
+.revolucao-session{
+    min-height: 500px;
+    background-color:  var(--red);
+}
+
+.revolucao-session h2{
+    font-size: 3em;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 0px 4px 4px #00000061;
+    letter-spacing: 1px;
+    padding-top: 76px;
+}
+
+.revolucao-video {
+    margin-top: 70px;
+    width: 33vw;
+    height: 24vw;
+    margin-bottom: 70px;
+}
+
+.revolucao-centro {
+    width: 450px;
+    margin: 0 auto;
+}
+
+
+@media(max-width:425px){
+    .revolucao-video {
+        width: 60vw;
+        height: 45vw;
+        position: relative;
+        right: 44px;
+    }
+}
+
+
+.realizadores-session{
+    height: 500px;
+    display: table;
+    margin: 0 auto;
+}
+
+.realizadores-middle{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.realizadores-middle img{
+    width: 100px;
+}
+
+#realizadorslider{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item{
+    cursor: pointer;
+    flex-basis: auto;
+    height: 185px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 367px;
+}
+
+.owl-carousel.owl-loaded {
+    display: inline-block;
+    margin-left: 3%;
+}
+
+.owl-carousel .owl-item img {
+    width: 160px;
+    height: auto;
+}
+
+.owl-stage{
+    width: auto;
+}
+
+.owl-item{
+    width: 349px;
+}
+
+.realizadores-session h2 {
+    font-size: 2em;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: bold;
+    color: var(--dark-green);
+    letter-spacing: 3px;
+    text-shadow: 0px 2px 2px #00000061;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.item p {
+    color: var(--green);
+    width: 350px;
+    font-family: sans-serif;
+    font-size: 1.15em;
+    font-weight: 400;
+    text-align: center;
+}
+
+.item p::after{
+    content: "";
+    background: var(--dark-green);
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    margin: 20px auto 0 auto;
+}
+
+.item h3 {
+    color: var(--yellow);
+    text-transform: uppercase;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    float: right;
+}
+
+@media (max-width:550px){
+    .item h3{
+        padding-left: 40px;
+    }
+}
+
 .patrocinadores-session{
     height: 488px;
     background-color:  var(--red);
@@ -479,346 +793,314 @@ textarea{
 
 .contato-session input[type="submit"]:hover{
     background: var(--yellow-hover);
-    transition: 0.3s
+    transition: 0.3s;
+    box-shadow: none;
 }
 
-.passport-session{
-    height: 500px;
-}
-
-.passport-left{
-    float: left;
-    width: 50vw;
-    clear: both;
-    //border-right-color: var(--yellow);
-    //border-right-style: solid;
-    //border-right-width: 2px;
-    height: 500px;
-}
-
-.passport-right{
-    width: 49.8vw;
-    float: right;
-}
-
-.passport-session h2{
-    font-size: 1.75em;
-    font-family: 'Palanquin Dark', sans-serif;
-    text-align: center;
-    margin: 0 auto;
-    color: var(--dark-green);
-    text-shadow: 0px 4px 4px #00000061;
-    letter-spacing: 1px;
-    margin-bottom: 1.7em;
-    width: 450px;
-    margin-top: 120px;
-}
-
-.passport-session p{
-    color: var(--dark-green);
-    clear: both;
-    font-family: 'Bitter', serif;
-    font-size: 1em;
-    text-align: center;
-    margin-right: 17vw;
-    line-height: 22px;
-    letter-spacing: 2px;
-    font-weight: 800;
-    float: right;
-    max-width: 40vw;
-}
-
-.passport-session .price-button{
-    background: var(--orange);
-    border: 0px;
-    border-radius: 100px;
-    color: var(--white);
-    padding: 6px 85px;
-    font-size: 1.125em;
-    font-family: 'Palanquin Dark', sans-serif;
-    box-shadow: 0 4px 4px 0px #00000061;
-    margin-top: 5.5em;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-left: 13.2vw;
+@media screen and (max-width: 930px) {
+    nav{
+        width: 50%;
     }
+    .main-session{
+        h2{
+            font-size: 30px;
+        }
+        .inscreva-se-button{
+            padding: 5px 50px;
+            font-size: 20px;
+        }
+        .area-do-congressista-button{
+            padding: 2px 25px;
+            font-size: 16px;
+        }
+        h3{
+            font-size: 22px;
+        }
+        h1{
+            font-size: 65px;
+        }
 
-.home-esquerda .logo-passport{
-    width: 400px;
-    height: 300px;
-    text-align: center;
-    margin-left: 19%;
-    margin-top: 14%;
-}
-
-/*.passport-circle{
-    border-radius:50%;
-    border: 10px solid var(--yellow);
-    width:40px;
-    height:40px;
-    background-color: var(--yellow);
-    box-shadow: inherit 25px 25px var(--white);  
-}
-
-.passport-white-circle{
-    border-radius:50%;
-    border: 10px solid var(--white);
-    width:60px;
-    height:60px;
-    background-color: var(--white);
-    z-index: 0;
-}
-
-#white1{
-    position: relative;
-    left: 50.5%;
-    transform: translateX(-50.5%);
-    top: -21.5%;
-
-}
-
-#white2{
-    position: relative;
-    left: 50.5%;
-    transform: translateX(-50.5%);
-    top: 80%;
-}
-
-#circle1{
-    position: relative;
-    left: 50.5%;
-    transform: translateX(-50.5%);
-    top: -2.5%;
-    z-index: 1;
-}
-
-#circle2{
-    position: relative;
-    left: 50.5%;
-    transform: translateX(-50.5%);
-    z-index: 1;
-}
-
-@media (max-width: 1300px){
-    #white1{
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -21.5%;
-    
     }
-    
-    #white2{
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 50%;
-    }
-    
-    #circle1{
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -2.5%;
-        z-index: 1;
-    }
-    
-    #circle2{
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-    }
-
-    @media (max-width: 990px){
-        .passport-left .logo-passport{
-            width: 397px;
-            height: 300px;
-            text-align: center;
-            margin-left: 19%;
-            margin-top: 14%;
-            border-right-color: var(--yellow);
-            border-right-style: solid;
-            border-right-width: 2px;
+    .evento-session{
+        h2{
+            font-size: 80px;
+        }
+        h3{
+            font-size: 33px;
+        }
+        p{
+            font-size: 16px;
+        }
+        h4{
+            font-size: 55px;
+            margin-bottom: 40px;
         }
     }
-}*/
 
+    .palestrantes-session{
+        h2{
+            font-size: 36px;
+        }
+        p{
+            font-size: 16px;
+        }
+        .confira-ja-button{
+            padding: 7px 50px;
+        }
+    }
 
+    .editais-session{
+        h2{
+            font-size: 32px;
+        }
+        p{
+            font-size: 16px;
+        }
+        .confira-ja-button{
+            padding: 7px 50px;
+        } 
+    }
 
-.revolucao-session{
-    height: 500px;
-    background-color:  var(--red);
-}
-
-.revolucao-session h2{
-    font-size: 3em;
-    font-family: 'Palanquin Dark', sans-serif;
-    text-align: center;
-    color: var(--white);
-    text-shadow: 0px 4px 4px #00000061;
-    letter-spacing: 1px;
-    padding-top: 76px;
-}
-
-.revolucao-video {
-    margin-top: 70px;
-}
-
-.revolucao-centro {
-    width: 410px;
-    margin: 0 auto;
-}
-
-.realizadores-session{
-    height: 500px;
-}
-
-.realizadores-left{
-    width: 50vw;
-    float: left;
-    //border-right-color: var(--yellow);
-    //border-right-style: solid;
-    //border-right-width: 2px;
-    height: 430px;
-    margin-top: 15px;
-}
-
-.realizadores-right{
-    width: 49.5vw;
-    float: right;
-    height: 430px;
-}
-
-.realizadores-session h2{
-    font-size: 2em;
-    font-family: 'Palanquin Dark', sans-serif;
-    font-weight: bold;
-    color: var(--dark-green);
-    letter-spacing: 3px;
-    text-shadow: 0px 2px 2px #00000061;
-    text-align: center;
-    margin-top: 70px;
-}
-
-/*.realizadores-circle{
-    border-radius:50%;
-    border: 10px solid var(--yellow);
-    width:20px;
-    height:20px;
-    background-color: var(--yellow);
-    box-shadow: inherit 25px 25px var(--white);  
-}
-
-.realizadores-white-circle{
-    border-radius:50%;
-    border: 10px solid var(--white);
-    width:45px;
-    height:45px;
-    background-color: var(--white);
-    z-index: 0;
-}
-
-#rwhite1{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 42.7%;
-}
-
-#rwhite2{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#rcircle1{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-#rcircle2{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}*/
-
-.realizadores-divisao{
-    margin-top: 60px;
-    margin-right: 20px;
-    margin-left: 60px;
-    width: 38vw;
-    height: 120px;
-    position: relative;
-}
-
-.realizadores-divisao .logo-enec{
-    width: 150px;
-    height: 120x;
-    float: right;
-    position: absolute;
-    top: -8%;
-    right: 8%;
-}
-
-.realizadores-divisao p {
-    color: var(--green);
-    width: 300px;
-    font-family: sans-serif;
-    margin-left: 60px;
-    font-size: 1.15em;
-    padding-top: 20px;
-    font-weight: 400;
-}
-
-.realizadores-divisao::after{
-    content: "";
-    background: var(--dark-green);
-    display: block;
-    width: 450px;
-    height: 2.5px;
-    margin: 20px auto 0 auto;
-}
-
-.afenec {
-    width: 400px;
-    height: 40px;
-}
-
-.afenec h3 {
-    color: var(--yellow);
-    text-transform: uppercase;
-    float: right;
-    font-family: 'Palanquin Dark', sans-serif;
-    font-size: 2em;
-    font-weight: 600;
-    letter-spacing: 3px;
-}
-
-.afenec h4 {
-    color: var(--green);
-    text-transform: uppercase;
-    float: right;
-    font-family: 'Palanquin Dark', sans-serif;
-    font-size: 2em;
-    font-weight: 600;
-    letter-spacing: 3px;
+    footer{
+        .first-logo-social{
+            margin-left: 3em;
+        }
+        .logo-social{
+            margin-left: 3em;
+        }
+        .logo-in-junior{
+            margin-right: 3em;
+        }
+        span{
+            margin-right: 0.5em;
+            font-size: 18px;
+        }
+    }
 
 }
+@media screen and (max-width: 620px) {
+    .home header{
+        display: block;
+    }
+    html .home{
+        font-size: 70%;
+    }
+    nav{
+        width: 100vw;
+    }
+    .container-home{
+        display: table;
+        width:100vw;
+        height: calc(100vh - 150px);
+    }
+    .home-esquerda{
+        width: 100vw;
+        display: table-cell;
+        vertical-align: middle;
+        margin: 0 auto;
 
-@media (max-width: 990px) {
-    .realizadores-divisao .logo-enec{
-        width: 100px;
-        height: 75px;
-        float: right;
-        position: absolute;
-        right: -25%;
-        top: 7%;
+    }
+    .home-direita{
+        width: 100vw;   
+    }
+
+    .main-session{
+        .home-direita{
+            display: none;
+        }
+        .home-esquerda{
+            height: calc(100vh);
+        }
+        h1{
+            font-size: 48px;
+        }
+        h2{
+            font-size: 24px;
+        }
+        h3{
+            font-size: 18px;
+            width: 50%;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 30px;
+        }
+    }
+
+    .evento-session{
+        display: table-cell;
+        vertical-align: middle;
+        height: 697px;
+        .home-direita div{
+            text-align: center;
+        }
+        .home-direita div:last-of-type{
+            margin-bottom: 50px;
+        }
+        .home-direita{
+            display: table;
+        }
+        .home-esquerda{
+            height: 0px;
+            display: table;
+        }
+        p{
+            margin-right: 5vw;
+            margin-left: 5vw;
+        }
+        h4{
+            margin-top: 32px;
+            text-align: center;
+        }
+        
+        h2{
+            margin-left: 0px;
+            text-align: center;
+            font-size: 56px;
+            margin-top: 32px;
+        }
+        span{
+            margin-left: 0px;
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        
+    }
+    .palestrantes-session{
+        height: 464px;
+        .home-direita{
+            display: none;
+        }
+        p{
+            margin-left: 0px;
+            float: none;
+            margin: 0 auto;
+            text-align: unset;
+            max-width: none;
+            margin-left: 5vw;
+            margin-right: 5vw;
+        }
+        p:last-of-type{
+            text-align: center;
+            margin: 0 auto;
+        }
+        h2{
+            text-align: center;
+        }
+    }
+
+    .editais-session{
+        height: 471px;
+        h2{
+            text-align: center;
+        }
+        p{
+            margin: 0 auto;
+            float: none;
+            margin: 0 auto;
+            text-align: unset;
+            max-width: none;
+            margin-left: 5vw;
+            margin-right: 5vw;
+        }
+        p:last-of-type{
+            text-align: center;
+            margin: 0 auto;
+        }
+        .home-esquerda{
+            display: none;
+        }
+        .home-direita{
+            margin: 0 auto;
+            display: table-cell;
+            vertical-align: middle;
+            height: 471px;
+        }
+        .confira-ja-button{
+            float: none;
+        }
+    }
+    .patrocinadores-session{
+        height: 580px;
+        h2:last-of-type{
+            margin-bottom: 20px;
+        }
+        .logo-patrocinador:first-of-type{
+            margin-left: 10px;
+        }
+        .logo-patrocinador{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    .contato-session{
+        height: 559px;
+        h2{
+            margin-bottom: 40px;
+        }
+        .input{
+            margin-bottom: 22px;
+            width: 300px;
+            padding: 12px 0px;
+            min-width: 300px;
+        }
+        input[type="submit"]{
+            margin-top: 65px;
+            width: 172px;
+            height: 45px;
+        }
+        textarea{
+            max-width: 300px;
+        }
+        .mensagem{
+            height: 126px;
+            padding: 0px;
+            max-height: 126px;
+            resize: none;
+        }
+    }
+    .footer, .push{
+        height: 431px;
+    }
+    .wrapper{
+        margin-bottom: -431px;
+    }
+    footer{
+        .footer-esquerda{
+            text-align: center;
+            width: 100vw;
+        }
+        
+        .first-logo-social{
+            margin-left: 0px;
+        }
+
+        .footer-direita{
+            float: none;
+            align-items: center;
+            display: block;
+            width: 100vw;
+        }
+        .logo-social{
+            margin-top: 87px;
+            margin-bottom: 100px;
+        }
+        span{
+            display: block;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .logo-in-junior{
+            float: none;
+            width: 94px;
+            margin: 0px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
 
     }
 }
-
 
