@@ -5,6 +5,7 @@ class SponsorsAndSupportersController < ApplicationController
   # GET /sponsors_and_supporters.json
   def index
     @sponsors_and_supporters = SponsorsAndSupporter.all
+    @sponsor_supporters_title = SponsorsAndSupportersTitle.all.first
   end
 
   # GET /sponsors_and_supporters/1
