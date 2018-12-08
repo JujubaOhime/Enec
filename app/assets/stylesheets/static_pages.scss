@@ -585,7 +585,7 @@ input{
 .revolucao-session{
     background-color:  var(--red);
     display: inline-table;
-    width: 100vw;
+    width: 100%;
 }
 
 .revolucao-session h2{
@@ -647,7 +647,7 @@ input{
 .item{
     cursor: pointer;
     flex-basis: auto;
-    height: 185px;
+    height: 135px;
     margin-left: 20px;
     margin-right: 20px;
     width: 80%;
