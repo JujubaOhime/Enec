@@ -32,7 +32,7 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.delegation %></td>
-        <td><%= user.lot %></td>
+        <td><%= user.lot.name %></td>
         <td><%= user.name %></td>
         <td><%= user.cpf %></td>
         <td><%= user.rg %></td>
@@ -42,12 +42,6 @@
         <td><%= user.address %></td>
         <td><%= user.city %></td>
         <td><%= user.state %></td>
-        <td><%= user.IES_name %></td>
-        <td><%= user.IES_city %></td>
-        <td><%= user.IES_state %></td>
-        <td><%= user.IES_course %></td>
-        <td><%= user.IES_period %></td>
-        <td><%= user.IES_registration_proof %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
