@@ -653,23 +653,6 @@ input{
     width: 367px;
 }
 
-.owl-carousel.owl-loaded {
-    display: inline-block;
-    margin-left: 3%;
-}
-
-.owl-carousel .owl-item img {
-    width: 160px;
-    height: auto;
-}
-
-.owl-stage{
-    width: auto;
-}
-
-.owl-item{
-    width: 349px;
-}
 
 .realizadores-session h2 {
     font-size: 2em;
@@ -794,6 +777,8 @@ input{
     flex-wrap: wrap;
     justify-content: center;
 }
+
+
 
 .contato-session{
     background-color: var(--green);

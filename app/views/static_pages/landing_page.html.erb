@@ -73,7 +73,7 @@
 <section class="realizadores-session">
     <div class="realizadores-middle">
         <h2><%= @event_realizers_title %></h2>
-        <div id="realizadorslider" class="owl-carousel owl-theme">
+        <div id="realizadorslider">
             <% @event_realizers.each do |event|%>
                 <div class="item">
                     <%= link_to (image_tag(event.image, alt: "logo do enec", class: "logo-enec-owl")), "http://#{event.link}" %>
