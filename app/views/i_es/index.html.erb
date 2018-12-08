@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ies.each do |ie| %>
+      <tr>
+        <td><%= ie.name %></td>
+        <td><%= ie.city %></td>
+        <td><%= link_to 'Show', ie %></td>
+        <td><%= link_to 'Edit', edit_ie_path(ie) %></td>
+        <td><%= link_to 'Destroy', ie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ie', new_ie_path %>

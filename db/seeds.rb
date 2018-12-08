@@ -8,8 +8,9 @@
 
 Showcase.create!(title: "Título", subtitle: "Subtítulo", phrase: "pequena frase")
 
-TheEvent.create!(title: "O Evento", days: "02 a 03",
-     content: "Lorem ipsum dolor sit amet,
+TheEvent.create!(title: "O Evento", days: "02 a 03", mounth: "Janeiro", 
+    locality:"Porto Alegre",
+    content: "Lorem ipsum dolor sit amet,
     consectur adipiscing elit. Praesent
     nunc elit, feugiat et tellus quis,
     luctus interd.")
@@ -33,7 +34,9 @@ TheSpeaker.create!(title: "Os palestrantes",
     MerchandisingVideo.create!(title: "Conheça a Revolução", 
     video: "sample.mp4")
 
-    4.times do
+    EventRealizersTitle.create!(title: "Realizadores doo Evento")
+
+4.times do
     EventRealizer.create!(image: "enec2019.png" , name:"A FENEC",
         description: "Lorem ipsum dolor sit amet,
         consectur adipiscing elit. Praesent
@@ -41,6 +44,7 @@ TheSpeaker.create!(title: "Os palestrantes",
         luctus interd.", link: "www.google.com" )
 end
 
+SponsorsAndSupportersTitle.create!(title: "Patrocinadores e Apoiadores")
 5.times do
     SponsorsAndSupporter.create!(image: "patrocinador.png", link: "www.google.com")
 end
@@ -61,3 +65,5 @@ Lot.create!(name:"4º Lote", description: "Com Hospedagem Federado", value:"200"
 Lot.create!(name:"4º Lote", description: "Com Hospedagem Não Federado", value:"200", status:"Ativo")
 Lot.create!(name:"4º Lote", description: "Sem Hospedagem Federado", value:"200", status:"Ativo")
 Lot.create!(name:"4º Lote", description: "Sem Hospedagem Não Federado", value:"200", status:"Ativo")
+
+User.create!(email: "admin@admin.com", password:"123456", lot_id: "1")

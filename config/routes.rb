@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :sponsors_and_supporters_titles
+  resources :event_realizers_titles
+  resources :user_college_informations
+  resources :ies
   root to: 'static_pages#landing_page'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
