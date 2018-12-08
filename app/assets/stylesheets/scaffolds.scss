@@ -185,9 +185,10 @@ nav {
     margin:0;
     padding:0;
     box-sizing:border-box;
-    padding-top:17vh; 
     text-align:center;
     list-style:none;
+    display: table-cell;
+    vertical-align: middle;
     li {      
       a {
         display:block;     
@@ -196,8 +197,8 @@ nav {
         text-transform:uppercase;
         text-decoration:none;
         font-family: 'Palanquin Dark', sans-serif;
-        font-size: 2em;
-        margin-bottom: 5vh;
+        font-size: 1.25em;
+        margin-bottom: 3.5vh;
         &:hover {
           text-transform: uppercase;
           cursor:pointer;      
@@ -213,6 +214,7 @@ nav {
   visibility: visible; 
   opacity:1;
   z-index: 3;
+  display: table;
 
 }
 .wrapper {
