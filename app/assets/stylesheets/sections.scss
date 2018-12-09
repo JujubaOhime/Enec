@@ -11,3 +11,114 @@
 #### ##    ## ########  ######## ##     ## 
 */
 
+
+.links-de-login{
+    display: none;
+}
+
+.index-sections{
+    height: calc(100vh - 95px - 135px);
+    display: table;
+    margin: 0 auto;
+}
+
+
+.container-table{
+    //border: 1px solid #0A4021;
+    border-radius: 9px;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0 auto;
+    overflow: hidden;
+    //width: 51%;
+    padding: 40px 0px;
+    
+    a{
+        text-decoration: none;
+        color: var(--white);
+    }
+    h1{
+        font-size: 2.250em;
+        color: var(--green-footer);
+        font-family: 'Palanquin Dark', sans-serif;
+        margin-bottom: 30px;
+    }
+    button{
+        margin-top: 25px;
+        background: var(--yellow);
+        border: 0px;
+        border-radius: 100px;
+        color: var(--white);
+        font-weight: bold;
+        padding: 3px 40px;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        text-align: center;
+        margin-bottom: 25px;
+        font-family: 'Palanquin Dark', sans-serif;
+        letter-spacing: 4px;
+        box-shadow: 0 4px 4px #00000061;
+    }
+
+}
+
+.table{
+    border: 2px solid var(--green-footer);
+    border-radius: 20px;
+    overflow: hidden;
+    table{
+        width: 70vw;
+    }
+    thead{
+        background: var(--dark-red);
+        font-family: 'Bitter', serif;
+        font-weight: bold;
+        border-radius: 20px;
+    }
+    th{
+        color: var(--white);
+        font-size: 24px;
+        padding: 10px 0px;
+        background-color: var(--dark-red);
+        border-bottom: 2px solid var(--green-footer);
+    }
+    tr{
+        border-top: 2px solid var(--green-footer);
+        background: var(--white-pink);
+    }
+    tr:first-of-type{
+        border-top: 0px;
+    }
+    td{
+        color: var(--green-footer);
+        font-size: 18px;
+        font-family: 'Bitter', serif;
+        padding-top: 15px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-left: 30px;
+    }
+    .td-ações{
+        vertical-align: middle;
+        text-align: center;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .img-table{
+        width: 25px;
+        display: inline-table;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    .td-excluir a{
+        font-family: 'Bitter', serif;
+        color: var(--red);
+        text-decoration: none;
+    }
+    .td-editar a{
+        font-family: 'Bitter', serif;
+        color: var(--yellow);
+        text-decoration: none;
+    }
+
+}
