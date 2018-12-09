@@ -71,4 +71,4 @@ Lot.create!(name:"4º Lote", description: "Com Hospedagem Não Federado", value:
 Lot.create!(name:"4º Lote", description: "Sem Hospedagem Federado", value:"200", status:"Ativo")
 Lot.create!(name:"4º Lote", description: "Sem Hospedagem Não Federado", value:"200", status:"Ativo")
 
-User.create!(email: "admin@admin.com", password:"123456", lot_id: "1")
+User.create!(email: "admin@admin.com", password:"123456",admin: true)

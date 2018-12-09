@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :lot
+  has_one :lot
   # Returns the hash digest of the given string.
   mount_uploader :image, ImageUploader
   

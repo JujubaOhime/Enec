@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.offset(1)
   end
 
   # GET /users/1
@@ -73,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_name, :IES_city, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation)
+      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_id, :admin, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation)
     end
 end

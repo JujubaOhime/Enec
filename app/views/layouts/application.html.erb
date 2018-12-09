@@ -28,37 +28,46 @@
         </div>
         <nav> 
           <ul>
-            <li><a href="#section-mais">Principal</a></li>
-            <li><a href="#section-event">O Evento</a></li>
-            <li><a href="#section-pass">Passaporte</a></li>
-            <li><a href="#section-pales">Palestrantes</a></li>
-            <li><a href="#section-edi">Editais</a></li>
-            <li><a href="#section-revo">A Revolução</a></li>
-            <li><a href="#section-reali">Realizadores</a></li>
-            <li><a href="#section-patro">Patrocinadores</a></li>
-            <li><a href="#section-contact">Contato</a></li>
-            <li><a <%= link_to 'home', root_path %>>Home</a></li>
+            <%if (current_page?(root_path))%>
+              <li><a href="#section-mais">Principal</a></li>
+              <li><a href="#section-event">O Evento</a></li>
+              <li><a href="#section-pass">Passaporte</a></li>
+              <li><a href="#section-pales">Palestrantes</a></li>
+              <li><a href="#section-edi">Editais</a></li>
+              <li><a href="#section-revo">A Revolução</a></li>
+              <li><a href="#section-reali">Realizadores</a></li>
+              <li><a href="#section-patro">Patrocinadores</a></li>
+              <li><a href="#section-contact">Contato</a></li>
+            <%else%>
+              <li> <%= link_to 'Home', root_path %></li>
+            <%end%>
+
+            <%if admin_user_logged?%>
+              <li> <%= link_to 'Lista de Cadastrados', users_path %></li>
+              <li> <%= link_to 'Lista de Lotes', lots_path %></li>
+              <li> <%= link_to 'Editar página', sections_edit_path %></li>
+            <%elsif logged_in? and !admin_user_logged?%>
+              <li> <%= link_to 'Meu Cadastro', users_path(@current_user) %></li>
+            <%end%>
+            
           </ul>  
         </nav> 
       </header>
 <!--      <div class="after-header"></div>-->
     <div class="links-de-login">
     <% if logged_in? %>
-      <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %>
-      <%if current_user.admin?%>
-      <h1>ENEC</h1>
+      <%= link_to 'LOG OUT', logout_path, method: :delete %>
+      <%if admin_user_logged?%>
+        <h1>ENEC</h1>
       <%else%>
-        <%if current_user.manager%>
-          <p>Olá, Manager</p>
-        <%else%>
-          <p>Olá, User</p>
-        <%end%>
+        <p>Olá, <%=@current_user.name%></p>
       <%end%>
+     
     <% end %>
     </div>
 
       <%= yield %>
-      <div class="push"></div>
+    <div class="push"></div>
     </div>
     <footer class="footer">
     <div class="footer-esquerda">

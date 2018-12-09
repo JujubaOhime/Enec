@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/sections_edit', to: 'static_pages#sections_edit', as: 'sections_edit'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  delete '/logout',  to: 'sessions#destroy', as: 'logout'
 
   resources :sponsors_and_supporters
   resources :event_realizers
