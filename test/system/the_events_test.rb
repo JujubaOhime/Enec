@@ -29,7 +29,7 @@ class TheEventsTest < ApplicationSystemTestCase
 
     fill_in "Content", with: @the_event.content
     fill_in "Days", with: @the_event.days
-    fill_in "Title", with: @the_event.title
+    fill_in "Título   ", with: @the_event.title
     click_on "Update The event"
 
     assert_text "The event was successfully updated"
