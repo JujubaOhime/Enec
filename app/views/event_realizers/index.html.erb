@@ -1,31 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Alterar título", edit_event_realizers_title_path(@event_realizer_title)%>
 
-<h1>Event Realizers</h1>
+<section class="index-sections">
+  <div class="container-table">
+    <h1>Realizadores do Evento </h1>
+    <div class="titulo-com-edit"><%= link_to "Alterar título", edit_event_realizers_title_path(@event_realizer_title)%> <%= link_to edit_event_realizers_title_path(@event_realizer_title) do %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %><%end%></div>
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th colspan="1">Descrição</th>
+            <th colspan="1">Link</th>
+            <th colspan="1">Ação</th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @event_realizers.each do |event_realizer| %>
-      <tr>
-        <td><%= event_realizer.name %></td>
-        <td><%= event_realizer.description %></td>
-        <td><%= event_realizer.link %></td>
-        <td><%= link_to 'Editar', edit_event_realizer_path(event_realizer) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+        <tbody>
+          <% @event_realizers.each do |event_realizer| %>
+            <tr>
+              <td class="td-ações td-editar"><%= event_realizer.name %></td>
+              <td class="td-ações td-editar"><%= event_realizer.description %></td>
+              <td class="td-ações td-editar"><%= event_realizer.link %></td>
+              <td class="td-ações td-editar">
+                <%= link_to 'Editar', edit_event_realizer_path(event_realizer) %><%= link_to edit_event_realizer_path(event_realizer) do %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %><%end%>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
