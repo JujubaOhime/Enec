@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_185448) do
     t.string "state"
     t.string "password_digest"
     t.string "image"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "use_term_accepted", default: false

@@ -1,6 +1,12 @@
-<h1>Editing Showcase</h1>
+<section class="edit-sections">
+    <div class="container-table">
+        <h1>Edição Sessão Principal</h1>
+        <div class="form-edit-section">
+            <%= render 'form', showcase: @showcase %>
+            <button><%= link_to 'Voltar', showcases_path %></button>
+        </div>
+    </div>
+</section>
 
-<%= render 'form', showcase: @showcase %>
+<% #link_to 'Show', @showcase %> 
 
-<%= link_to 'Show', @showcase %> |
-<%= link_to 'Back', showcases_path %>

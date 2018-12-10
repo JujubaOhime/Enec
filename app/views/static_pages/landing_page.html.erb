@@ -1,4 +1,4 @@
-<body class="home"> <!-- TODO Remover body, essa tag deveria ser única e ela já é usada no app.html.erb -->
+<body class="home"> 
 
     <section id="section-main" class="main-session">
         <div class="container-home">
@@ -8,7 +8,13 @@
                 <h3><%=@showcase.phrase%></h3>
             </div>
             <div class="home-direita ">
-                <p><%=link_to "Área do congressista", login_path, class: "area-do-congressista-button"%></p>
+                <%if logged_in? and admin_user_logged? %>
+                    <p><%=link_to "Área do congressista", users_path, class: "area-do-congressista-button"%></p>
+                <%elsif logged_in?%>
+                    <p><%=link_to "Área do congressista", @current_user, class: "area-do-congressista-button"%></p>
+                <%else%>
+                    <p><%=link_to "Área do congressista", login_path, class: "area-do-congressista-button"%></p>
+                <%end%>
             </div>
         </div>
         <div class='icon-scroll'></div>

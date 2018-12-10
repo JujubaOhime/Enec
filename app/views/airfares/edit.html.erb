@@ -1,6 +1,15 @@
-<h1>Editing Airfare</h1>
+<section class="edit-sections">
+    <div class="container-table">
+        <h1>Edição Sessão Passaporte</h1>
+        <div class="form-edit-section">
+            <%= render 'form', airfare: @airfare %>
+            <button><%= link_to 'Voltar', airfares_path %></button>
+        </div>
+    </div>
+</section>
 
-<%= render 'form', airfare: @airfare %>
 
-<%= link_to 'Show', @airfare %> |
-<%= link_to 'Back', airfares_path %>
+<!--<%= link_to 'Show', @airfare %> -->
+
+
+

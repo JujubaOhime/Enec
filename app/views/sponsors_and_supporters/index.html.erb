@@ -1,25 +1,30 @@
 <p id="notice"><%= notice %></p>
+<section class="index-sections">
+  <div class="container-table">
+    <h1>Patrocinadores e Apoiadores</h1>
+    <div class="titulo-com-edit"><%= link_to "Alterar título", edit_sponsors_and_supporters_title_path(@sponsor_supporters_title)%> <%= link_to edit_sponsors_and_supporters_title_path(@sponsor_supporters_title) do %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %><%end%></div>
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Link</th>
+            <th colspan="1">Ação</th>
+          </tr>
+        </thead>
 
-<h1>Sponsors And Supporters</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sponsors_and_supporters.each do |sponsors_and_supporter| %>
-      <tr>
-        <td><%= sponsors_and_supporter.link %></td>
-        <td><%= link_to 'Editar', edit_sponsors_and_supporter_path(sponsors_and_supporter) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+        <tbody>
+          <% @sponsors_and_supporters.each do |sponsors_and_supporter| %>
+            <tr>
+              <td class="td-ações td-editar"><%= sponsors_and_supporter.link %></td>
+              <td class="td-ações td-editar">
+                <%= link_to 'Editar', edit_sponsors_and_supporter_path(sponsors_and_supporter) %><%= link_to edit_sponsors_and_supporter_path(sponsors_and_supporter) do %><%= image_tag("edit.png", :alt => "imagem de editar", :class => "img-editar img-table") %><%end%>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
 

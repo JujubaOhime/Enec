@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit,:change_password, :update, :destroy]
+  before_action :current_user
+  before_action :user_kick
   
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.offset(1)
   end
 
   # GET /users/1
@@ -15,10 +17,17 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @lots = Lot.all
   end
+
 
   # GET /users/1/edit
   def edit
+    @lots = Lot.all
+    @ies = Ies.all
+  end
+
+  def change_password
   end
 
   # POST /users
@@ -73,6 +82,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_name, :IES_city, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation, :use_term_accepted, :lot_term_accepted)
+      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_id, :admin, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation, :use_term_accepted, :lot_term_accepted)
     end
 end

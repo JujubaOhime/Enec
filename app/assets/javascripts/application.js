@@ -15,38 +15,47 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
-    $(".hamburguer").click(function(){
-        lockScroll();
-      $("nav").toggleClass("open");  
-      $(this).toggleClass("toggle");
+//$(document).ready(function() {
+    $(document).ready(function(){
+        $(document).on('click', '.hamburguer', function(){
+        //$(".hamburguer").click(function(){
+            lockScroll();
+        $("nav").toggleClass("open");  
+        $(this).toggleClass("toggle");
+        //$(".home header").addClass("ativo");
+        //if ($('scroll').scrollTop() > 10) {
+        //    $(".home header").addClass("ativo")};
+        });
+        $(".form-edit-campo .actions input").val('Atualizar');
     });
-    $(".form-edit-campo .actions input").val('Atualizar');
-  });
-  $(window).on('scroll', function() {
-      if ($(this).scrollTop() > 10) {
-        $(".home header").addClass("ativo");
-      } else {
-        $("header").removeClass("ativo");
-      }
-      if ($(this).scrollTop() > 200) {
-        $(".icon-scroll").addClass("icon-scroll-gone");
-      } else {
-        $(".icon-scroll").removeClass("icon-scroll-gone");
-      }
-  });
-  
-  function lockScroll() {
+
+$(document).ready(function(){
+$(window).on('scroll', function() {
+    if ($(this).scrollTop() > 10) {
+    $(".home header").addClass("ativo");
+    } else {
+    $("header").removeClass("ativo");
+    }
+    if ($(this).scrollTop() > 200) {
+    $(".icon-scroll").addClass("icon-scroll-gone");
+    } else {
+    $(".icon-scroll").removeClass("icon-scroll-gone");
+    }
+    
+});
+});
+
+function lockScroll() {
     if ($('body').hasClass('lock-scroll')) {
         $('body').removeClass('lock-scroll');
     }
     else {
         $('body').addClass('lock-scroll');
     }
-  };
+};
 
 
-
+/*
   $(document).ready(function() {
      
     $('.owl-carousel').owlCarousel({
@@ -71,4 +80,9 @@ $(document).ready(function() {
     })
    
   });
-
+*/
+/*$(".hamburguer").click(function(){
+    lockScroll();
+  $("nav").toggleClass("open");  
+  $(this).toggleClass("toggle");
+});*/
