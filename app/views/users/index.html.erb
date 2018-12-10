@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Email</th>
       <th>Nome</th>
       <th>Delegação</th>
       <th>Lote</th>
@@ -15,13 +16,14 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%=link_to user.name , users_path(user)%></td>
+        <td><%= link_to user.email, user%></td>
+        <td><%= user.name%></td>
         <td><%= user.delegation %></td>
-        <td><%= user.lot %></td>
+        <td><%= user_lot_name(user) %></td>
 
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver Cadastro', user %></td>
+        <td><%= link_to 'Editar', edit_user_path(user) %></td>
+        <td><%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

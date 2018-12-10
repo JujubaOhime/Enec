@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy', as: 'logout'
-
+  get 'users/:id/alteracao_de_senha', to: "users#change_password"
+  post 'users/:id/alteracao_de_senha', to: "users#change_password", as: 'change_password'
   resources :sponsors_and_supporters
   resources :event_realizers
   resources :merchandising_videos

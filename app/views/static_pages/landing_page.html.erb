@@ -11,7 +11,7 @@
                 <%if logged_in? and admin_user_logged? %>
                     <p><%=link_to "Área do congressista", users_path, class: "area-do-congressista-button"%></p>
                 <%elsif logged_in?%>
-                    <p><%=link_to "Área do congressista", users_path(@current_user), class: "area-do-congressista-button"%></p>
+                    <p><%=link_to "Área do congressista", @current_user, class: "area-do-congressista-button"%></p>
                 <%else%>
                     <p><%=link_to "Área do congressista", login_path, class: "area-do-congressista-button"%></p>
                 <%end%>
