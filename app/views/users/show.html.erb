@@ -12,7 +12,7 @@
 
 <p>
   <strong>Lot:</strong>
-  <%= @user.lot %>
+  <%= user_lot_name(@user) %>
 </p>
 
 <p>
@@ -60,35 +60,10 @@
   <%= @user.state %>
 </p>
 
-<p>
-  <strong>Ies name:</strong>
-  <%= @user.IES_name %>
-</p>
 
-<p>
-  <strong>Ies city:</strong>
-  <%= @user.IES_city %>
 </p>
-
-<p>
-  <strong>Ies state:</strong>
-  <%= @user.IES_state %>
-</p>
-
-<p>
-  <strong>Ies course:</strong>
-  <%= @user.IES_course %>
-</p>
-
-<p>
-  <strong>Ies period:</strong>
-  <%= @user.IES_period %>
-</p>
-
-<p>
-  <strong>Ies registration proof:</strong>
-  <%= @user.IES_registration_proof %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%=link_to "Alterar Senha", change_password_path%>
+<%= link_to 'Editar Perfil', edit_user_path(@user) %> |
+<%if admin_user_logged?%>
+  <%= link_to 'Voltar', users_path %>
+<%end%>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit,:change_password, :update, :destroy]
   before_action :current_user
   before_action :user_kick
   
@@ -17,10 +17,17 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @lots = Lot.all
   end
+
 
   # GET /users/1/edit
   def edit
+    @lots = Lot.all
+    @ies = Ies.all
+  end
+
+  def change_password
   end
 
   # POST /users
