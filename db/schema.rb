@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_185448) do
     t.string "delegation"
     t.integer "lot_id"
     t.string "name"
+    t.string "telephone"
     t.string "cpf"
     t.string "rg"
     t.string "rg_issuing_body"
@@ -136,10 +137,18 @@ ActiveRecord::Schema.define(version: 2018_12_08_185448) do
     t.string "password_digest"
     t.string "image"
     t.boolean "admin", default: false
+    t.string "course"
+    t.string "period"
+    t.string "registration_proof"
+    t.integer "payment_status", default: 0
+    t.integer "payment_option"
+    t.integer "parceling_options"
+    t.integer "IES_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "use_term_accepted", default: false
     t.boolean "lot_term_accepted", default: false
+    t.index ["IES_id"], name: "index_users_on_IES_id"
     t.index ["lot_id"], name: "index_users_on_lot_id"
   end
 
