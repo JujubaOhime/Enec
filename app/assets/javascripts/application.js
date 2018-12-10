@@ -41,6 +41,7 @@ $(window).on('scroll', function() {
     } else {
     $(".icon-scroll").removeClass("icon-scroll-gone");
     }
+    
 });
 });
 

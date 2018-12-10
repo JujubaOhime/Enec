@@ -1,6 +1,11 @@
-<h1>Editing Sponsors And Supporters Title</h1>
+<section class="edit-sections">
+    <div class="container-table">
+        <h1>Edição Título Patrocinadores e Apoiadores</h1>
+         <div class="form-edit-section">
+            <%= render 'form', sponsors_and_supporters_title: @sponsors_and_supporters_title %>
+            <button><%= link_to 'Voltar', sponsors_and_supporters_titles_path %></button>
+        </div>
+    </div>
+</div>
 
-<%= render 'form', sponsors_and_supporters_title: @sponsors_and_supporters_title %>
-
-<%= link_to 'Show', @sponsors_and_supporters_title %> |
-<%= link_to 'Back', sponsors_and_supporters_titles_path %>
+<!--<%= link_to 'Show', @sponsors_and_supporters_title %> -->

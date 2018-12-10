@@ -1,6 +1,12 @@
-<h1>Editing Event Realizers Title</h1>
+<section class="edit-sections">
+    <div class="container-table">
+        <h1>Edição Título Realizadores do Evento</h1>
+        <div class="form-edit-section">
+            <%= render 'form', event_realizers_title: @event_realizers_title %>
+            <button><%= link_to 'Voltar', event_realizers_titles_path %></button>
+        </div>
+    </div>
+</section>
 
-<%= render 'form', event_realizers_title: @event_realizers_title %>
 
-<%= link_to 'Show', @event_realizers_title %> |
-<%= link_to 'Back', event_realizers_titles_path %>
+<!--<%= link_to 'Show', @event_realizers_title %> -->

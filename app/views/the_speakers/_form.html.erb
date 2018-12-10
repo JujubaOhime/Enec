@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :Título %>
+    <%= form.text_field :title , class: "input-texto" %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :Descrição %>
     <%= form.text_area :description %>
   </div>
 
@@ -27,6 +27,6 @@
   documento pra landing page (pdf)
   <%= form.file_field :document, multiple: true %>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Atualizar" %>
   </div>
 <% end %>

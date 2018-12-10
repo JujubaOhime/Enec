@@ -11,14 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image, multiple: true %>
-  </div>
+
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name , class: "input-texto"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link , class: "input-texto"%>
   </div>
 
   <div class="field">
@@ -27,11 +29,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link %>
+    <%= form.label :image %>
+    <%= form.file_field :image, multiple: true %>
   </div>
-
+  
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Atualizar" %>
   </div>
 <% end %>
