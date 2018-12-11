@@ -21,12 +21,19 @@
     <%= form.text_area :description %>
   </div>
 
-  imagem
-  <%= form.file_field :image, multiple: true %>
-
-  documento pra landing page (pdf)
-  <%= form.file_field :document, multiple: true %>
+  <div class="field send-file" id="image_field">
+    <%= form.file_field :image, id:"image_label"%>
+    <label for="image_label">Escolher Imagem</label>
+    <%= form.hidden_field :picture_cache %>
+  </div>
+  <div class="field send-file" id="document_field">
+    <%= form.file_field :document, id:"document_label"%>
+    <label for="document_label">Escolher Documento</label>
+    <%= form.hidden_field :document_cache %>
+  </div>
   <div class="actions">
     <%= form.submit "Atualizar" %>
   </div>
 <% end %>
+
+

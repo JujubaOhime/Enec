@@ -16,12 +16,14 @@
     <%= form.text_field :title , class: "input-texto" %>
   </div>
 
-  <div class="field">
-    <%= form.label :Vídeo  %>
-    <%= form.file_field :video, multiple: true %>
+  <div class="field send-file" id="document_field">
+    <%= form.file_field :video, id:"video_label"%>
+    <label for="video_label">Escolher Vídeo</label>
+    <%= form.hidden_field :video_cache %>
   </div>
 
   <div class="actions">
     <%= form.submit "Atualizar" %>
   </div>
 <% end %>
+

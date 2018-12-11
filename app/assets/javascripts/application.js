@@ -48,6 +48,19 @@ $(window).on('scroll', function() {
 /* Inicio do scroll do menu */
 
 $(document).ready(function (){
+    //aqui muda o placeholder do botão de enviar arquivo
+    $("[type=file]").on("change", function(){
+        // Name of file and placeholder
+        var file = this.files[0].name;
+        var dflt = $(this).attr("placeholder");
+        if($(this).val()!=""){
+          $(this).next().text(file);
+        } else {
+          $(this).next().text(dflt);
+        }
+      });
+
+    //scroll suave
     $('nav a[href^="#"]').on('click', function(e) {
         e.preventDefault();
         var id = $(this).attr('href'),
@@ -102,3 +115,4 @@ function lockScroll() {
   $("nav").toggleClass("open");  
   $(this).toggleClass("toggle");
 });*/
+

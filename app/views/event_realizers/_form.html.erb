@@ -28,9 +28,10 @@
     <%= form.text_area :description %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image, multiple: true %>
+  <div class="field send-file" id="image_field">
+    <%= form.file_field :image, id:"image_label"%>
+    <label for="image_label">Escolher Imagem</label>
+    <%= form.hidden_field :picture_cache %>
   </div>
   
   <div class="actions">
