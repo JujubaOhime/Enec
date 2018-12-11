@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit,:change_password, :update, :destroy]
   before_action :current_user
   before_action :user_kick
+  include ApplicationHelper
   
   # GET /users
   # GET /users.json
@@ -52,10 +53,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         if admin_user_logged?
-          redirect_to root_path
+          format.html { redirect_to users_path, notice: 'Usuário atualizado com sucesso.' }
         else
-          format.html { redirect_to @user, notice: 'Usuário atualizado com sucesso.' }
-          format.json { render :show, status: :ok, location: @user }
+            format.html { redirect_to @user, notice: 'Usuário atualizado com sucesso.' }
+            format.json { render :show, status: :ok, location: @user }
         end
       else
         format.html { render :edit }

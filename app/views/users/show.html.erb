@@ -1,19 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
-  <strong>Delegation:</strong>
-  <%= @user.delegation %>
-</p>
-
-<p>
-  <strong>Lot:</strong>
-  <%= user_lot_name(@user) %>
-</p>
+<%= image_tag @user.image.url%>
 
 <p>
   <strong>Name:</strong>
@@ -21,8 +9,18 @@
 </p>
 
 <p>
-  <strong>Cpf:</strong>
-  <%= @user.cpf %>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @user.birth_date %>
 </p>
 
 <p>
@@ -36,18 +34,18 @@
 </p>
 
 <p>
-  <strong>Birth date:</strong>
-  <%= @user.birth_date %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
+  <strong>Cpf:</strong>
+  <%= @user.cpf %>
 </p>
 
 <p>
   <strong>Address:</strong>
   <%= @user.address %>
+</p>
+
+<p>
+  <strong>Delegation:</strong>
+  <%= @user.delegation %>
 </p>
 
 <p>
@@ -59,11 +57,32 @@
   <strong>State:</strong>
   <%= @user.state %>
 </p>
-
-
+<p>
+  <strong>Curso:</strong>
+  <%= @user.course %>
 </p>
-<%=link_to "Alterar Senha", change_password_path%>
-<%= link_to 'Editar Perfil', edit_user_path(@user) %> |
+<p>
+  <strong>Periodo:</strong>
+  <%= @user.period %>
+</p>
+<p>
+  <strong>IES:</strong>
+  <%= user_ies(@user).name %>
+  <%= user_ies(@user).city %>
+  <%= link_to @user.registration_proof, @user.registration_proof.url  %>
+</p>
+
+
+
+<%=link_to "Alterar Senha", change_password_path(@user)%>
+<%= link_to 'Editar Perfil', edit_user_path(@user) %> 
 <%if admin_user_logged?%>
   <%= link_to 'Voltar', users_path %>
 <%end%>
+
+<p>
+Lote:
+<%= user_lot(@user).name %>
+<%= user_lot(@user).description %>
+<%= user_lot(@user).price %>
+</p>
