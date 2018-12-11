@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Showcase.create!(title: "Título", subtitle: "Subtítulo", phrase: "pequena frase")
+sc = Showcase.create!(title: "Título", subtitle: "Subtítulo", phrase: "pequena frase")
+sc.image = Rails.root.join("app/assets/images/morro_santa_teresa.jpg").open 
+sc.save!
 
 TheEvent.create!(title: "O Evento", days: "02 a 03", mounth: "Janeiro", 
     locality:"Porto Alegre",
@@ -17,25 +19,27 @@ TheEvent.create!(title: "O Evento", days: "02 a 03", mounth: "Janeiro",
 
 Airfare.create!(title: "Compre sua Passagem aérea aqui", phrase: "Confira os melhores preços")
 
-TheSpeaker.create!(title: "Os palestrantes", 
+ts = TheSpeaker.create!(title: "Os palestrantes", 
     description: "Lorem ipsum dolor sit amet,
     consectur adipiscing elit. Praesent
     nunc elit, feugiat et tellus quis,
-    luctus interd.",
-    image: "parque_farroupilha1.jpg")
+    luctus interd.")
+ts.image = Rails.root.join("app/assets/images/parque_farroupilha1.jpg").open
+ts.save!
 
-    EventNotice.create!(title: "Editais do Evento",
-        content: "Lorem ipsum dolor sit amet,
-        consectur adipiscing elit. Praesent
-        nunc elit, feugiat et tellus quis,
-        luctus interd.",
-    image: "parque_farroupilha2.jpg")
+en = EventNotice.create!(title: "Editais do Evento",
+    content: "Lorem ipsum dolor sit amet,
+    consectur adipiscing elit. Praesent
+    nunc elit, feugiat et tellus quis,
+    luctus interd.")
+en.image = Rails.root.join("app/assets/images/parque_farroupilha2.jpg").open
+en.save!
 
-    mv = MerchandisingVideo.create!(title: "Conheça a Revolução")
-    mv.video = Rails.root.join("app/assets/images/sample.mp4").open
-    mv.save!
+mv = MerchandisingVideo.create!(title: "Conheça a Revolução")
+mv.video = Rails.root.join("app/assets/images/sample.mp4").open
+mv.save!
 
-    EventRealizersTitle.create!(title: "Realizadores do Evento")
+EventRealizersTitle.create!(title: "Realizadores do Evento")
 
 4.times do
     e = EventRealizer.create!(image: "enec2019.png" , name:"A FENEC",
