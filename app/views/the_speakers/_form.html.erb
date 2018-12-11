@@ -22,11 +22,14 @@
   </div>
 
   imagem
-  <%= form.file_field :image, multiple: true %>
+  <%= form.file_field :image%>
 
-  documento pra landing page (pdf)
-  <%= form.file_field :document, multiple: true %>
+  documento do link(pdf)
+  <%= form.file_field :document%>
+
+
   <div class="actions">
     <%= form.submit "Atualizar" %>
   </div>
+
 <% end %>
