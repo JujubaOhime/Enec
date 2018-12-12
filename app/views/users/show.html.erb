@@ -20,7 +20,7 @@
 
 <p>
   <strong>Birth date:</strong>
-  <%= @user.birth_date %>
+  <%= brazilian_default_date(@user.birth_date) %>
 </p>
 
 <p>
@@ -67,9 +67,9 @@
 </p>
 <p>
   <strong>IES:</strong>
-  <%= user_ies(@user).name %>
-  <%= user_ies(@user).city %>
-  <%= link_to @user.registration_proof, @user.registration_proof.url  %>
+  <%= user_ies(@user).name %>,
+  <%= user_ies(@user).city %>,
+  <%= link_to "Comprovante de Matrícula", @user.registration_proof.url  %>
 </p>
 
 
@@ -84,5 +84,5 @@
 Lote:
 <%= user_lot(@user).name %>
 <%= user_lot(@user).description %>
-<%= user_lot(@user).price %>
+<%= user_lot(@user).value %>
 </p>

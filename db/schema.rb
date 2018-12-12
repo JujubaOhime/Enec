@@ -108,18 +108,6 @@ ActiveRecord::Schema.define(version: 2018_12_08_185448) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_college_informations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "IES_id"
-    t.string "course"
-    t.string "period"
-    t.string "registration_proof"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["IES_id"], name: "index_user_college_informations_on_IES_id"
-    t.index ["user_id"], name: "index_user_college_informations_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "delegation"

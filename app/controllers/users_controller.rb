@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.email = @user.email.downcase
+    @user.image = Rails.root.join("app/assets/images/perfil.jpg").open
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'Usuário criado com sucesso.' }
