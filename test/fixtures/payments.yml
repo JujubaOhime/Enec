@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  package: one
+  payment_option: 1
+  parceling_option: 1
+  user: one
+
+two:
+  package: two
+  payment_option: 1
+  parceling_option: 1
+  user: two

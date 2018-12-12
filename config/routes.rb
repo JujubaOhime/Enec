@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :interests
+  resources :parcels
+  resources :payments
+  resources :packages
   resources :sponsors_and_supporters_titles
   resources :event_realizers_titles
   resources :ies
