@@ -66,6 +66,14 @@
   <%= @user.period %>
 </p>
 <p>
+  <strong>Inscrição:</strong>
+  <%if @user.subscribe_status %>
+    Inscrito
+  <%else%>
+    Não Inscrito
+  <%end%>
+</p>
+<p>
   <strong>IES:</strong>
   <%= user_ies(@user).name %>,
   <%= user_ies(@user).city %>,
@@ -80,9 +88,14 @@
   <%= link_to 'Voltar', users_path %>
 <%end%>
 
-<p>
-Lote:
-<%= user_lot(@user).name %>
-<%= user_lot(@user).description %>
-<%= user_lot(@user).value %>
-</p>
+
+<%if user_payment_exists?(@user)%>
+  <p>
+  Lote:
+  <%= user_lot(@user).name %>
+  <%= find_user_payment(@user).value %>
+  <%= find_user_payment(@user).description %>
+  </p>
+<%else%>
+    pagamento
+<%end%>

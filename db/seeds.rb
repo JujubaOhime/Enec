@@ -58,22 +58,41 @@ SponsorsAndSupportersTitle.create!(title: "Patrocinadores e Apoiadores")
     ss.save!
 end
 
-Lot.create!(name:"1º Lote Com Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"1º Lote Com Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"1º Lote Sem Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"1º Lote Sem Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"2º Lote Com Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"2º Lote Com Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"2º Lote Sem Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"2º Lote Sem Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"3º Lote Com Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"3º Lote Com Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"3º Lote Sem Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"3º Lote Sem Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"4º Lote Com Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"4º Lote Com Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"4º Lote Sem Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"4º Lote Sem Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
+lot = Lot.create!(name:"1º Lote", status:"Ativo")
+lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.save!
+
+Package.create!(lot_id: "1", name: "Sem Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "1", name: "Sem Hospedagem, Não Federado", value: "200")
+Package.create!(lot_id: "1", name: "Com Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "1", name: "Com Hospedagem, Federado", value: "200")
+
+lot = Lot.create!(name:"2º Lote", status:"Ativo")
+lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.save!
+
+Package.create!(lot_id: "2", name: "Sem Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "2", name: "Sem Hospedagem, Não Federado", value: "200")
+Package.create!(lot_id: "2", name: "Com Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "2", name: "Com Hospedagem, Federado", value: "200")
+
+lot = Lot.create!(name:"3º Lote", status:"Ativo")
+lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.save!
+
+Package.create!(lot_id: "3", name: "Sem Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "3", name: "Sem Hospedagem, Não Federado", value: "200")
+Package.create!(lot_id: "3", name: "Com Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "3", name: "Com Hospedagem, Federado", value: "200")
+
+lot = Lot.create!(name:"4º Lote", status:"Ativo")
+lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.save!
+
+Package.create!(lot_id: "4", name: "Sem Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "4", name: "Sem Hospedagem, Não Federado", value: "200")
+Package.create!(lot_id: "4", name: "Com Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "4", name: "Com Hospedagem, Federado", value: "200")
 
 
 Ies.create!(name:"UFF - Universidade Federal Fluminense", city:"Niterói")

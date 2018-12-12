@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit,:change_password, :update, :destroy]
+  before_action :set_user, only: [:show, :edit,:change_password,:therm_agreement, :update, :destroy]
   before_action :current_user
   before_action :user_kick
   include ApplicationHelper
@@ -29,6 +29,10 @@ class UsersController < ApplicationController
   end
 
   def change_password
+  end
+
+  def therm_agreement
+  
   end
 
   # POST /users

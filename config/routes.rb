@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy', as: 'logout'
   get 'users/:id/alteracao_de_senha', to: "users#change_password"
   post 'users/:id/alteracao_de_senha', to: "users#change_password", as: 'change_password'
+  get 'users/:id/selecao_de_pacote', to: "users#therm_agreement"
+  post 'users/:id/selecao_de_pacote', to: "users#therm_agreement", as: 'therm_agreement'
   resources :sponsors_and_supporters
   resources :event_realizers
   resources :merchandising_videos
