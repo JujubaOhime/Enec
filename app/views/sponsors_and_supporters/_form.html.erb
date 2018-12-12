@@ -17,11 +17,13 @@
     <%= form.label :Link %>
     <%= form.text_field :link, class: "input-texto" %>
   </div>
+
   <div class="field send-file" id="image_field">
       <%= form.file_field :image, id:"image_label"%>
       <label for="image_label">Escolher Imagem</label>
       <%= form.hidden_field :picture_cache %>
   </div>
+  
   <div class="actions">
     <%= form.submit "Atualizar" %>
   </div>

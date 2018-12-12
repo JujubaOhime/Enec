@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_one :IES
 
   mount_uploader :image, ImageUploader
+  mount_uploader :registration_proof, DocumentUploader
   # Returns the hash digest of the given string.
  
   enum gender: {"Masculino": 1 , "Feminino": 2}

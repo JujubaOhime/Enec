@@ -6,4 +6,8 @@ module ApplicationHelper
             end
         end
     end
+    def brazilian_default_date(date)
+        # formatting date: 31 de Outubro de 2007
+        date.strftime("%d/%m/%y")
+    end
 end

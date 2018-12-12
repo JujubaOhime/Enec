@@ -9,6 +9,7 @@
       <th>Nome</th>
       <th>Delegação</th>
       <th>Lote</th>
+      <th>Inscrição</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,7 +21,11 @@
         <td><%= user.name%></td>
         <td><%= user.delegation %></td>
         <td><%= user_lot_name(user) %></td>
-
+        <%if user.subscribe_status %>
+          <td>Inscrito</td>
+        <%else%>
+          <td>Não Inscrito</td>
+        <%end%>
         <td><%= link_to 'Ver Cadastro', user %></td>
         <td><%= link_to 'Editar', edit_user_path(user) %></td>
         <td><%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Tem certeza?' } %></td>

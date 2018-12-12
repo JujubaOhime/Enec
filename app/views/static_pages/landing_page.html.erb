@@ -1,5 +1,5 @@
 <body class="home"> 
-    <section id="section-main" class="main-session">
+    <section id="section-main" class="main-session" style="background-image: url(<%=@showcase.image.url%>);">
         <div class="container-home">
             <div class="home-esquerda">
                 <h2><%=@showcase.title%> </h2>
@@ -53,13 +53,13 @@
             <p><%=@the_speakers.description%></p>
             <p><button class="confira-ja-button">Confira Já</button></p>
         </div>
-        <div class="home-direita">
+        <div class="home-direita"  style="background-image: url(<%=@the_speakers.image.url%>);">
         </div>
         
     </section>
 
     <section id="section-edi" class="editais-session sections-home-table-cell">
-        <div class="home-esquerda">
+        <div class="home-esquerda"  style="background-image: url(<%=@event_notices.image.url%>);">
         </div>
         <div class="home-direita">
             <h2><%=@event_notices.title%></h2>

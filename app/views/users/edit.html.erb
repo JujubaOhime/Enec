@@ -33,10 +33,6 @@
     <%= form.text_field :delegation %>
   </div>
 
-  <div class="field">
-    <%= form.label :lot_id %>
-    <%= form.select :lot_id, options_from_collection_for_select(@lots, 'id', 'name'),{include_blank: true} %>
-  </div>
 
   <div class="field">
     <%= form.label :cpf %>

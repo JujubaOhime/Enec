@@ -20,11 +20,13 @@
     <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
+
   <div class="field send-file" id="image_field">
     <%= form.file_field :image, id:"image_label"%>
     <label for="image_label">Escolher Imagem</label>
     <%= form.hidden_field :picture_cache %>
   </div>
+
   <div class="actions">
     <%= form.submit "Atualizar" %>
   </div>

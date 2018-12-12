@@ -58,21 +58,51 @@ SponsorsAndSupportersTitle.create!(title: "Patrocinadores e Apoiadores")
     ss.save!
 end
 
-Lot.create!(name:"1º Lote Com Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"1º Lote Com Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"1º Lote Sem Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"1º Lote Sem Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"2º Lote Com Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"2º Lote Com Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"2º Lote Sem Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"2º Lote Sem Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"3º Lote Com Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"3º Lote Com Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"3º Lote Sem Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"3º Lote Sem Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"4º Lote Com Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"4º Lote Com Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"4º Lote Sem Hospedagem Federado", description: "", value:"200", status:"Ativo")
-Lot.create!(name:"4º Lote Sem Hospedagem Não Federado", description: "", value:"200", status:"Ativo")
+lot = Lot.create!(name:"1º Lote", status:"Ativo")
+lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.save!
 
+Package.create!(lot_id: "1", name: "Sem Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "1", name: "Sem Hospedagem, Não Federado", value: "200")
+Package.create!(lot_id: "1", name: "Com Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "1", name: "Com Hospedagem, Federado", value: "200")
+
+lot = Lot.create!(name:"2º Lote", status:"Ativo")
+lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.save!
+
+Package.create!(lot_id: "2", name: "Sem Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "2", name: "Sem Hospedagem, Não Federado", value: "200")
+Package.create!(lot_id: "2", name: "Com Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "2", name: "Com Hospedagem, Federado", value: "200")
+
+lot = Lot.create!(name:"3º Lote", status:"Ativo")
+lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.save!
+
+Package.create!(lot_id: "3", name: "Sem Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "3", name: "Sem Hospedagem, Não Federado", value: "200")
+Package.create!(lot_id: "3", name: "Com Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "3", name: "Com Hospedagem, Federado", value: "200")
+
+lot = Lot.create!(name:"4º Lote", status:"Ativo")
+lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.save!
+
+Package.create!(lot_id: "4", name: "Sem Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "4", name: "Sem Hospedagem, Não Federado", value: "200")
+Package.create!(lot_id: "4", name: "Com Hospedagem, Federado", value: "200")
+Package.create!(lot_id: "4", name: "Com Hospedagem, Federado", value: "200")
+
+
+Ies.create!(name:"UFF - Universidade Federal Fluminense", city:"Niterói")
 User.create!(email: "admin@admin.com", password:"123456",admin: true)
+
+us = User.create!(name:"teste da silva", telephone:"2199588584", email: "teste@teste.com" ,password: "111111",
+    admin: false ,lot_id: "1", delegation: "IN Junior", cpf: "18182888234", rg: "319877367", rg_issuing_body: "detran-rj",
+    birth_date: "Mon, 10 Dec 2018 23:40:30 UTC +00:00", gender:"Masculino", address:"avenida teste, numero teste", city: "Rio de janeiro",
+    state: "Rio de Janeiro", course: "Sistemas de Informação", period: "5 periodo", IES_id: 1)
+us.image = Rails.root.join("app/assets/images/perfil.jpg").open
+us.registration_proof = Rails.root.join("app/assets/images/atestado.jpg").open
+us.save!
+
