@@ -1,6 +1,6 @@
 class SponsorsAndSupportersController < ApplicationController
   before_action :set_sponsors_and_supporter, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:edit, :update, :destroy]
+  # before_action :admin_only, only: [:edit, :update, :destroy]
 
   # GET /sponsors_and_supporters
   # GET /sponsors_and_supporters.json

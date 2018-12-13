@@ -18,6 +18,7 @@
 }
 
 .sessions h2{
+    margin-top: 15px;
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -47,7 +48,7 @@
     border-radius: 100px;
     color: var(--white);
     padding: 6px 0px;
-    width: 8.72em;
+    width: 148px;
     font-size: 1.125em;
     font-family: 'Palanquin Dark', sans-serif;
     box-shadow: 0 4px 4px 0px #00000061;
@@ -58,7 +59,6 @@
     cursor: pointer;
 }
 .sessions .actions input:hover{
-    background: var(--yellow-hover);
     transition: 0.3s;
     box-shadow: none;
 }
@@ -119,4 +119,113 @@
 .container-sessions .field{
     display: table;
     margin: 0 auto;
+}
+
+.container-sessions .campos-cadastro{
+    display: table-cell;
+    vertical-align: middle;
+    height: calc(100vh - 230px);
+}
+
+.session-esquerda{
+    float: left;
+    margin-right: 20px;
+}
+
+.session-direita{
+    float: right;
+}
+
+.data-de-nascimento{
+    border: 1px solid var(--green);
+}
+
+/*#user_picture::placeholder{
+    font-family: FontAwesome;
+    content: "\f1b9";
+}
+*/
+.sessions #user_ies_id, #user_gender, #user_lot_id{
+    font-family: 'Palanquin Dark', sans-serif;
+    width: 304px;
+    border-radius: 15px;
+    border: none;
+    padding: 0px 0px;
+    background: var(--green-input);
+    border: 2px solid var(--green-input-stroke);
+    /* margin-bottom: 20px; */
+    padding: 5px 10px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+.sessions .send-file{
+    #image_field {
+        width: 100%;
+    }
+    
+    [type=file] {
+        //position: absolute;
+        //width: 0;
+        //visibility: hidden;
+        display: none;
+    }
+    
+    [type=file] + label {
+      /* Decorative */
+        border-radius: 100px;
+        background: var(--dark-green);
+        color: var(--white);
+        font-weight: bold;
+        font-family: 'Palanquin Dark', sans-serif;
+        font-size: 1.125em;
+        text-align: center;
+        padding: 11.5px 0px;
+        cursor: pointer;
+        width: 304px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        box-shadow: 0 4px 4px #00000061;
+        margin-bottom: 20px;
+    }
+    [type=file] + label:hover {
+        box-shadow: 0 0 0 #000000;
+        transition: 0.3s;
+    }
+}
+@media(max-width:650px){
+    .session-direita{
+        float: none;
+    }
+    .session-esquerda{
+        float: none;
+        margin: 0px;
+    }
+}
+
+
+.container-sessions .actions a{
+    text-decoration: none;
+    color: var(--white);
+    background: var(--yellow);
+    border: 0px;
+    text-align: center;
+    border-radius: 100px;
+    padding: 6px 0px;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 6px 35px;
+}
+
+.container-sessions .actions a:hover{
+    transition: 0.3s;
+    box-shadow: 0 0 0 0 black;
+
 }

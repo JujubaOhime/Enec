@@ -1,6 +1,6 @@
 class InterestsController < ApplicationController
   before_action :set_interest, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:show, :edit, :update, :destroy]
+  # before_action :admin_only, only: [:show, :edit, :update, :destroy]
 
   # GET /interests
   # GET /interests.json

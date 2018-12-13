@@ -1,6 +1,6 @@
 class LotsController < ApplicationController
   before_action :set_lot, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:show, :edit, :update, :destroy]
+  # before_action :admin_only, only: [:show, :edit, :update, :destroy]
 
   # GET /lots
   # GET /lots.json

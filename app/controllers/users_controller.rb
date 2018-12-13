@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit,:change_password,:therm_agreement, :update, :destroy]
   before_action :current_user
   before_action :user_kick
-  before_action :admin_only, only: [:destroy, :index, :new, :create]
+  # before_action :admin_only, only: [:destroy, :index, :new, :create]
   include ApplicationHelper
   
   # GET /users

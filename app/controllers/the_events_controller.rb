@@ -1,6 +1,6 @@
 class TheEventsController < ApplicationController
   before_action :set_the_event, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:edit, :update, :destroy]
+  # before_action :admin_only, only: [:edit, :update, :destroy]
 
   # GET /the_events
   # GET /the_events.json

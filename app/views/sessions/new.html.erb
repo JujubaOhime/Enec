@@ -5,17 +5,17 @@
         <h2>login</h2>
         <%= form_for(:session, url: login_path) do |f| %>
             <div class="field">
-                <p><%= f.label :email %></p>
+                <p><%= f.label :Email %></p>
                 <%= f.email_field :email, class: 'form-control' %>
             </div>
 
             <div class="field">
-                <p><%= f.label :password %></p>
+                <p><%= f.label :Senha %></p>
                 <%= f.password_field :password, class: 'form-control' %>
             </div>
 
             <div class="actions">
-                <%= f.submit "Log in", class: "btn btn-primary" %>
+                <%= f.submit "Entrar", class: "btn btn-primary" %>
             </div>
         <% end %>
 

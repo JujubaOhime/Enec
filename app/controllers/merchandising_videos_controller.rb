@@ -1,6 +1,6 @@
 class MerchandisingVideosController < ApplicationController
   before_action :set_merchandising_video, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:edit, :update, :destroy]
+  # before_action :admin_only, only: [:edit, :update, :destroy]
 
   # GET /merchandising_videos
   # GET /merchandising_videos.json

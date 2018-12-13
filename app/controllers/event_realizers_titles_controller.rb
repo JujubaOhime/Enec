@@ -1,6 +1,6 @@
 class EventRealizersTitlesController < ApplicationController
   before_action :set_event_realizers_title, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:edit, :update, :destroy]
+  # before_action :admin_only, only: [:edit, :update, :destroy]
 
   # GET /event_realizers_titles
   # GET /event_realizers_titles.json
