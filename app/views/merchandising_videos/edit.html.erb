@@ -1,6 +1,13 @@
-<h1>Editing Merchandising Video</h1>
+<section class="edit-sections">
+    <div class="container-table">
+        <h1>Edição Sessão de Vídeo</h1>
+        <div class="form-edit-section">
+            <%= render 'form', merchandising_video: @merchandising_video %>
+            <button><%= link_to 'Voltar', sections_edit_path %></button>
+        </div>
+    </div>
+</section>
 
-<%= render 'form', merchandising_video: @merchandising_video %>
+<!--<%= link_to 'Show', @merchandising_video %> -->
 
-<%= link_to 'Show', @merchandising_video %> |
-<%= link_to 'Back', merchandising_videos_path %>
+

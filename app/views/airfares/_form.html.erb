@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :Título %>
+    <%= form.text_field :title, class: "input-texto" %>
   </div>
 
   <div class="field">
-    <%= form.label :phrase %>
-    <%= form.text_field :phrase %>
+    <%= form.label :Frase %>
+    <%= form.text_field :phrase, class: "input-texto" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Atualizar" %>
   </div>
 <% end %>

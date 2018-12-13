@@ -5,6 +5,7 @@ class EventRealizersController < ApplicationController
   # GET /event_realizers.json
   def index
     @event_realizers = EventRealizer.all
+    @event_realizer_title = EventRealizersTitle.all.first
   end
 
   # GET /event_realizers/1

@@ -18,21 +18,21 @@
 }
 
 .sessions h2{
-    font-size: 4em;
+    font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
     font-family: 'Palanquin Dark', sans-serif;
     text-shadow: 0px 4px 4px #00000061;
     color: var(--white);
-    margin-bottom: 65px;
+    margin-bottom: 45px;
     font-weight: bold;
 }
 
 .sessions p{
     margin-bottom: 5px;
     margin-left: 10px;
-    font-size: 1.5em;
+    font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: 'Palanquin Dark', sans-serif;
@@ -47,11 +47,12 @@
     border-radius: 100px;
     color: var(--white);
     padding: 6px 0px;
-    width: 10.72em;
+    width: 8.72em;
     font-size: 1.125em;
     font-family: 'Palanquin Dark', sans-serif;
     box-shadow: 0 4px 4px 0px #00000061;
-    margin-top: 1em;
+    margin-top: 15px;
+    margin-bottom: 30px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
@@ -62,10 +63,10 @@
     box-shadow: none;
 }
 .sessions .field input{
-    width: 426px;
+    width: 300px;
     border-radius: 15px;
     border: none;
-    padding: 13px 0px;
+    padding: 0px 0px;
     background: var(--green-input);
     border: 2px solid var(--green-input-stroke);
     margin-bottom: 20px;
