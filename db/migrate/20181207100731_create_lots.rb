@@ -4,6 +4,7 @@ class CreateLots < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :status
       t.string :therm
+      t.string :link
       t.timestamps
     end
   end

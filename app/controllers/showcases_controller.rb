@@ -1,5 +1,6 @@
 class ShowcasesController < ApplicationController
   before_action :set_showcase, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, only: [:edit, :update, :destroy]
 
   # GET /showcases
   # GET /showcases.json

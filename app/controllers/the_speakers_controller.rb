@@ -1,5 +1,6 @@
 class TheSpeakersController < ApplicationController
   before_action :set_the_speaker, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, only: [:edit, :update, :destroy]
 
   # GET /the_speakers
   # GET /the_speakers.json

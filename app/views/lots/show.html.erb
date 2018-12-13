@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Lote:</strong>
   <%= @lot.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @lot.description %>
-</p>
-
-<p>
-  <strong>Value:</strong>
-  <%= @lot.value %>
+  <strong>Link no Google Form:</strong>
+  <%= @lot.link %>
 </p>
 
 <p>
@@ -22,7 +17,7 @@
 
 <p>
   <strong>Termo:</strong>
-  <%= link_to 'PDF', @lot.term.url, target: :_blank %>
+  <%= link_to 'PDF', @lot.therm.url, target: :_blank %>
 </p>
 
 <%= link_to 'Edit', edit_lot_path(@lot) %> |

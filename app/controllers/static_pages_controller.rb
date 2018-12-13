@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+
     def landing_page
         @showcase = Showcase.all.first
         @the_event = TheEvent.all.first

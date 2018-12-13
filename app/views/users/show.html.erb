@@ -1,101 +1,65 @@
-<p id="notice"><%= notice %></p>
-
-
-<%= image_tag @user.image.url%>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Birth date:</strong>
-  <%= brazilian_default_date(@user.birth_date) %>
-</p>
-
-<p>
-  <strong>Rg:</strong>
-  <%= @user.rg %>
-</p>
-
-<p>
-  <strong>Rg issuing body:</strong>
-  <%= @user.rg_issuing_body %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @user.cpf %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
-
-<p>
-  <strong>Delegation:</strong>
-  <%= @user.delegation %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
-<p>
-  <strong>Curso:</strong>
-  <%= @user.course %>
-</p>
-<p>
-  <strong>Periodo:</strong>
-  <%= @user.period %>
-</p>
-<p>
-  <strong>Inscrição:</strong>
-  <%if @user.subscribe_status %>
-    Inscrito
-  <%else%>
-    Não Inscrito
-  <%end%>
-</p>
-<p>
-  <strong>IES:</strong>
-  <%= user_ies(@user).name %>,
-  <%= user_ies(@user).city %>,
-  <%= link_to "Comprovante de Matrícula", @user.registration_proof.url  %>
-</p>
+<body class="show-user">
+  <section class="perfil">
+    <div class="headers-do-perfil">
+      <div class="retangulo-esquerdo"></div><div class="retangulo-direito"></div>
+      <div class="triangulo-esquerdo"></div><div class="triangulo-direito"></div>
+    </div>
+    <%= image_tag @user.image.url, class:"img-perfil", alt:"Imagem de perfil"%>
+    <div class="container-perfil">
+      <h2>
+        <%= @user.name %>
+      </h2>
+      <div class="informações-perfil">
+        <h3>Email: <span><%= @user.email %></span></h3>
+        <h3>Gênero: <span><%= @user.gender %></span></h3>
+        <h3>Data de Nascimento: <span><%= brazilian_default_date(@user.birth_date) %></span></h3>
+        <h3>Rg: <span><%= @user.rg %></span></h3>
+        <h3>Cpf: <span><%= @user.cpf %></span></h3>
+        <h3>Orgão Emissor: <span><%= @user.rg_issuing_body %></span></h3>
+        <h3>Endereço: <span><%= @user.address %></span></h3>
+        <h3>Delegação: <span><%= @user.delegation %></span></h3>
+        <h3>Cidade: <span><%= @user.city %></span></h3>
+        <h3>Estado: <span><%=  @user.state %></span></h3>
+        <h3>Curso: <span><%= @user.course %></span></h3>
+        <h3>Período: <span><%= @user.period %></span></h3>
+        <h3>Inscrição: 
+          <%if @user.subscribe_status %>
+            <span>Inscrito</span>
+          <%else%>
+            <span class="nao-inscrito">Não Inscrito</span>
+          <%end%>
+        </h3>
+        <h3>IES: <span><%= user_ies(@user).name %>, <%= user_ies(@user).city %>, <%= link_to "Comprovante de Matrícula", @user.registration_proof.url%></span></h3>
+        <div class="perfil-links">
+          <button><%=link_to "Alterar Senha", change_password_path(@user)%></button>
+          <button><%= link_to 'Editar Perfil', edit_user_path(@user) %></button>
+          <!--<%if admin_user_logged?%>
+            <button><%= link_to 'Voltar', users_path %></button>
+          <%end%>-->
+        </div>
+      </div>
+      <%if user_payment_exists?(@user)%>
+        <p>
+        Lote:
+        <%= user_lot(@user).name %>
+        <%= find_user_payment(@user).value %>
+        <%= find_user_payment(@user).description %>
+        </p>
+      <%else%>
+        <div class="perfil-links">
+          <button><%= link_to 'Pagamento', "https://#{user_lot(@user).link}" %></button>
+        </div>
+      <%end%>
+    </div>
+  </section>
+</body>
 
 
 
-<%=link_to "Alterar Senha", change_password_path(@user)%>
-<%= link_to 'Editar Perfil', edit_user_path(@user) %> 
-<%if admin_user_logged?%>
-  <%= link_to 'Voltar', users_path %>
-<%end%>
 
 
-<%if user_payment_exists?(@user)%>
-  <p>
-  Lote:
-  <%= user_lot(@user).name %>
-  <%= find_user_payment(@user).value %>
-  <%= find_user_payment(@user).description %>
-  </p>
-<%else%>
-  <%= link_to 'Pagar', "https://docs.google.com/forms/d/e/1FAIpQLSckkKmedsvx9vYgilev0iG2Md1ZoAeBk19RwoRP_fEAEH2jBA/viewform" %>
-<%end%>
+
+
+
+
+

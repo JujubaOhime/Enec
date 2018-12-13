@@ -102,7 +102,7 @@
     font-size: 2em;
     font-family: 'Palanquin Dark', sans-serif;
     letter-spacing: 1px;
-    margin-bottom: 2em;
+    margin-bottom: 25px;
 }
 
 .show-user h3 span{
@@ -112,13 +112,20 @@
     padding-left: 1.5em;
 }
 
+.show-user h3 span a{
+    text-decoration: none;
+    text-decoration: underline;
+    color: var(--green);
+}
+
 .informações-perfil{
     margin: 0 auto;
     display: table;
     margin-top: 4em;
 }
 .perfil-links{
-    margin: 3em 0;
+    text-align: center;
+    padding-bottom: 50px;
 }
 .perfil-links a{
     text-decoration: none;
@@ -131,27 +138,28 @@
 
 .perfil-links button{
     margin-top: 0.5em;
-    background: var(--yellow);
+    background: var(--yellow-hover);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     border-radius: 100px;
-    padding: 6px 85px;
+    padding: 5px 15px;
     box-shadow: 0 4px 4px 0px #00000061;
     text-decoration: none;  
-    border: none;
-    width: 292px;   
+    border: none;   
 }
 
 .perfil-links button:first-of-type{
-    margin-right: 2em;
+    margin-right: 10px;
 }
 
 .perfil-links button:hover{
-    background: var(--yellow-hover);
     transition: 0.3s;
     box-shadow: 0 0px 0px 0px #00000061;
 }
 
 .show-user #notice{
     display: none;
+}
+.nao-inscrito{
+    color: var(--red)!important; 
 }
