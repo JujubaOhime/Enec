@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment: one
+  value: 9.99
+  status: false
+
+two:
+  payment: two
+  value: 9.99
+  status: false

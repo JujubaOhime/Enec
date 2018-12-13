@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit,:change_password,:therm_agreement, :update, :destroy]
+  before_action :current_user
+  before_action :user_kick
+  include ApplicationHelper
   
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.offset(1)
   end
 
   # GET /users/1
@@ -15,10 +18,21 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @lots = Lot.all
   end
+
 
   # GET /users/1/edit
   def edit
+    @lots = Lot.all
+    @ies = Ies.all
+  end
+
+  def change_password
+  end
+
+  def therm_agreement
+  
   end
 
   # POST /users
@@ -26,9 +40,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.email = @user.email.downcase
+    @user.image = Rails.root.join("app/assets/images/perfil.jpg").open
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'Usuário criado com sucesso.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -43,10 +58,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         if admin_user_logged?
-          redirect_to root_path
+          format.html { redirect_to users_path, notice: 'Usuário atualizado com sucesso.' }
         else
-          format.html { redirect_to @user, notice: 'User was successfully updated.' }
-          format.json { render :show, status: :ok, location: @user }
+            format.html { redirect_to @user, notice: 'Usuário atualizado com sucesso.' }
+            format.json { render :show, status: :ok, location: @user }
         end
       else
         format.html { render :edit }
@@ -60,7 +75,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'Usuário excluído com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +88,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_name, :IES_city, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation)
+      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_id, :admin, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation, :use_term_accepted, :lot_term_accepted)
     end
 end

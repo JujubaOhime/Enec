@@ -189,6 +189,8 @@ nav {
     vertical-align: middle;
     text-align:center;
     list-style:none;
+    display: table-cell;
+    vertical-align: middle;
     li {      
       a {
         display:block;     
@@ -236,6 +238,7 @@ nav {
 .footer,
 .push {
   height: 135px;
+  width: 100vw;
 }
 
 footer{

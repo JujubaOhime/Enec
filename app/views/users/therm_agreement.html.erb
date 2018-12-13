@@ -1,0 +1,27 @@
+<%= form_with(model: @user, local: true) do |form| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+            <ul>
+            <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <h1 class="TituloNewUser">Seleção de pacote</h1>
+
+    <div class="boxTextos">
+        <%= form.check_box :therm_acepted%> Eu Concordo com os <%= link_to "Termos de Uso",find_user_lot_by_id(params[:id]).therm.url%>
+    </div>
+
+    <div class="boxTextos">
+        <h4>Selecione o pacote:</h4>
+        <%= form.select :package_id, options_from_collection_for_select(user_package_possibilities(User.find(params[:id]), 'id', 'name'),{include_blank: true} %>
+    </div>
+
+    <input type="submit" value="enviar" class="btnSenha" />
+
+<% end %>
