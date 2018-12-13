@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.hidden_field :package_id %>value: user_package(@current_user).id 
+    <%= form.text_field :package_id, value: user_package(@current_user).id %>
   </div>
 
   <div class="field">
     <%= form.label :payment_option %>
-    <%= form.number_field :payment_option %>
+    <%= form.select :payment_option, Payment.payment_options.keys, {include_blank: true}%>
   </div>
 
   <div class="field">
     <%= form.label :parceling_option %>
-    <%= form.number_field :parceling_option %>
+    <%= form.select :parceling_option, Payment.parceling_options.keys, {include_blank: true}%>
   </div>
 
   <div class="field">
