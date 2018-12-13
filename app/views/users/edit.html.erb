@@ -75,8 +75,8 @@
   </div>  
 
   <div class="field">
-    <%= form.label :ies_id %>
-    <%= form.select :ies_id, options_from_collection_for_select(@ies, 'id', 'name'),{include_blank: true} %>
+    <%= form.label :IES_id %>
+    <%= form.select :IES_id, @ies.collect {|x| [x.name, x.id] }, {include_blank: true} %>
   </div>
   <div class="field">
     <%= form.label :course %>

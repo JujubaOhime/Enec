@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :package_id %>
-    <%= form.text_field :package_id %>
+    <%= form.hidden_field :package_id %>value: user_package(@current_user).id 
   </div>
 
   <div class="field">
@@ -28,7 +27,7 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.hidden_field :user_id, value: @current_user.id %>
   </div>
 
   <div class="actions">

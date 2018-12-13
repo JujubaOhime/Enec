@@ -9,11 +9,13 @@ module UsersHelper
         lot = Lot.find(user_lot_id)
         return lot
     end
+    
     def user_package(user)
         user_package_id = user.package_id
         package = Package.find(user_package_id)
         return package
     end
+
     def user_package_possibilities(user)
         user_lot_id = user.lot_id
         lot = Lot.find(user_lot_id)
