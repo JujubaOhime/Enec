@@ -124,6 +124,7 @@
 .container-sessions .campos-cadastro{
     display: table-cell;
     vertical-align: middle;
+    height: calc(100vh - 230px);
 }
 
 .session-esquerda{
@@ -144,7 +145,7 @@
     content: "\f1b9";
 }
 */
-.sessions #user_ies_id, #user_gender{
+.sessions #user_ies_id, #user_gender, #user_lot_id{
     font-family: 'Palanquin Dark', sans-serif;
     width: 304px;
     border-radius: 15px;
@@ -200,4 +201,31 @@
         float: none;
         margin: 0px;
     }
+}
+
+
+.campos-cadastro .actions a{
+    text-decoration: none;
+    color: var(--white);
+    background: var(--yellow);
+    border: 0px;
+    text-align: center;
+    border-radius: 100px;
+    padding: 6px 0px;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 6px 40px;
+}
+
+.campos-cadastro .actions a:hover{
+    transition: 0.3s;
+    box-shadow: 0 0 0 0 black;
+
 }
