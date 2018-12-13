@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :Título %>
+    <%= form.text_field :title, class: "input-texto" %>
   </div>
 
   <div class="field">
-    <%= form.label :days %>
-    <%= form.text_field :days %>
+    <%= form.label :Dias %>
+    <%= form.text_field :days, class: "input-texto" %>
   </div>
   <div class="field">
-    <%= form.label :mounth %>
-    <%= form.text_field :mounth %>
+    <%= form.label :Mês %>
+    <%= form.text_field :mounth, class: "input-texto" %>
   </div>
   <div class="field">
-    <%= form.label :locality %>
-    <%= form.text_field :locality %>
+    <%= form.label :Local %>
+    <%= form.text_field :locality, class: "input-texto" %>
   </div>
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label :Conteúdo %>
+    <%= form.text_area :content, class: "input-textarea" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Atualizar" %>
   </div>
 <% end %>

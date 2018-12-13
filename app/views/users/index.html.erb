@@ -1,28 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Lista de cadastrados</h1>
 
 <table>
   <thead>
     <tr>
       <th>Email</th>
-      <th>Delegation</th>
-      <th>Lot</th>
-      <th>Name</th>
-      <th>Cpf</th>
-      <th>Rg</th>
-      <th>Rg issuing body</th>
-      <th>Birth date</th>
-      <th>Gender</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Ies name</th>
-      <th>Ies city</th>
-      <th>Ies state</th>
-      <th>Ies course</th>
-      <th>Ies period</th>
-      <th>Ies registration proof</th>
+      <th>Nome</th>
+      <th>Delegação</th>
+      <th>Lote</th>
+      <th>Inscrição</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,27 +17,18 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.email %></td>
+        <td><%= link_to user.email, user%></td>
+        <td><%= user.name%></td>
         <td><%= user.delegation %></td>
-        <td><%= user.lot %></td>
-        <td><%= user.name %></td>
-        <td><%= user.cpf %></td>
-        <td><%= user.rg %></td>
-        <td><%= user.rg_issuing_body %></td>
-        <td><%= user.birth_date %></td>
-        <td><%= user.gender %></td>
-        <td><%= user.address %></td>
-        <td><%= user.city %></td>
-        <td><%= user.state %></td>
-        <td><%= user.IES_name %></td>
-        <td><%= user.IES_city %></td>
-        <td><%= user.IES_state %></td>
-        <td><%= user.IES_course %></td>
-        <td><%= user.IES_period %></td>
-        <td><%= user.IES_registration_proof %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user_lot_name(user) %></td>
+        <%if user.subscribe_status %>
+          <td>Inscrito</td>
+        <%else%>
+          <td>Não Inscrito</td>
+        <%end%>
+        <td><%= link_to 'Ver Cadastro', user %></td>
+        <td><%= link_to 'Editar', edit_user_path(user) %></td>
+        <td><%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -58,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Adicionar usuario', new_user_path %>

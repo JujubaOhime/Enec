@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_024349) do
+ActiveRecord::Schema.define(version: 2018_12_12_104032) do
 
   create_table "airfares", force: :cascade do |t|
     t.string "title"
@@ -50,11 +50,16 @@ ActiveRecord::Schema.define(version: 2018_12_08_024349) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "interests", force: :cascade do |t|
+    t.float "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lots", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.float "value"
     t.integer "status"
+    t.string "therm"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,6 +69,36 @@ ActiveRecord::Schema.define(version: 2018_12_08_024349) do
     t.string "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "packages", force: :cascade do |t|
+    t.integer "lot_id"
+    t.string "name"
+    t.decimal "value"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lot_id"], name: "index_packages_on_lot_id"
+  end
+
+  create_table "parcels", force: :cascade do |t|
+    t.integer "payment_id"
+    t.decimal "value"
+    t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_id"], name: "index_parcels_on_payment_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer "package_id"
+    t.integer "payment_option"
+    t.integer "parceling_option"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["package_id"], name: "index_payments_on_package_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "showcases", force: :cascade do |t|
@@ -107,23 +142,11 @@ ActiveRecord::Schema.define(version: 2018_12_08_024349) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_college_informations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "IES_id"
-    t.string "course"
-    t.string "period"
-    t.string "registration_proof"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["IES_id"], name: "index_user_college_informations_on_IES_id"
-    t.index ["user_id"], name: "index_user_college_informations_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "delegation"
-    t.integer "lot_id"
     t.string "name"
+    t.string "telephone"
     t.string "cpf"
     t.string "rg"
     t.string "rg_issuing_body"
@@ -133,9 +156,29 @@ ActiveRecord::Schema.define(version: 2018_12_08_024349) do
     t.string "city"
     t.string "state"
     t.string "password_digest"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    t.string "image"
+    t.boolean "admin", default: false
+    t.string "course"
+    t.string "period"
+    t.string "registration_proof"
+    t.boolean "subscribe_status", default: false
+    t.boolean "therm_acepted", default: false
+    t.integer "IES_id"
+    t.integer "lot_id"
+    t.integer "package_id"
+    t.integer "payment_id"
+>>>>>>> master
+>>>>>>> master
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["IES_id"], name: "index_users_on_IES_id"
     t.index ["lot_id"], name: "index_users_on_lot_id"
+    t.index ["package_id"], name: "index_users_on_package_id"
+    t.index ["payment_id"], name: "index_users_on_payment_id"
   end
 
 end

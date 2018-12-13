@@ -1,6 +1,5 @@
-<body class="home"> <!-- TODO Remover body, essa tag deveria ser única e ela já é usada no app.html.erb -->
-
-    <section id="section-main" class="main-session">
+<body class="home"> 
+    <section id="section-main" class="main-session" style="background-image: url(<%=@showcase.image.url%>);">
         <div class="container-home">
             <div class="home-esquerda">
                 <h2><%=@showcase.title%> </h2>
@@ -8,7 +7,13 @@
                 <h3><%=@showcase.phrase%></h3>
             </div>
             <div class="home-direita ">
-                <p><%=link_to "Área do congressista", login_path, class: "area-do-congressista-button"%></p>
+                <%if logged_in? and admin_user_logged? %>
+                    <p><%=link_to "Área do congressista", users_path, class: "area-do-congressista-button"%></p>
+                <%elsif logged_in?%>
+                    <p><%=link_to "Área do congressista", @current_user, class: "area-do-congressista-button"%></p>
+                <%else%>
+                    <p><%=link_to "Área do congressista", login_path, class: "area-do-congressista-button"%></p>
+                <%end%>
             </div>
         </div>
         <div class='icon-scroll'></div>
@@ -48,13 +53,13 @@
             <p><%=@the_speakers.description%></p>
             <p><button class="confira-ja-button">Confira Já</button></p>
         </div>
-        <div class="home-direita">
+        <div class="home-direita"  style="background-image: url(<%=@the_speakers.image.url%>);">
         </div>
         
     </section>
 
     <section id="section-edi" class="editais-session sections-home-table-cell">
-        <div class="home-esquerda">
+        <div class="home-esquerda"  style="background-image: url(<%=@event_notices.image.url%>);">
         </div>
         <div class="home-direita">
             <h2><%=@event_notices.title%></h2>

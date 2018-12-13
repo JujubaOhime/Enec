@@ -1,6 +1,6 @@
 module SessionsHelper
     # Logs in the given user.
-def log_in(user)
+  def log_in(user)
     session[:user_id] = user.id
   end
   
@@ -27,8 +27,8 @@ def log_in(user)
   end
 
   def user_kick #if the user is logged, can't get logged again
-    if logged_in?
-        redirect_to users_path
+    if !logged_in?
+        redirect_to login_path
     end
   end
 end
