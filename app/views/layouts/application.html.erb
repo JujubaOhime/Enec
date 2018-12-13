@@ -47,7 +47,7 @@
               <li> <%= link_to 'Lista de Lotes', lots_path %></li>
               <li> <%= link_to 'Editar página', sections_edit_path %></li>
             <%elsif logged_in? and !admin_user_logged?%>
-              <li> <%= link_to 'Meu Cadastro', users_path(@current_user) %></li>
+              <li> <%= link_to 'Meu Cadastro', @current_user %></li>
             <%end%>
             
             <% if logged_in? %>

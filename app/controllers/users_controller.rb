@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     if params[:therm_acepted]
       @user.therm_acepted = params[:therm_acepted]
     end
-    debugger
+
     user_changed_attributes = @user.changed
     package_id = "package_id"
     term_acceptance = "therm_acepted"
