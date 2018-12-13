@@ -48,7 +48,7 @@
     border-radius: 100px;
     color: var(--white);
     padding: 6px 0px;
-    width: 8.72em;
+    width: 148px;
     font-size: 1.125em;
     font-family: 'Palanquin Dark', sans-serif;
     box-shadow: 0 4px 4px 0px #00000061;
@@ -204,7 +204,7 @@
 }
 
 
-.campos-cadastro .actions a{
+.container-sessions .actions a{
     text-decoration: none;
     color: var(--white);
     background: var(--yellow);
@@ -221,10 +221,10 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
-    padding: 6px 40px;
+    padding: 6px 35px;
 }
 
-.campos-cadastro .actions a:hover{
+.container-sessions .actions a:hover{
     transition: 0.3s;
     box-shadow: 0 0 0 0 black;
 
