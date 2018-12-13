@@ -157,10 +157,6 @@ ActiveRecord::Schema.define(version: 2018_12_12_104032) do
     t.string "city"
     t.string "state"
     t.string "password_digest"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
     t.string "image"
     t.boolean "admin", default: false
     t.string "course"
@@ -172,8 +168,6 @@ ActiveRecord::Schema.define(version: 2018_12_12_104032) do
     t.integer "lot_id"
     t.integer "package_id"
     t.integer "payment_id"
->>>>>>> master
->>>>>>> master
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["IES_id"], name: "index_users_on_IES_id"
