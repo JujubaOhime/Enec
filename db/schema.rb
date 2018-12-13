@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_104032) do
     t.string "name"
     t.integer "status"
     t.string "therm"
+    t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

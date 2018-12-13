@@ -1,5 +1,6 @@
 class EventRealizersController < ApplicationController
   before_action :set_event_realizer, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, only: [:edit, :update, :destroy]
 
   # GET /event_realizers
   # GET /event_realizers.json

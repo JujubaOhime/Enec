@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit,:change_password,:therm_agreement, :update, :destroy]
   before_action :current_user
   before_action :user_kick
+  before_action :admin_only, only: [:destroy, :index, :new, :create]
   include ApplicationHelper
   
   # GET /users
@@ -55,6 +56,20 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    if params[:package_id]
+      @user.package_id = params[:package_id]
+    end
+    if params[:therm_acepted]
+      @user.therm_acepted = params[:therm_acepted]
+    end
+
+    user_changed_attributes = @user.changed
+    package_id = "package_id"
+    term_acceptance = "therm_acepted"
+    if package_id.in?(user_changed_attributes) or term_acceptance.in?(user_changed_attributes)
+      @user.save!
+      redirect_to new_payment_path
+    end
     respond_to do |format|
       if @user.update(user_params)
         if admin_user_logged?
@@ -64,6 +79,7 @@ class UsersController < ApplicationController
             format.json { render :show, status: :ok, location: @user }
         end
       else
+        @ies = Ies.all
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -88,6 +104,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :IES_id, :admin, :IES_state, :IES_course, :IES_period, :IES_registration_proof, :password, :password_confirmation, :use_term_accepted, :lot_term_accepted)
+      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :admin, :registration_proof, :password, :password_confirmation, :therm_accepted, :telephone, :IES_id, :course, :period, :package_id)
     end
 end

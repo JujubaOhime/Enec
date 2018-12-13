@@ -19,9 +19,11 @@
 
     <div class="boxTextos">
         <h4>Selecione o pacote:</h4>
-        <%= form.select :package_id, options_from_collection_for_select(user_package_possibilities(User.find(params[:id]), 'id', 'name'),{include_blank: true} %>
+        <%= form.select :package_id, user_package_possibilities(User.find(params[:id])).collect {|x| [x.name, x.id] }, {include_blank: true} %>
+       
     </div>
 
-    <input type="submit" value="enviar" class="btnSenha" />
-
+    <input type="submit" value="Salvar" class="btnSenha" />
+    <p id="notice"><%= notice %></p>
+ <%= link_to "Próxima Etapa", new_payment_path%>
 <% end %>

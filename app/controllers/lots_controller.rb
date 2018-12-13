@@ -1,5 +1,6 @@
 class LotsController < ApplicationController
   before_action :set_lot, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, only: [:show, :edit, :update, :destroy]
 
   # GET /lots
   # GET /lots.json
@@ -69,6 +70,6 @@ class LotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lot_params
-      params.require(:lot).permit(:name, :description, :value, :status, :term)
+      params.require(:lot).permit(:name, :status, :link, :term)
     end
 end
