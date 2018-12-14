@@ -31,4 +31,4 @@
 /config/master.key
 
 # Ignore db/schema
-/db/schema.rb
+/db/schema.rbconfig/database.yml\nconfig/secrets.yml
