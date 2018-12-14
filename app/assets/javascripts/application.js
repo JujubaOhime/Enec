@@ -16,7 +16,7 @@
 //= require_tree .
 
 //$(document).ready(function() {
-    $(document).ready(function(){
+    $(document).on("turbolinks:load", function (){
         $(document).on('click', '.hamburguer', function(){
         //$(".hamburguer").click(function(){
             lockScroll();
