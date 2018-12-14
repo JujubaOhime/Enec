@@ -1,3 +1,3 @@
-$(document).ready(function() {
-    $(".form-edit-campo .actions input").val('testando');
-});
+//$(document).ready(function() {
+//    $(".form-edit-campo .actions input").val('testando');
+//});
