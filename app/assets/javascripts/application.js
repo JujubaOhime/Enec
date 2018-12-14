@@ -12,11 +12,9 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
-//$(document).ready(function() {
-    $(document).on("turbolinks:load", function (){
+$(document).ready(function() {
         $(document).on('click', '.hamburguer', function(){
         //$(".hamburguer").click(function(){
             lockScroll();
