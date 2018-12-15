@@ -29,7 +29,7 @@ class MerchandisingVideosController < ApplicationController
 
     respond_to do |format|
       if @merchandising_video.save
-        format.html { redirect_to sections_edit_path, notice: 'Merchandising video was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'Video de Divulgação criado com sucesso.' }
         format.json { render :show, status: :created, location: @merchandising_video }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class MerchandisingVideosController < ApplicationController
   def update
     respond_to do |format|
       if @merchandising_video.update(merchandising_video_params)
-        format.html { redirect_to sections_edit_path, notice: 'Merchandising video was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'Video de Divulgação atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @merchandising_video }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class MerchandisingVideosController < ApplicationController
   def destroy
     @merchandising_video.destroy
     respond_to do |format|
-      format.html { redirect_to sections_edit_path, notice: 'Merchandising video was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'Video de Divulgação excluído com sucesso.' }
       format.json { head :no_content }
     end
   end

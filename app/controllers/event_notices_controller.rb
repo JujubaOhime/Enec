@@ -29,7 +29,7 @@ class EventNoticesController < ApplicationController
 
     respond_to do |format|
       if @event_notice.save
-        format.html { redirect_to sections_edit_path, notice: 'Event notice was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'Notícia do Evento criada com sucesso.' }
         format.json { render :show, status: :created, location: @event_notice }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class EventNoticesController < ApplicationController
   def update
     respond_to do |format|
       if @event_notice.update(event_notice_params)
-        format.html { redirect_to sections_edit_path, notice: 'Event notice was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'Notícia do Evento atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @event_notice }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class EventNoticesController < ApplicationController
   def destroy
     @event_notice.destroy
     respond_to do |format|
-      format.html { redirect_to sections_edit_path, notice: 'Event notice was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'Notícia do Evento excluída com sucesso.' }
       format.json { head :no_content }
     end
   end
