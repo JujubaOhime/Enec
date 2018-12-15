@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_104032) do
+ActiveRecord::Schema.define(version: 2018_12_13_101231) do
 
   create_table "airfares", force: :cascade do |t|
     t.string "title"
@@ -166,10 +166,14 @@ ActiveRecord::Schema.define(version: 2018_12_12_104032) do
     t.boolean "therm_acepted", default: false
     t.integer "IES_id"
     t.integer "lot_id"
-    t.integer "package"
-    t.integer "payment"
+    t.integer "package_id"
+    t.integer "payment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["IES_id"], name: "index_users_on_IES_id"
+    t.index ["lot_id"], name: "index_users_on_lot_id"
+    t.index ["package_id"], name: "index_users_on_package_id"
+    t.index ["payment_id"], name: "index_users_on_payment_id"
   end
 
 end

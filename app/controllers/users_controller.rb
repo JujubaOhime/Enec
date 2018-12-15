@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit,:change_password,:therm_agreement, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :change_password, :therm_agreement, :update, :destroy]
   before_action :current_user
   before_action :user_kick
   # before_action :admin_only, only: [:destroy, :index, :new, :create]
@@ -9,6 +9,11 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all.offset(1)
+    @users = if params[:term]
+      User.where("name LIKE (?) OR email LIKE (?)", "%#{params[:term]}%", "%#{params[:term]}%").paginate(page: params[:page], per_page: 10)
+    else
+      User.paginate(page: params[:page], per_page: 10)
+    end
   end
 
   # GET /users/1
@@ -104,6 +109,31 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :delegation, :lot_id, :name, :cpf, :rg, :rg_issuing_body, :birth_date, :gender, :address, :city, :state, :admin, :registration_proof, :password, :password_confirmation, :therm_accepted, :telephone, :IES_id, :course, :period, :package_id)
+      params.require(:user).permit(
+        :lot_id, 
+        :IES_id,
+        :package_id,
+        :payment_id,
+        :email, 
+        :delegation, 
+        :name,
+        :telephone,  
+        :cpf, 
+        :rg, 
+        :rg_issuing_body, 
+        :birth_date, 
+        :gender, 
+        :address, 
+        :city, 
+        :state,
+        :password, 
+        :password_confirmation,  
+        :admin,
+        :course,
+        :period,  
+        :registration_proof, 
+        :subscribe_status,
+        :therm_accepted
+        )
     end
 end

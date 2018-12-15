@@ -12,7 +12,9 @@
       <div class="informações-perfil">
         <h3>Email: <span><%= @user.email %></span></h3>
         <h3>Gênero: <span><%= @user.gender %></span></h3>
-        <h3>Data de Nascimento: <span><%= brazilian_default_date(@user.birth_date) %></span></h3>
+        <% if @user.birth_date.present? %>
+          <h3>Data de Nascimento: <span><%=  brazilian_default_date(@user.birth_date) %></span></h3>
+        <% end %>
         <h3>Rg: <span><%= @user.rg %></span></h3>
         <h3>Cpf: <span><%= @user.cpf %></span></h3>
         <h3>Orgão Emissor: <span><%= @user.rg_issuing_body %></span></h3>
@@ -29,13 +31,17 @@
             <span class="nao-inscrito">Não Inscrito</span>
           <%end%>
         </h3>
-        <h3>IES: <span><%= user_ies(@user).name %>, <%= user_ies(@user).city %>, <%= link_to "Comprovante de Matrícula", @user.registration_proof.url%></span></h3>
+        <% if @user.IES_id.present? %>
+          <h3>IES: <span><%= user_ies(@user).name %>, <%= user_ies(@user).city %>, <%= link_to "Comprovante de Matrícula", @user.registration_proof.url%></span></h3>
+        <% else %>
+          <h3>IES: <span> Não cadastrado. </span></h3>
+        <% end %>
         <div class="perfil-links">
           <button><%=link_to "Alterar Senha", change_password_path(@user)%></button>
           <button><%= link_to 'Editar Perfil', edit_user_path(@user) %></button>
-          <!--<%if admin_user_logged?%>
+          <%if admin_user_logged?%>
             <button><%= link_to 'Voltar', users_path %></button>
-          <%end%>-->
+          <%end%>
         </div>
       </div>
       <%if user_payment_exists?(@user)%>
