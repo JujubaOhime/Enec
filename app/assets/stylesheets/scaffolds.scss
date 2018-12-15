@@ -191,16 +191,26 @@ nav {
     list-style:none;
     display: table-cell;
     vertical-align: middle;
-    li {      
+    li { 
+      display:block;     
+      color:var(--white);
+      font-weight: bold;
+      text-transform:uppercase;
+      text-decoration:none;
+      font-family: 'Palanquin Dark', sans-serif;
+      font-size: 1.25em;
+      margin-bottom: 3.5vh;
+      &:hover {
+        text-transform: uppercase;     
+        color:var(--yellow-hover);
+      }      
+      
       a {
-        display:block;     
+            
         color:var(--white);
         font-weight: bold;
         text-transform:uppercase;
         text-decoration:none;
-        font-family: 'Palanquin Dark', sans-serif;
-        font-size: 1.25em;
-        margin-bottom: 3.5vh;
         &:hover {
           text-transform: uppercase;
           cursor:pointer;      
