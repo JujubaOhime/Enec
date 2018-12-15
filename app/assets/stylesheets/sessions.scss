@@ -70,6 +70,7 @@
     background: var(--green-input);
     border: 2px solid var(--green-input-stroke);
     margin-bottom: 20px;
+    padding-left: 10px;
 }
 
 .sessions .actions{
@@ -119,6 +120,17 @@
 .container-sessions .field{
     display: table;
     margin: 0 auto;
+}
+
+.container-sessions .fieldTermo{
+    display: table;
+    margin: 0 auto;
+}
+
+.sessions .fieldTermo input {
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 1em;
 }
 
 .container-sessions .campos-cadastro{

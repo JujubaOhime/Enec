@@ -109,6 +109,9 @@
         padding: 10px 0px;
         background-color: var(--dark-red);
         border-bottom: 3px solid var(--green-footer);
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
     }
     tr{
         border-top: 3px solid var(--green-footer);
@@ -122,10 +125,11 @@
         font-size: 18px;
         font-family: 'Bitter', serif;
         padding-top: 15px;
-        padding-right: 0px;
+        padding-right: 30px;
         padding-bottom: 15px;
         padding-left: 30px;
         border-bottom: 3px solid var(--green-footer);
+        text-align: center;
     }
     //td{
     //    border-bottom: 0px;

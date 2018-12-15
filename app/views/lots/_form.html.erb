@@ -10,29 +10,34 @@
       </ul>
     </div>
   <% end %>
+  
+
+<div class="campos-cadastro">
+  
 
   <div class="field">
-    <%= form.label :name %>
+    <p><%= form.label :Nome %></p>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
+    <p><%= form.label :status %></p>
     <%= form.number_field :status %>
   </div>
 
-  <div class="field">
-    <%= form.label :term %>
+  <div class="fieldTermo">
+    <p><%= form.label :Termo %></p>
     <%= form.file_field :term %>
   </div>
 
   <div class="field">
-    <%= form.label :link, "Adicionar link sem 'http://'" %>
+    <p><%= form.label :link, "Link (sem http://)" %></p>
     <%= form.text_field :link %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Cadastrar" %>
   </div>
+</div>
   
 <% end %>

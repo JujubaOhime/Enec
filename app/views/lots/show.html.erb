@@ -1,24 +1,29 @@
+<body class="sessions">
+  <section class="container-sessions">
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Lote:</strong>
-  <%= @lot.name %>
-</p>
+<div class="boxLoteShow">
+  <h3>Lote:</h3>
+  <p><%= @lot.name %></p>
+</div>
 
-<p>
-  <strong>Link no Google Form:</strong>
-  <%= @lot.link %>
-</p>
+<div class="boxLoteShow">
+  <h3>Link do Google Form:</h3>
+  <p><%= @lot.link %></p>
+</div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @lot.status %>
-</p>
+<div class="boxLoteShow">
+  <h3>Status:</h3>
+  <p><%= @lot.status %></p>
+</div>
 
-<p>
-  <strong>Termo:</strong>
-  <%= link_to 'PDF', @lot.therm.url, target: :_blank %>
-</p>
+<div class="boxLoteShow">
+  <h3>Termos e Condições:</h3>
+  <p><%= link_to 'PDF', @lot.therm.url, target: :_blank %></p>
+</div>
 
-<%= link_to 'Edit', edit_lot_path(@lot) %> |
-<%= link_to 'Back', lots_path %>
+
+
+</section>
+</body>

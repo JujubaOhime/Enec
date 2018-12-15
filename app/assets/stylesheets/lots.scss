@@ -1,3 +1,37 @@
 // Place all the styles related to the Lots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.boxLoteShow{
+    margin-bottom: 40px;
+}
+
+.boxLoteShow p{
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0 4px 4px 0px #00000061;
+    color: var(--white);
+    background: var(--green-input);
+    border: 2px solid var(--green-input-stroke);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.boxLoteShow a{
+    color: #fff;
+}
+
+.sessions h3 {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0 4px 4px 0px #00000061;
+    color: var(--white);
+}
