@@ -26,7 +26,7 @@
         </div>
         <div class="home-direita">
             <h2><%=@the_event.days%></h2>
-            <div><span>de </span><h3> <%=@the_event.mounth%></h3></div>
+            <div><span>de </span><h3> <%=@the_event.month%></h3></div>
             <div><span>em </span><h3> <%=@the_event.locality%></h3></div>
         </div>
     </section>
@@ -41,7 +41,9 @@
                     <div class="text-passport">
                         <h2><%=@airfare.title%></h2>
                         <p><%=@airfare.phrase%></p>
-                        <button class="price-button">Confira os preços </button>
+                        <%= link_to "http://#{@airfare.link}" do %>
+                            <button class="price-button">Confira os preços </button>
+                        <% end %>
                     </div>
             </div>
         </div>

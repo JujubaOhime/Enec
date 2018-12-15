@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     delete '/logout',  to: 'sessions#destroy', as: 'logout'
     get 'usuarios/:id/alteracao-de-senha', to: "users#change_password"
     post 'usuarios/:id/alteracao-de-senha', to: "users#change_password", as: 'change_password'
-    get 'usuarios/:id/selecao-de-pacote', to: "users#therm_agreement"
-    post 'usuarios/:id/selecao-de-pacote', to: "users#therm_agreement", as: 'therm_agreement'
+    get 'usuarios/:id/selecao-de-pacote', to: "users#term_agreement"
+    post 'usuarios/:id/selecao-de-pacote', to: "users#term_agreement", as: 'term_agreement'
     resources :sponsors_and_supporters, path: 'patrocionadores-e-apoiadores'
     resources :event_realizers, path: 'realizadores-do-evento'
     resources :merchandising_videos, path: 'video-de-divulgacao'

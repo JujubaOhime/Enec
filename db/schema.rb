@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_045108) do
+ActiveRecord::Schema.define(version: 2018_12_15_054906) do
 
   create_table "airfares", force: :cascade do |t|
     t.string "title"
     t.string "phrase"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "link"
   end
 
   create_table "event_notices", force: :cascade do |t|
@@ -59,7 +60,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_045108) do
   create_table "lots", force: :cascade do |t|
     t.string "name"
     t.integer "status"
-    t.string "therm"
+    t.string "term"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -127,7 +128,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_045108) do
   create_table "the_events", force: :cascade do |t|
     t.string "title"
     t.string "days"
-    t.string "mounth"
+    t.string "month"
     t.string "locality"
     t.text "content"
     t.datetime "created_at", null: false
@@ -163,7 +164,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_045108) do
     t.string "period"
     t.string "registration_proof"
     t.boolean "subscribe_status", default: false
-    t.boolean "therm_acepted", default: false
+    t.boolean "term_accepted", default: false
     t.integer "IES_id"
     t.integer "lot_id"
     t.integer "package_id"

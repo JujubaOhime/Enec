@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :change_password, :therm_agreement, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :change_password, :term_agreement, :update, :destroy]
   before_action :current_user
   before_action :user_kick
+  before_action only: [:index] do
+    needs_to_be_admin("Você não tem permissão para isso!")
+  end
   # before_action :admin_only, only: [:destroy, :index, :new, :create]
   include ApplicationHelper
   
@@ -37,7 +40,7 @@ class UsersController < ApplicationController
   def change_password
   end
 
-  def therm_agreement
+  def term_agreement
   
   end
 
@@ -61,24 +64,23 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    if params[:package_id]
-      @user.package_id = params[:package_id]
-    end
-    if params[:therm_acepted]
-      @user.therm_acepted = params[:therm_acepted]
+    @user.assign_attributes(user_params)
+
+    if @user.subscribe_status_changed?
+      needs_to_be_admin("Apenas administradores podem fazer isso!")
     end
 
-    user_changed_attributes = @user.changed
-    package_id = "package_id"
-    term_acceptance = "therm_acepted"
-    if package_id.in?(user_changed_attributes) or term_acceptance.in?(user_changed_attributes)
-      @user.save!
-      redirect_to new_payment_path
+    changed_attributes = @user.changed
+    if "package_id".in?(changed_attributes) or "term_accepted".in?(changed_attributes)
+      user_chose_a_package = true
     end
+
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.save
         if admin_user_logged?
           format.html { redirect_to users_path, notice: 'Usuário atualizado com sucesso.' }
+        elsif user_chose_a_package
+          format.html { redirect_to new_payment_path, notice: 'Usuário atualizado com sucesso.' }
         else
             format.html { redirect_to @user, notice: 'Usuário atualizado com sucesso.' }
             format.json { render :show, status: :ok, location: @user }
@@ -133,7 +135,7 @@ class UsersController < ApplicationController
         :period,  
         :registration_proof, 
         :subscribe_status,
-        :therm_accepted
+        :term_accepted
         )
     end
 end

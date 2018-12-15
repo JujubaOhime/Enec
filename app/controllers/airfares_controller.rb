@@ -70,6 +70,6 @@ class AirfaresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def airfare_params
-      params.require(:airfare).permit(:title, :phrase)
+      params.require(:airfare).permit(:title, :phrase, :link)
     end
 end

@@ -14,7 +14,7 @@
     <h1 class="TituloNewUser">Seleção de pacote</h1>
 
     <div class="boxTextos">
-        <%= form.check_box :therm_acepted%> Eu Concordo com os <%= link_to "Termos de Uso",find_user_lot_by_id(params[:id]).therm.url%>
+        <%= form.check_box :term_accepted%> Eu Concordo com os <%= link_to "Termos de Uso",find_user_lot_by_id(params[:id]).term.url%>
     </div>
 
     <div class="boxTextos">
