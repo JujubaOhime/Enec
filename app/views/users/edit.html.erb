@@ -78,7 +78,7 @@
 
           <div class="field">
             <p><%= form.label :IES %></p>
-            <%= form.select :ies_id, options_from_collection_for_select(@ies, 'id', 'name'),{include_blank: true} %>
+            <%= form.select :IES_id, options_from_collection_for_select(@ies, 'id', 'name'),{include_blank: true} %>
           </div>
           <div class="field">
             <p><%= form.label :Curso %></p>
@@ -123,6 +123,3 @@
     <% end %>
   </section>
 </body>
-
-    <!--<%= link_to 'Show', @user %> |
-    <%= link_to 'Back', users_path %> -->

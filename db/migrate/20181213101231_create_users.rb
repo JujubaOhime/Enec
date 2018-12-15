@@ -23,10 +23,10 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.boolean :subscribe_status , default: false
       t.boolean :therm_acepted, default: false
 
-      t.integer :IES_id
-      t.integer :lot_id
-      t.integer :package
-      t.integer :payment
+      t.references :IES, foreign_key: true
+      t.references :lot, foreign_key: true
+      t.references :package, foreign_key: true
+      t.references :payment, foreign_key: true
 
       t.timestamps
     end
