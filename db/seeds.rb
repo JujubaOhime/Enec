@@ -42,7 +42,7 @@ SponsorsAndSupportersTitle.create!(title: "Patrocinadores e Apoiadores")
 end
 
 lot = Lot.create!(name:"1º Lote", status:"Ativo")
-lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.term = Rails.root.join("app/assets/images/termo.pdf").open
 lot.save!
 
 Package.create!(lot_id: "1", name: "Sem Hospedagem, Federado", value: "200")
@@ -51,7 +51,7 @@ Package.create!(lot_id: "1", name: "Com Hospedagem, Federado", value: "200")
 Package.create!(lot_id: "1", name: "Com Hospedagem, Federado", value: "200")
 
 lot = Lot.create!(name:"2º Lote", status:"Ativo")
-lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.term = Rails.root.join("app/assets/images/termo.pdf").open
 lot.save!
 
 Package.create!(lot_id: "2", name: "Sem Hospedagem, Federado", value: "200")
@@ -60,7 +60,7 @@ Package.create!(lot_id: "2", name: "Com Hospedagem, Federado", value: "200")
 Package.create!(lot_id: "2", name: "Com Hospedagem, Federado", value: "200")
 
 lot = Lot.create!(name:"3º Lote", status:"Ativo")
-lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.term = Rails.root.join("app/assets/images/termo.pdf").open
 lot.save!
 
 Package.create!(lot_id: "3", name: "Sem Hospedagem, Federado", value: "200")
@@ -69,7 +69,7 @@ Package.create!(lot_id: "3", name: "Com Hospedagem, Federado", value: "200")
 Package.create!(lot_id: "3", name: "Com Hospedagem, Federado", value: "200")
 
 lot = Lot.create!(name:"4º Lote", status:"Ativo")
-lot.therm = Rails.root.join("app/assets/images/termo.pdf").open
+lot.term = Rails.root.join("app/assets/images/termo.pdf").open
 lot.save!
 
 Package.create!(lot_id: "4", name: "Sem Hospedagem, Federado", value: "200")

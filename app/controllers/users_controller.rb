@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :change_password, :therm_agreement, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :change_password, :term_agreement, :update, :destroy]
   before_action :current_user
   before_action :user_kick
   # before_action :admin_only, only: [:destroy, :index, :new, :create]
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def change_password
   end
 
-  def therm_agreement
+  def term_agreement
   
   end
 
@@ -64,13 +64,13 @@ class UsersController < ApplicationController
     if params[:package_id]
       @user.package_id = params[:package_id]
     end
-    if params[:therm_acepted]
-      @user.therm_acepted = params[:therm_acepted]
+    if params[:term_accepted]
+      @user.term_accepted = params[:term_accepted]
     end
 
     user_changed_attributes = @user.changed
     package_id = "package_id"
-    term_acceptance = "therm_acepted"
+    term_acceptance = "term_accepted"
     if package_id.in?(user_changed_attributes) or term_acceptance.in?(user_changed_attributes)
       @user.save!
       redirect_to new_payment_path
@@ -133,7 +133,7 @@ class UsersController < ApplicationController
         :period,  
         :registration_proof, 
         :subscribe_status,
-        :therm_accepted
+        :term_accepted
         )
     end
 end
