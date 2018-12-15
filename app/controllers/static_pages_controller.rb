@@ -39,7 +39,11 @@ class StaticPagesController < ApplicationController
     end
     
     def formulario_pagamento_enviar
-        
+        info = params.require(:subscription).permit(:name, :cpf, :package_id, :email, :telephone, :pagamento, :parcelas)
+        info[:id] = current_user.id
+        info[:package] = Package.find(info[:package_id])
+        PaymentMailer.notify_admin_about_payment(info).deliver_later
+        PaymentMailer.notify_user_about_payment(current_user).deliver_later
     end
     
     def get_parcelas
