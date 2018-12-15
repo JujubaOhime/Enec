@@ -115,7 +115,7 @@
           </div>
         -->
           <% if current_user.admin? %>
-            <div class="field">
+            <div class="fieldcheck">
               <p><%= form.label :subscribe_status, "Inscrito?" %></p>
               <%= form.check_box :subscribe_status %>
             </div>
