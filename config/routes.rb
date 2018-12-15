@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     root to: 'static_pages#landing_page'
     get '/formulario-pagamento', to: 'static_pages#formulario_pagamento', as: 'form_pagamento'
     post '/formulario-pagamento', to: 'static_pages#formulario_pagamento_enviar'
+    get '/retorna_parcelas', to: 'static_pages#get_parcelas'
     get '/edicao-secoes', to: 'static_pages#sections_edit', as: 'sections_edit'
     get    '/login',   to: 'sessions#new'
     post   '/login',   to: 'sessions#create'
