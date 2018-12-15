@@ -41,7 +41,9 @@
                     <div class="text-passport">
                         <h2><%=@airfare.title%></h2>
                         <p><%=@airfare.phrase%></p>
-                        <button class="price-button">Confira os preços </button>
+                        <%= link_to "http://#{@airfare.link}" do %>
+                            <button class="price-button">Confira os preços </button>
+                        <% end %>
                     </div>
             </div>
         </div>
