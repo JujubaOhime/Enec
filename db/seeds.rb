@@ -10,7 +10,7 @@ sc = Showcase.create!(title: "Título", subtitle: "Subtítulo", phrase: "pequena
 sc.image = Rails.root.join("app/assets/images/morro_santa_teresa.jpg").open 
 sc.save!
 
-TheEvent.create!(title: "O Evento", days: "02 a 03", mounth: "Janeiro", locality:"Porto Alegre", content: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.")
+TheEvent.create!(title: "O Evento", days: "02 a 03", month: "Janeiro", locality:"Porto Alegre", content: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.")
 
 Airfare.create!(title: "Compre sua Passagem aérea aqui", phrase: "Confira os melhores preços")
 

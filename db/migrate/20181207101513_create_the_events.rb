@@ -3,7 +3,7 @@ class CreateTheEvents < ActiveRecord::Migration[5.2]
     create_table :the_events do |t|
       t.string :title
       t.string :days
-      t.string :mounth
+      t.string :month
       t.string :locality
       t.text :content
       

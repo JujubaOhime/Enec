@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_101231) do
   create_table "the_events", force: :cascade do |t|
     t.string "title"
     t.string "days"
-    t.string "mounth"
+    t.string "month"
     t.string "locality"
     t.text "content"
     t.datetime "created_at", null: false
