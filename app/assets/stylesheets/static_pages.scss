@@ -192,7 +192,7 @@ input{
     border: 0px;
     border-radius: 100px;
     color: var(--white);
-    padding: 2px 40px;
+    padding: 10px 40px;
     font-size: 1.125em;
     font-family: 'Palanquin Dark', sans-serif;
     box-shadow: 0 4px 4px 0px #00000061;
@@ -635,6 +635,7 @@ input{
 
 .realizadores-middle img{
     width: 100px;
+    max-height: 100px;
 }
 
 #realizadorslider{
@@ -651,6 +652,7 @@ input{
     margin-right: 20px;
     width: 80%;
     max-width: 350px;
+    margin-bottom: 30px;
 }
 
 
