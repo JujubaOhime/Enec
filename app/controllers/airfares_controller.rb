@@ -29,7 +29,7 @@ class AirfaresController < ApplicationController
 
     respond_to do |format|
       if @airfare.save
-        format.html { redirect_to sections_edit_path, notice: 'Airfare was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'Passagem Aérea criada com sucesso.' }
         format.json { render :show, status: :created, location: @airfare }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AirfaresController < ApplicationController
   def update
     respond_to do |format|
       if @airfare.update(airfare_params)
-        format.html { redirect_to sections_edit_path, notice: 'Airfare was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'Passagem Aérea atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @airfare }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AirfaresController < ApplicationController
   def destroy
     @airfare.destroy
     respond_to do |format|
-      format.html { redirect_to sections_edit_path, notice: 'Airfare was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'Passagem Aérea excluída com sucesso.' }
       format.json { head :no_content }
     end
   end

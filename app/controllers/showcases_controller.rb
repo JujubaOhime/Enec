@@ -29,7 +29,7 @@ class ShowcasesController < ApplicationController
 
     respond_to do |format|
       if @showcase.save
-        format.html { redirect_to sections_edit_path, notice: 'Vitrine foi criada com sucesso.' }
+        format.html { redirect_to sections_edit_path, notice: 'Vitrine criada com sucesso.' }
         format.json { render :show, status: :created, location: @showcase }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ShowcasesController < ApplicationController
   def update
     respond_to do |format|
       if @showcase.update(showcase_params)
-        format.html { redirect_to sections_edit_path, notice: 'Vitrine foi atualizada com sucesso.' }
+        format.html { redirect_to sections_edit_path, notice: 'Vitrine atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @showcase }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ShowcasesController < ApplicationController
   def destroy
     @showcase.destroy
     respond_to do |format|
-      format.html { redirect_to sections_edit_path, notice: 'Vitrine foi destruída com sucesso.' }
+      format.html { redirect_to sections_edit_path, notice: 'Vitrine excluída com sucesso.' }
       format.json { head :no_content }
     end
   end

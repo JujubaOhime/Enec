@@ -30,7 +30,7 @@ class SponsorsAndSupportersController < ApplicationController
 
     respond_to do |format|
       if @sponsors_and_supporter.save
-        format.html { redirect_to sections_edit_path, notice: 'Sponsors and supporter was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'Patrocinador ou Apoiador criado com sucesso.' }
         format.json { render :show, status: :created, location: @sponsors_and_supporter }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class SponsorsAndSupportersController < ApplicationController
   def update
     respond_to do |format|
       if @sponsors_and_supporter.update(sponsors_and_supporter_params)
-        format.html { redirect_to sections_edit_path, notice: 'Sponsors and supporter was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'Patrocinador ou Apoiador atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @sponsors_and_supporter }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class SponsorsAndSupportersController < ApplicationController
   def destroy
     @sponsors_and_supporter.destroy
     respond_to do |format|
-      format.html { redirect_to sections_edit_path, notice: 'Sponsors and supporter was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'Patrocinador ou Apoiador excluído com sucesso.' }
       format.json { head :no_content }
     end
   end

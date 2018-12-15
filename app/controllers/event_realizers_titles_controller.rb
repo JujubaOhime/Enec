@@ -29,7 +29,7 @@ class EventRealizersTitlesController < ApplicationController
 
     respond_to do |format|
       if @event_realizers_title.save
-        format.html { redirect_to sections_edit_path, notice: 'Event realizers title was successfully created.' }
+        format.html { redirect_to sections_edit_path, notice: 'Título de Realizadores do Evento criado com sucesso.' }
         format.json { render :show, status: :created, location: @event_realizers_title }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class EventRealizersTitlesController < ApplicationController
   def update
     respond_to do |format|
       if @event_realizers_title.update(event_realizers_title_params)
-        format.html { redirect_to sections_edit_path, notice: 'Event realizers title was successfully updated.' }
+        format.html { redirect_to sections_edit_path, notice: 'Título de Realizadores do Evento atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @event_realizers_title }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class EventRealizersTitlesController < ApplicationController
   def destroy
     @event_realizers_title.destroy
     respond_to do |format|
-      format.html { redirect_to sections_edit_path, notice: 'Event realizers title was successfully destroyed.' }
+      format.html { redirect_to sections_edit_path, notice: 'Título de Realizadores do Evento excluído com sucesso.' }
       format.json { head :no_content }
     end
   end

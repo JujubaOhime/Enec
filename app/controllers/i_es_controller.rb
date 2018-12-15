@@ -29,7 +29,7 @@ class IEsController < ApplicationController
 
     respond_to do |format|
       if @ie.save
-        format.html { redirect_to @ie, notice: 'Ies was successfully created.' }
+        format.html { redirect_to @ie, notice: 'Instituição de Ensino Superior criada com sucesso.' }
         format.json { render :show, status: :created, location: @ie }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class IEsController < ApplicationController
   def update
     respond_to do |format|
       if @ie.update(ie_params)
-        format.html { redirect_to @ie, notice: 'Ies was successfully updated.' }
+        format.html { redirect_to @ie, notice: 'Instituição de Ensino Superior atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @ie }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class IEsController < ApplicationController
   def destroy
     @ie.destroy
     respond_to do |format|
-      format.html { redirect_to ies_index_url, notice: 'Ies was successfully destroyed.' }
+      format.html { redirect_to ies_index_url, notice: 'Instituição de Ensino Superior excluída com sucesso.' }
       format.json { head :no_content }
     end
   end
