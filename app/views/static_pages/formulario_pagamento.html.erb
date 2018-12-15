@@ -11,5 +11,8 @@
   <%= f.label :Telefone %>
   <%= f.text_field :telefone %>
   
-  <%= f.submit %>
+  <%= f.label :Pacote %>
+  <%= select(:subscription, :package_id, package_select) %>
+  
+  <%= f.submit "Enviar" %>
 <% end %>
