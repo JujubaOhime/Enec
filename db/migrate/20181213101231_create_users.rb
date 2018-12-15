@@ -26,7 +26,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.integer :IES_id
       t.references :lot, foreign_key: true
       t.references :package, foreign_key: true
-      t.references :payment, foreign_key: true
+      t.integer :payment_id
 
       t.timestamps
     end
