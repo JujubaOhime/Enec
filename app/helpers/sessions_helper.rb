@@ -31,4 +31,12 @@ module SessionsHelper
         redirect_to login_path
     end
   end
+
+  def needs_to_be_admin(error_message)
+    error_message ||= "Você não tem permissão para isso!"
+    if current_user.present? && !current_user.admin?
+      flash.notice = error_message
+      redirect_to root_path
+    end
+  end
 end

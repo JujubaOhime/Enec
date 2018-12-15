@@ -114,6 +114,13 @@
             <%= form.hidden_field :picture_cache %>
           </div>
         -->
+          <% if current_user.admin? %>
+            <div class="field">
+              <p><%= form.label :subscribe_status, "Inscrito?" %></p>
+              <%= form.check_box :subscribe_status %>
+            </div>
+          <% end %>
+
         </div>
       </div>
       <div class="actions">
