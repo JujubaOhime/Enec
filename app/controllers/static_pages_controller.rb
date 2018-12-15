@@ -12,6 +12,7 @@ class StaticPagesController < ApplicationController
         @event_realizers_title = EventRealizersTitle.all.first.title
         @sponsor_and_supporters_title = SponsorsAndSupportersTitle.all.first.title
     end
+    
     def send_email
         form = {
             name: params[:name],
@@ -20,6 +21,7 @@ class StaticPagesController < ApplicationController
           }
           ContactMailer.contact_email(form).deliver_later
     end
+    
     def sections_edit
         @showcase = Showcase.all.first
         @the_event = TheEvent.all.first
@@ -27,5 +29,13 @@ class StaticPagesController < ApplicationController
         @the_speakers = TheSpeaker.all.first
         @event_notices = EventNotice.all.first
         @video = MerchandisingVideo.all.first
+    end
+    
+    def formulario_pagamento
+        
+    end
+    
+    def formulario_pagamento_enviar
+        
     end
 end

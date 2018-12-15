@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :event_realizers_titles, path: 'titulo-de-realizadores-do-evento'
     resources :ies, path: 'instituicoes-de-ensino-superior'
     root to: 'static_pages#landing_page'
+    get '/formulario-pagamento', to: 'static_pages#formulario_pagamento', as: 'form_pagamento'
+    post '/formulario-pagamento', to: 'static_pages#formulario_pagamento_enviar'
     get '/edicao-secoes', to: 'static_pages#sections_edit', as: 'sections_edit'
     get    '/login',   to: 'sessions#new'
     post   '/login',   to: 'sessions#create'
