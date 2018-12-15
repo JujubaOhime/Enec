@@ -53,7 +53,7 @@
         </p>
       <%else%>
         <div class="perfil-links">
-          <button><%= link_to 'Pagamento', "https://#{user_lot(@user).link}" %></button>
+          <button><%= link_to 'Pagamento', form_pagamento_path %></button>
         </div>
       <%end%>
     </div>
