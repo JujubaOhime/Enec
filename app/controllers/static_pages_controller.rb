@@ -51,8 +51,8 @@ class StaticPagesController < ApplicationController
         )
 
         if payment.save
-            payment.generate_parcels(info[:parcelas])
-            current_user.update(package: package)
+            payment.generate_parcels
+            current_user.update(package_id: package.id)
             
             info[:id] = current_user.id
             info[:package] = package

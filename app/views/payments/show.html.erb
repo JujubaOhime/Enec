@@ -2,7 +2,8 @@
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Pacote:</strong>
-  <%= @payment.package.value*1.05 %> (com taxa)
+  <%= number_to_currency(@payment.value, :unit => "R$ ", :separator => ",",
+      :delimiter => ".") %>
 </p>
 
 <p>

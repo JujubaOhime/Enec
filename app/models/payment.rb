@@ -3,18 +3,18 @@ class Payment < ApplicationRecord
   belongs_to :user
   has_many :parcels
 
-  before_create :apply_rate_to_value
+  before_create :calculate_value
 
   enum payment_option: {"boleto": 1 , "cartao": 2}
   enum parceling_options: {"1x sem juros": 1 ,"2x sem juros": 2 ,"3x sem juros": 3 ,"4x sem juros": 4 ,"5x sem juros": 5 ,"6x com juros no cartão(somente no cartão)": 6 ,"7x com juros no cartão(somente no cartão)": 7 ,"8x com juros no cartão(somente no cartão)": 8 ,"9x com juros no cartão(somente no cartão)": 9 ,"10x com juros no cartão(somente no cartão)": 10}
 
-  def generate_parcels(quantity)
-    quantity = BigDecimal.new(quantity)
+  def generate_parcels
+    quantity = parceling_option_before_type_cast
 
-    parcel_general_value = value/quantity
+    parcel_general_value = (value/quantity).round(2)
     total_value = value
-    while total_value > 0
-      parcel = Parcel.create(
+    quantity.times do |i|
+      @parcel = Parcel.create(
         value: parcel_general_value,
         payment: self,
         status: 0
@@ -29,12 +29,16 @@ class Payment < ApplicationRecord
     # valor um pouco menor, nesse tipo de caso.
 
     if total_value != 0
-      parcel.update(value: parcel.value + total_value)
+      @parcel.update(value: (@parcel.value + total_value).round(2))
     end
   end
 
   private
-    def apply_rate_to_value
+    def calculate_value
       self.value = value * 1.05
+      quantity_parcels = parceling_option_before_type_cast.to_i
+      if payment_option == 'cartao' && quantity_parcels > 5
+        self.value = value * (1 + BigDecimal.new("0.03")) ** quantity_parcels
+      end
     end
 end
