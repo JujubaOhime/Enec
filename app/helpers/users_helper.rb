@@ -47,7 +47,7 @@ module UsersHelper
     end
     
     def find_user_payment(user)
-        payment = find_by(user_id: user.id)
+        payment = Payment.find_by(user_id: user.id)
         return payment
     end
 end

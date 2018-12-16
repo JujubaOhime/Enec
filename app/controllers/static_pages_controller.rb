@@ -40,10 +40,30 @@ class StaticPagesController < ApplicationController
     
     def formulario_pagamento_enviar
         info = params.require(:subscription).permit(:name, :cpf, :package_id, :email, :telephone, :pagamento, :parcelas)
-        info[:id] = current_user.id
-        info[:package] = Package.find(info[:package_id])
-        PaymentMailer.notify_admin_about_payment(info).deliver_later
-        PaymentMailer.notify_user_about_payment(current_user).deliver_later
+        package = Package.find(info[:package_id])
+        
+        payment = Payment.new(
+            value: package.value,
+            payment_option: info[:pagamento],
+            parceling_option: info[:parcelas],
+            user: current_user,
+            package: package
+        )
+
+        if payment.save
+            payment.generate_parcels(info[:parcelas])
+            current_user.update(package: package)
+            
+            info[:id] = current_user.id
+            info[:package] = package
+            PaymentMailer.notify_admin_about_payment(info).deliver_later
+            PaymentMailer.notify_user_about_payment(current_user).deliver_later
+
+            redirect_to payment
+        else
+            flash.notice = payment.errors
+            redirect_to form_pagamento_path
+        end
     end
     
     def get_parcelas
