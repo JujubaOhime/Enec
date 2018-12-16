@@ -38,24 +38,24 @@ module StaticPagesHelper
       parcelas_compostas = parcelas_simples
       
       parcelas_compostas.append({ parcelas: 6, detalhes: "6x de 
-          #{ parcela_com_juros_compostos(total_com_juros_compostos(package.value, 6), 6) },
-          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(package.value, 6)) }" })
+          #{ parcela_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 6), 6) },
+          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 6)) }" })
       
       parcelas_compostas.append({ parcelas: 7, detalhes: "7x de 
-          #{ parcela_com_juros_compostos(total_com_juros_compostos(package.value, 7), 7) },
-          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(package.value, 7)) }" })
+          #{ parcela_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 7), 7) },
+          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 7)) }" })
           
       parcelas_compostas.append({ parcelas: 8, detalhes: "8x de 
-          #{ parcela_com_juros_compostos(total_com_juros_compostos(package.value, 8), 8) },
-          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(package.value, 8)) }" })
+          #{ parcela_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 8), 8) },
+          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 8)) }" })
           
       parcelas_compostas.append({ parcelas: 9, detalhes: "9x de 
-          #{ parcela_com_juros_compostos(total_com_juros_compostos(package.value, 9), 9) },
-          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(package.value, 9)) }" })
+          #{ parcela_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 9), 9) },
+          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 9)) }" })
           
       parcelas_compostas.append({ parcelas: 10, detalhes: "10x de 
-          #{ parcela_com_juros_compostos(total_com_juros_compostos(package.value, 10), 10) },
-          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(package.value, 10)) }" })
+          #{ parcela_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 10), 10) },
+          total: #{ total_monetario_com_juros_compostos(total_com_juros_compostos(valor_com_taxa, 10)) }" })
       
       return parcelas_compostas
     end
