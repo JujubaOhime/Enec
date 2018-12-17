@@ -7,7 +7,9 @@ $(document).ready(function(){
             id = id.replace("parcel_", "");
             $.ajax({
                 type:"POST",
-                url:`/parcelas/${id}/update_status/${new_status}`,
+                url:`/parcelas/update_status`,
+                dataType:"json",
+  	            data: { id: id, new_status: new_status },
                 success:function(result){
                     alert("Status atualizado!");
                 }

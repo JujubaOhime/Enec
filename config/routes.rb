@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :users, path: 'usuarios'
     resources :interests, path: 'juros'
     resources :parcels, path: 'parcelas'
-      post '/parcelas/:id/update_status/:new_status', to: 'parcels#update_status', as: 'update_parcel_status'
+      post '/parcelas/update_status', to: 'parcels#update_status', as: 'update_parcel_status'
     resources :payments, path: 'pagamentos'
       get '/retorna_parcelas', to: 'payments#get_parcelas'
     resources :packages, path: 'pacotes'
