@@ -7,6 +7,14 @@ module PaymentsHelper
         end
     end
 
+    def pretty_parcel_status(parcel)
+        if parcel.status
+            return "Sim"
+        else
+            return "Não"
+        end
+    end
+
     def user_package(user)
         user_package_id = user.package_id
         package = Package.find(user_package_id)

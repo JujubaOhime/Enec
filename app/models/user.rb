@@ -9,7 +9,7 @@ class User < ApplicationRecord
   mount_uploader :registration_proof, DocumentUploader
   # Returns the hash digest of the given string.
  
-  enum gender: {"Masculino": 1 , "Feminino": 2}
+  enum gender: {"Masculino": 1 , "Feminino": 2, "Outro": 3}
   enum payment_option: {"Boleto": 1, "Cartão de crédito": 2}
   enum payment_status: {"Pago": 1, "pendente": 2}
   enum parceling_option: {"1 vez": 1, "2 vezes": 2, "3 vezes": 3, "4 vezes": 4, "5 vezes": 5 }

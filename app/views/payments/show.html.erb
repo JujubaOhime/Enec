@@ -22,12 +22,7 @@
       <%= @payment.parceling_option %> vezes
     </h2>
 
-    <h2>
-      Usuário:
-      <%= link_to 'Ir para Perfil', @payment.user %>
-    </h2>
     <div class="titulo-com-edit">
-      <button><%= link_to 'Editar', edit_payment_path(@payment) %></button>
       <button><%= link_to 'Voltar', @payment.user %></button>
     </div>
     <div class="table">
@@ -41,8 +36,9 @@
         <tbody>
           <% @payment.parcels.each do |parcel| %>
             <tr>
-              <td><%= parcel.value %></td>
-              <td><%= parcel.status %></td>
+              <td><%= number_to_currency(parcel.value, :unit => "R$ ", :separator => ",",
+          :delimiter => ".") %></td>
+              <td><%= pretty_parcel_status(parcel) %></td>
             </tr>
           <% end %>
         </tbody>
