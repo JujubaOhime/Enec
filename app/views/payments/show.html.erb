@@ -38,7 +38,15 @@
             <tr>
               <td><%= number_to_currency(parcel.value, :unit => "R$ ", :separator => ",",
           :delimiter => ".") %></td>
-              <td><%= parcel.status %></td>
+              <td>
+                <% if current_user.admin? %>
+                  <%= form_with model: parcel do |form| %>
+                    <%= form.select :status, Parcel.statuses.keys %>
+                  <% end %>
+                <% else %>
+                  <%= parcel.status %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
