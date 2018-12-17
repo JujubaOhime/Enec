@@ -30,7 +30,7 @@
         <thead>
           <tr>
             <th> Valor </th>
-            <th> Pago? </th>
+            <th> Status </th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +38,15 @@
             <tr>
               <td><%= number_to_currency(parcel.value, :unit => "R$ ", :separator => ",",
           :delimiter => ".") %></td>
-              <td><%= pretty_parcel_status(parcel) %></td>
+              <td>
+                <% if current_user.admin? %>
+                  <%= form_with model: parcel do |form| %>
+                    <%= form.select :status, Parcel.statuses.keys, {}, id: "parcel_#{parcel.id}", class: 'parcel-change-status' %>
+                  <% end %>
+                <% else %>
+                  <%= parcel.status %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
