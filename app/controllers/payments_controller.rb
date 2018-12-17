@@ -2,6 +2,10 @@ class PaymentsController < ApplicationController
   include PaymentsHelper
   include ActionView::Helpers::NumberHelper
 
+  before_action except: [:new, :create, :get_parcelas] do
+    needs_to_be_admin("Você não tem permissão para isso!")
+  end
+
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
   # before_action :admin_only, only: [:show, :edit, :update, :destroy]
 

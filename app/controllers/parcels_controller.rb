@@ -1,4 +1,7 @@
 class ParcelsController < ApplicationController
+  before_action do
+    needs_to_be_admin("Você não tem permissão para isso!")
+  end
   before_action :set_parcel, only: [:show, :edit, :update, :destroy]
   # before_action :admin_only, only: [:show, :edit, :update, :destroy]
 

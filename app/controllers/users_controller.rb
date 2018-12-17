@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
+
+  before_action except: [:edit, :update, :show, :change_password, :term_agreement] do
+    needs_to_be_admin("Você não tem permissão para isso!")
+  end
+  
   before_action :set_user, only: [:show, :edit, :change_password, :term_agreement, :update, :destroy]
   before_action :current_user
   before_action :user_kick
-  before_action only: [:index] do
-    needs_to_be_admin("Você não tem permissão para isso!")
-  end
   # before_action :admin_only, only: [:destroy, :index, :new, :create]
-  include ApplicationHelper
   
   # GET /users
   # GET /users.json
