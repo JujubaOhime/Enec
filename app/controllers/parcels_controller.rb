@@ -1,8 +1,9 @@
 class ParcelsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :update_status
   before_action do
     needs_to_be_admin("Você não tem permissão para isso!")
   end
-  before_action :set_parcel, only: [:show, :edit, :update, :destroy]
+  before_action :set_parcel, only: [:show, :edit, :update, :destroy, :update_status]
   # before_action :admin_only, only: [:show, :edit, :update, :destroy]
 
   # GET /parcels
@@ -62,6 +63,14 @@ class ParcelsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to parcels_url, notice: 'Parcela excluída com sucesso.' }
       format.json { head :no_content }
+    end
+  end
+
+  def update_status
+    if @parcel.update(status: params[:new_status])
+      @status_updated = true
+    else
+      @status_updated = false
     end
   end
 

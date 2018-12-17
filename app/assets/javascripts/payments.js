@@ -2,13 +2,12 @@ $(document).ready(function(){
     parcels = $('.parcel-change-status');
     for(var i=0; i<parcels.length; i++)
         parcels[i].addEventListener('change', function(e){
-            alert("oi");
             var id = e.target.id;
-            alert(id);
+            var new_status = e.target.value;
             id = id.replace("parcel_", "");
             $.ajax({
                 type:"POST",
-                url:`/parcelas/${id}/update_status`,
+                url:`/parcelas/${id}/update_status/${new_status}`,
                 success:function(result){
                     alert("Status atualizado!");
                 }
