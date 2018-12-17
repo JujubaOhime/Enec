@@ -1,8 +1,5 @@
 class StaticPagesController < ApplicationController
 
-    include StaticPagesHelper
-    include ActionView::Helpers::NumberHelper
-
     def landing_page
         @showcase = Showcase.all.first
         @the_event = TheEvent.all.first
@@ -32,19 +29,5 @@ class StaticPagesController < ApplicationController
         @the_speakers = TheSpeaker.all.first
         @event_notices = EventNotice.all.first
         @video = MerchandisingVideo.all.first
-    end
-    
-    def formulario_pagamento
-        
-    end
-    
-    def formulario_pagamento_enviar
-        
-    end
-    
-    def get_parcelas
-        @result = parcelas(params[:package_id], params[:pagamento])
-        
-        render json: @result
     end
 end

@@ -1,24 +1,50 @@
+<section class="index-sections">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Package:</strong>
-  <%= @payment.package %>
+  <strong>Pacote:</strong>
+  <%= @payment.package.name %>
 </p>
 
 <p>
-  <strong>Payment option:</strong>
-  <%= @payment.payment_option %>
+  <strong>Valor Total:</strong>
+  <%= number_to_currency(@payment.value, :unit => "R$ ", :separator => ",",
+      :delimiter => ".") %>
 </p>
 
 <p>
-  <strong>Parceling option:</strong>
-  <%= @payment.parceling_option %>
+  <strong>Forma de Pagamento:</strong>
+  <%= pretty_payment_option(@payment) %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @payment.user %>
+  <strong>Opção de Parcelamento:</strong>
+  <%= @payment.parceling_option %> vezes
 </p>
 
-<%= link_to 'Edit', edit_payment_path(@payment) %> |
-<%= link_to 'Back', payments_path %>
+<p>
+  <strong>Usuário:</strong>
+  <%= link_to 'Perfil', @payment.user %>
+</p>
+
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th> Valor </th>
+        <th> Pago? </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @payment.parcels.each do |parcel| %>
+        <tr>
+          <td><%= parcel.value %></td>
+          <td><%= parcel.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to 'Editar', edit_payment_path(@payment) %> |
+<%= link_to 'Voltar', @payment.user %>
+</section>

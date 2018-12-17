@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
-  has_one :lot
-  has_one :IES
+  belongs_to :lot, optional: true
+  belongs_to :IES, optional: true
+  has_one :package
+  has_one :payment
 
   mount_uploader :image, ImageUploader
   mount_uploader :registration_proof, DocumentUploader

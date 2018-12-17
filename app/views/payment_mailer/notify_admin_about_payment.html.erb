@@ -1,0 +1,21 @@
+<h1>Novo Pagamento Registrado!</h1>
+
+<p>
+    Olá! O usuário <%= @user.name %> preencheu o formulário de pagamento.
+</p>
+
+<h2>Dados do Cliente</h2>
+
+<ul>
+    <li>CPF: <%= @user_info[:cpf] %></li>
+    <li>Nome: <%= @user_info[:name] %></li>
+    <li>Email: <%= @user_info[:email] %></li>
+    <li>Telefone: <%= @user_info[:telephone] %></li>
+    <li>Pacote: <%= @user_info[:package].name %></li>
+    <li>Forma de Pagamento: <%= @user_info[:pagamento] %></li>
+    <li>Número de Parcelas: <%= @user_info[:parcelas] %></li>
+</ul>
+
+<p>
+    <% link_to "Clique aqui", @user %> para acessar o perfil deste usuário.
+</p>

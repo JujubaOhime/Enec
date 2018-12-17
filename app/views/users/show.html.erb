@@ -44,18 +44,15 @@
           <%end%>
         </div>
       </div>
-      <%if user_payment_exists?(@user)%>
-        <p>
-        Lote:
-        <%= user_lot(@user).name %>
-        <%= find_user_payment(@user).value %>
-        <%= find_user_payment(@user).description %>
-        </p>
-      <%else%>
-        <div class="perfil-links">
-          <button><%= link_to 'Pagamento', form_pagamento_path %></button>
-        </div>
-      <%end%>
+
+      <div class="perfil-links">
+        <% if @user.payment.present? %>
+          <button><%= link_to 'Pagamento', @user.payment %></button>
+        <% else %>
+          <button><%= link_to 'Pagamento', new_payment_path %></button>
+        <% end %>
+      </div>
+
     </div>
   </section>
 </body>
