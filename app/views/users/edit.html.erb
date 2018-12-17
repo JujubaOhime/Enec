@@ -26,7 +26,7 @@
 
           <div class="field">
             <p><%= form.label :Telefone %></p>
-            <%= form.text_field :telephone %>
+            <%= form.text_field :telephone, :pattern => ".{14,15}", maxlength: 15, placeholder:"(99) 99999-9999" %>
           </div>
 
           <div class="field">
@@ -37,7 +37,7 @@
 
           <div class="field">
             <p><%= form.label :CPF %></p>
-            <%= form.text_field :cpf %>
+            <%= form.text_field :cpf, placeholder: "___.___.___-__",  :pattern => ".{14,14}", maxlength: 14 %>
           </div>
 
           <div class="field">
@@ -116,10 +116,7 @@
         -->
           <% if current_user.admin? %>
             <div class="fieldcheck">
-              <p><%= form.label :subscribe_status, "Inscrito?" %></p>
-              <p class="checkInscrito">
-                <%= form.check_box :subscribe_status %>
-              </p>
+              <p><%= form.label :subscribe_status, "Inscrito?" %><span class="checkInscrito"><%= form.check_box :subscribe_status %></span></p>
             </div>
           <% end %>
 
