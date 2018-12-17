@@ -36,7 +36,7 @@
         </div>
         <nav> 
           <ul>
-            <%if (current_page?(root_path))%>
+            <%if (current_page?(root_path)) && !current_user%>
               <li><a href="#section-main">Principal</a></li>
               <li><a href="#section-event">O Evento</a></li>
               <li><a href="#section-pass">Passaporte</a></li>
@@ -74,13 +74,13 @@
     </div>
     <footer class="footer">
     <div class="footer-esquerda">
-      <a href="#"><%= image_tag("facebook.png", :alt => "logo do facebook", :class => "logo-social first-logo-social") %></a>
-      <a href="#"><%= image_tag("instagram.png", :alt => "logo do instagram", :class => "logo-social") %></a>
+      <a href="https://www.facebook.com/ENECBrasil/"><%= image_tag("facebook.png", :alt => "logo do facebook", :class => "logo-social first-logo-social") %></a>
+      <a href="https://www.instagram.com/oficialenec/"><%= image_tag("instagram.png", :alt => "logo do instagram", :class => "logo-social") %></a>
       <a href="#"><%= image_tag("youtube.png", :alt => "logo do youtube", :class => "logo-social") %></a>
     </div>
     <div class="footer-direita">
       <span>Desenvolvido por: </span>
-      <a href="#"><%= image_tag("in-logo.png", :alt => "logo da in-junior", :class => "logo-in-junior") %></a>
+      <a href="http://injunior.com.br/"><%= image_tag("in-logo.png", :alt => "logo da in-junior", :class => "logo-in-junior") %></a>
     </div>
     </footer>
   </body>

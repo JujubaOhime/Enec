@@ -1,4 +1,4 @@
-<body class="home"> 
+<body class="home">
     <section id="section-main" class="main-session" style="background-image: url(<%=@showcase.image.url%>);">
         <div class="container-home">
             <div class="home-esquerda">
@@ -118,5 +118,13 @@
             <% end %>
         </div>
     </section>
-
+    <% if notice.present? %>
+        <script>
+            $(document).ready(function() {
+                alert("<%= notice %>");
+            });
+        </script>   
+    <% end %>
 </body>
+
+

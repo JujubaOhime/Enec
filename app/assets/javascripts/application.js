@@ -15,7 +15,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-        $(document).on('click', '.hamburguer', function(){
+    $(document).on('click', '.hamburguer', function(){
         //$(".hamburguer").click(function(){
             lockScroll();
         $("nav").toggleClass("open");  
@@ -28,19 +28,19 @@ $(document).ready(function() {
     });
 
 $(document).ready(function(){
-$(window).on('scroll', function() {
-    if ($(this).scrollTop() > 10) {
-    $(".home header").addClass("ativo");
-    } else {
-    $("header").removeClass("ativo");
-    }
-    if ($(this).scrollTop() > 200) {
-    $(".icon-scroll").addClass("icon-scroll-gone");
-    } else {
-    $(".icon-scroll").removeClass("icon-scroll-gone");
-    }
-    
-});
+    $(window).on('scroll', function() {
+        if ($(this).scrollTop() > 10) {
+        $(".home header").addClass("ativo");
+        } else {
+        $("header").removeClass("ativo");
+        }
+        if ($(this).scrollTop() > 200) {
+        $(".icon-scroll").addClass("icon-scroll-gone");
+        } else {
+        $(".icon-scroll").removeClass("icon-scroll-gone");
+        }
+        
+    });
 });
 
 /* Inicio do scroll do menu */

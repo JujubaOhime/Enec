@@ -1,50 +1,53 @@
 <section class="index-sections">
-<p id="notice"><%= notice %></p>
+  <div class="container-table">
+    <p id="notice"><%= notice %></p>
+    <h2>
+      Pacote:
+      <%= @payment.package.name %>
+    </h2>
 
-<p>
-  <strong>Pacote:</strong>
-  <%= @payment.package.name %>
-</p>
+    <h2>
+      Valor Total:
+      <%= number_to_currency(@payment.value, :unit => "R$ ", :separator => ",",
+          :delimiter => ".") %>
+    </h2>
 
-<p>
-  <strong>Valor Total:</strong>
-  <%= number_to_currency(@payment.value, :unit => "R$ ", :separator => ",",
-      :delimiter => ".") %>
-</p>
+    <h2>
+      Forma de Pagamento:
+      <%= pretty_payment_option(@payment) %>
+    </h2>
 
-<p>
-  <strong>Forma de Pagamento:</strong>
-  <%= pretty_payment_option(@payment) %>
-</p>
+    <h2>
+      Opção de Parcelamento:
+      <%= @payment.parceling_option %> vezes
+    </h2>
 
-<p>
-  <strong>Opção de Parcelamento:</strong>
-  <%= @payment.parceling_option %> vezes
-</p>
+    <h2>
+      Usuário:
+      <%= link_to 'Ir para Perfil', @payment.user %>
+    </h2>
+    <div class="titulo-com-edit">
+      <button><%= link_to 'Editar', edit_payment_path(@payment) %></button>
+      <button><%= link_to 'Voltar', @payment.user %></button>
+    </div>
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th> Valor </th>
+            <th> Pago? </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @payment.parcels.each do |parcel| %>
+            <tr>
+              <td><%= parcel.value %></td>
+              <td><%= parcel.status %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-<p>
-  <strong>Usuário:</strong>
-  <%= link_to 'Perfil', @payment.user %>
-</p>
-
-<div class="table">
-  <table>
-    <thead>
-      <tr>
-        <th> Valor </th>
-        <th> Pago? </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @payment.parcels.each do |parcel| %>
-        <tr>
-          <td><%= parcel.value %></td>
-          <td><%= parcel.status %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<%= link_to 'Editar', edit_payment_path(@payment) %> |
-<%= link_to 'Voltar', @payment.user %>
+  </div>
 </section>
