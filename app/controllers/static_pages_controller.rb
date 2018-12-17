@@ -1,4 +1,7 @@
 class StaticPagesController < ApplicationController
+    before_action only: [:sections_edit] do
+        needs_to_be_admin("Você não tem permissão para isso!")
+      end
 
     def landing_page
         @showcase = Showcase.all.first
