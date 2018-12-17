@@ -1,8 +1,5 @@
 class StaticPagesController < ApplicationController
 
-    include StaticPagesHelper
-    include ActionView::Helpers::NumberHelper
-
     def landing_page
         @showcase = Showcase.all.first
         @the_event = TheEvent.all.first
@@ -32,43 +29,5 @@ class StaticPagesController < ApplicationController
         @the_speakers = TheSpeaker.all.first
         @event_notices = EventNotice.all.first
         @video = MerchandisingVideo.all.first
-    end
-    
-    def formulario_pagamento
-        
-    end
-    
-    def formulario_pagamento_enviar
-        info = params.require(:subscription).permit(:name, :cpf, :package_id, :email, :telephone, :pagamento, :parcelas)
-        package = Package.find(info[:package_id])
-        
-        payment = Payment.new(
-            value: package.value,
-            payment_option: info[:pagamento],
-            parceling_option: info[:parcelas],
-            user: current_user,
-            package: package
-        )
-
-        if payment.save
-            payment.generate_parcels
-            current_user.update(package_id: package.id)
-            
-            info[:id] = current_user.id
-            info[:package] = package
-            PaymentMailer.notify_admin_about_payment(info).deliver_later
-            PaymentMailer.notify_user_about_payment(current_user).deliver_later
-
-            redirect_to payment
-        else
-            flash.notice = payment.errors
-            redirect_to form_pagamento_path
-        end
-    end
-    
-    def get_parcelas
-        @result = parcelas(params[:package_id], params[:pagamento])
-        
-        render json: @result
     end
 end

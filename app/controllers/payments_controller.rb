@@ -1,4 +1,7 @@
 class PaymentsController < ApplicationController
+  include PaymentsHelper
+  include ActionView::Helpers::NumberHelper
+
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
   # before_action :admin_only, only: [:show, :edit, :update, :destroy]
 
@@ -25,16 +28,30 @@ class PaymentsController < ApplicationController
   # POST /payments
   # POST /payments.json
   def create
-    @payment = Payment.new(payment_params)
+    info = params.require(:subscription).permit(:name, :cpf, :package_id, :email, :telephone, :pagamento, :parcelas)
+    package = Package.find(info[:package_id])
+    debugger
+    payment = Payment.new(
+      value: package.value,
+      payment_option: info[:pagamento],
+      parceling_option: info[:parcelas],
+      user: current_user,
+      package: package
+    )
+    debugger
+    if payment.save
+      payment.generate_parcels
+      current_user.update(package_id: package.id)
+      
+      info[:id] = current_user.id
+      info[:package] = package
+      PaymentMailer.notify_admin_about_payment(info).deliver_later
+      PaymentMailer.notify_user_about_payment(current_user).deliver_later
 
-    respond_to do |format|
-      if @payment.save
-        format.html { redirect_to @current_user, notice: 'Pagamento criado com sucesso.' }
-        format.json { render :show, status: :created, location: @payment }
-      else
-        format.html { render :new }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
-      end
+      redirect_to payment
+    else
+      flash.notice = payment.errors
+      redirect_to new_payment_path
     end
   end
 
@@ -61,6 +78,12 @@ class PaymentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def get_parcelas
+    @result = parcelas(params[:package_id], params[:pagamento])
+    
+    render json: @result
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

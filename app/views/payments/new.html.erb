@@ -1,5 +1,94 @@
-<h1>New Payment</h1>
+<body class="sessions">
+  <section class="container-sessions">
 
-<%= render 'form', payment: @payment %>
 
-<%= link_to 'Back', payments_path %>
+    <h2>Pagamento</h2>
+
+    <%= form_for :subscription, url: payments_path do |f| %>
+
+      <div class="field">
+        <p><%= f.label :CPF %></p>
+        <%= f.text_field :cpf %>
+      </div>
+
+      <div class="field">
+        <p><%= f.label :Nome %></p>
+        <%= f.text_field :name %>
+      </div>
+      
+      <div class="field">
+        <p><%= f.label :Email %></p>
+        <%= f.email_field :email %>
+      </div>      
+      
+      <div class="field">
+        <p><%= f.label :Telefone %></p>
+        <%= f.text_field :telephone %>
+      </div>        
+      
+      <div class="fieldPag">
+        <p><%= f.label :Pacote %></p>
+        <%= select(:subscription, :package_id, package_select(current_user)) %>
+      </div>      
+      
+      <div class="fieldPag">
+        <p><%= f.label "Forma de pagamento" %></p>
+        <%= select(:subscription, :pagamento, 
+            options_for_select(
+              [ 
+                 ["Selecione forma de pagamento", ""], 
+                 ["Cartão de Crédito", "cartao"], ["Boleto bancário", "boleto"],
+              ], ["Selecione forma de pagamento", ""])) %>
+      </div>
+      
+      <div class="fieldPag">
+        <p><%= f.label "Nº de parcelas" %></p>
+        <%= select(:subscription, :parcelas, 
+            [ ["Selecione forma de pagamento", ""] ]) %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit "Enviar" %>
+      </div>
+
+    <% end %>
+  </section>
+</body>
+
+<script>
+  $( "#subscription_package_id" ).change(function() {
+  	
+  	$( "#subscription_parcelas" ).html('');
+  	$( "#subscription_parcelas" ).append('<option value="">' + 'Selecione forma de pagamento' + '</option>')
+  
+    $( "#subscription_pagamento" ).html('');
+    $( "#subscription_pagamento" ).append('<option value="">' + 'Selecione forma de pagamento' + '</option>')
+    $( "#subscription_pagamento" ).append('<option value="cartao">' + 'Cartão de Crédito' + '</option>')
+    $( "#subscription_pagamento" ).append('<option value="">' + 'Boleto bancário' + '</option>')
+  });
+</script>
+
+<script>
+  $( "#subscription_pagamento" ).change(function() {
+  	package_id = $( "#subscription_package_id" ).val();
+  	pagamento = $(this).val();
+  	
+  	$( "#subscription_parcelas" ).html('');
+  	$( "#subscription_parcelas" ).prop('disabled', true);
+  
+  	$.ajax({
+  	  type:"GET",
+  	  url:"/retorna_parcelas",
+  	  dataType:"json",
+  	  data: { package_id: package_id, pagamento: pagamento },
+  	  success:function(result){
+  	    //adicionar opções ao dropdown
+  	    $( "#subscription_parcelas" ).html('');
+  	    for (i = 0; i < result.length; i++) {
+  		    $( "#subscription_parcelas" ).append('<option value="' + result[i].parcelas + '">' + result[i].detalhes + '</option>')
+  		  }
+  		  $( "#subscription_parcelas" ).prop('disabled', false);
+  	  }
+  	})
+  });
+</script>
