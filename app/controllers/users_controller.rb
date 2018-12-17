@@ -19,6 +19,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def import
+    if User.import(params[:file])
+      redirect_to users_path, notice: "Usuarios importados com sucesso"
+    else
+      redirect_to users_path, notice: "Selecione o arquivo a ser importado"
+    end
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

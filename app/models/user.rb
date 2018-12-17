@@ -20,4 +20,14 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
+  def self.import(file)
+    if file.present?
+      CSV.foreach(file.path, headers: true) do |row|
+        User.create! row.to_hash
+      end
+      return true
+    end
+    return false
+  end
+
 end

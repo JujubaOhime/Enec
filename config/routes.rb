@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     get 'usuarios/:id/selecao-de-pacote', to: "users#term_agreement"
     post 'usuarios/:id/selecao-de-pacote', to: "users#term_agreement", as: 'term_agreement'
     
-    resources :users, path: 'usuarios'
+    resources :users, path: 'usuarios' do
+      collection { post :import }
+    end
     resources :interests, path: 'juros'
     resources :parcels, path: 'parcelas'
     resources :payments, path: 'pagamentos'

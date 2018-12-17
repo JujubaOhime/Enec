@@ -50,6 +50,13 @@
           <% end %>
         </tbody>
       </table>
+
+      <p>Importar Usuario</p>
+
+      <%= form_tag import_users_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Importar" %>
+      <% end %>
       
       <%= will_paginate @users, :previous_label => 'Anterior', :next_label => 'Próxima', :class => "paginacao-index" %>
       
