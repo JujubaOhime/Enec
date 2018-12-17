@@ -17,4 +17,12 @@ module ApplicationHelper
             end
         end
     end
+
+    def payment_link(user)
+        if user.payment.present?
+            return user.payment
+        else
+            return new_payment_path
+        end
+    end
 end
