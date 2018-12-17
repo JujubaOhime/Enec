@@ -41,7 +41,7 @@
               <td>
                 <% if current_user.admin? %>
                   <%= form_with model: parcel do |form| %>
-                    <%= form.select :status, Parcel.statuses.keys %>
+                    <%= form.select :status, Parcel.statuses.keys, {}, id: "parcel_#{parcel.id}", class: 'parcel-change-status' %>
                   <% end %>
                 <% else %>
                   <%= parcel.status %>
