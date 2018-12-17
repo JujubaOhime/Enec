@@ -1,4 +1,7 @@
 class EventNoticesController < ApplicationController
+  before_action do
+    needs_to_be_admin("Você não tem permissão para isso!")
+  end
   before_action :set_event_notice, only: [:show, :edit, :update, :destroy]
   # before_action :admin_only, only: [:edit, :update, :destroy]
 
