@@ -30,7 +30,6 @@ class PaymentsController < ApplicationController
   def create
     info = params.require(:subscription).permit(:name, :cpf, :package_id, :email, :telephone, :pagamento, :parcelas)
     package = Package.find(info[:package_id])
-    debugger
     payment = Payment.new(
       value: package.value,
       payment_option: info[:pagamento],
@@ -38,7 +37,6 @@ class PaymentsController < ApplicationController
       user: current_user,
       package: package
     )
-    debugger
     if payment.save
       payment.generate_parcels
       current_user.update(package_id: package.id)

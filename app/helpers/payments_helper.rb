@@ -1,4 +1,12 @@
 module PaymentsHelper
+    def pretty_payment_option(payment)
+        if payment.payment_option == 'boleto'
+            return 'Boleto Bancário'
+        else
+            return 'Cartão de Crédito'
+        end
+    end
+
     def user_package(user)
         user_package_id = user.package_id
         package = Package.find(user_package_id)

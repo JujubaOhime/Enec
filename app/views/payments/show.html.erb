@@ -1,14 +1,20 @@
 <section class="index-sections">
 <p id="notice"><%= notice %></p>
+
 <p>
   <strong>Pacote:</strong>
+  <%= @payment.package.name %>
+</p>
+
+<p>
+  <strong>Valor Total:</strong>
   <%= number_to_currency(@payment.value, :unit => "R$ ", :separator => ",",
       :delimiter => ".") %>
 </p>
 
 <p>
   <strong>Forma de Pagamento:</strong>
-  <%= @payment.payment_option %>
+  <%= pretty_payment_option(@payment) %>
 </p>
 
 <p>
@@ -18,7 +24,7 @@
 
 <p>
   <strong>Usuário:</strong>
-  <%= @payment.user.name %>
+  <%= link_to 'Perfil', @payment.user %>
 </p>
 
 <div class="table">
