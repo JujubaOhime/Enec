@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_222609) do
+ActiveRecord::Schema.define(version: 2018_12_17_142744) do
 
   create_table "airfares", force: :cascade do |t|
     t.string "title"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_222609) do
   create_table "parcels", force: :cascade do |t|
     t.integer "payment_id"
     t.decimal "value"
-    t.boolean "status"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["payment_id"], name: "index_parcels_on_payment_id"

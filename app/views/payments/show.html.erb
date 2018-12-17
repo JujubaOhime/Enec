@@ -30,7 +30,7 @@
         <thead>
           <tr>
             <th> Valor </th>
-            <th> Pago? </th>
+            <th> Status </th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +38,7 @@
             <tr>
               <td><%= number_to_currency(parcel.value, :unit => "R$ ", :separator => ",",
           :delimiter => ".") %></td>
-              <td><%= pretty_parcel_status(parcel) %></td>
+              <td><%= parcel.status %></td>
             </tr>
           <% end %>
         </tbody>

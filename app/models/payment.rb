@@ -17,7 +17,7 @@ class Payment < ApplicationRecord
       @parcel = Parcel.create(
         value: parcel_general_value,
         payment: self,
-        status: 0
+        status: 4
         )
         total_value -= parcel_general_value
     end
