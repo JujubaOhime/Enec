@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AirfaresControllerTest < ActionDispatch::IntegrationTest
+classLandingPage::AirfaresControllerTest < ActionDispatch::IntegrationTest
   setup do
     @airfare = airfares(:one)
   end

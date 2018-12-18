@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EventRealizerTest < ActiveSupport::TestCase
+class LandingPage::EventRealizerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

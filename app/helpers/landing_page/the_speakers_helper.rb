@@ -1,0 +1,2 @@
+module LandingPage::TheSpeakersHelper
+end

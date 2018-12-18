@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SponsorsAndSupporterTest < ActiveSupport::TestCase
+classLandingPage::SponsorsAndSupporterTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

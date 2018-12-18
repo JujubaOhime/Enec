@@ -1,0 +1,2 @@
+module LandingPage::MerchandisingVideosHelper
+end

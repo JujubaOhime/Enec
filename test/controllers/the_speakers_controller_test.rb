@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TheSpeakersControllerTest < ActionDispatch::IntegrationTest
+classLandingPage::TheSpeakersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @the_speaker = the_speakers(:one)
   end

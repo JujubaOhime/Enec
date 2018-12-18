@@ -1,0 +1,134 @@
+<body class="home">
+    <section id="section-main" class="main-session" style="background-image: url(<%=@showcase.image.url%>);">
+        <div class="container-home">
+            <div class="home-esquerda">
+                <h2><%=@showcase.title%> </h2>
+                <h1><%=@showcase.subtitle%></h1>
+                <h3><%=@showcase.phrase%></h3>
+            </div>
+            <div class="home-direita ">
+                <%if logged_in? and admin_user_logged? %>
+                    <p><%=link_to "Área do congressista", users_path, class: "area-do-congressista-button"%></p>
+                <%elsif logged_in?%>
+                    <p><%=link_to "Área do congressista", @current_user, class: "area-do-congressista-button"%></p>
+                <%else%>
+                    <p><%=link_to "Área do congressista", login_path, class: "area-do-congressista-button"%></p>
+                <%end%>
+            </div>
+        </div>
+        <div class='icon-scroll'></div>
+    </section>
+
+    <section  id="section-event" class="evento-session sections-home-table-cell">
+        <div class="home-esquerda">
+            <h4><%=@the_event.title%></h4>
+            <p><%=@the_event.content%></p>
+        </div>
+        <div class="home-direita">
+            <h2><%=@the_event.days%></h2>
+            <div><span>de </span><h3> <%=@the_event.month%></h3></div>
+            <div><span>em </span><h3> <%=@the_event.locality%></h3></div>
+        </div>
+    </section>
+
+    <section id="section-pass" class="passport-session">
+        <div class="container-passport">
+            <div class="passport-left">
+            <%= image_tag("passaporte.png", :alt => "logo da plataforma de passaporte", :class => "logo-passport") %>
+            </div>
+
+            <div class="passport-right">
+                    <div class="text-passport">
+                        <h2><%=@airfare.title%></h2>
+                        <p><%=@airfare.phrase%></p>
+                        <%= link_to "http://#{@airfare.link}" do %>
+                            <button class="price-button">Confira os preços </button>
+                        <% end %>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-pales" class="palestrantes-session sections-home-table-cell">
+        <div class="home-esquerda">
+            <h2><%=@the_speakers.title%></h2>
+            <p><%=@the_speakers.description%></p>
+            <%= link_to @the_speakers.document.url, target: :_blank do %>
+                <p><button class="confira-ja-button">Confira Já</button></p>
+            <% end %>
+        </div>
+        <div class="home-direita"  style="background-image: url(<%=@the_speakers.image.url%>);">
+        </div>
+        
+    </section>
+
+    <section id="section-edi" class="editais-session sections-home-table-cell">
+        <div class="home-esquerda"  style="background-image: url(<%=@event_notices.image.url%>);">
+        </div>
+        <div class="home-direita">
+            <h2><%=@event_notices.title%></h2>
+            <p><%=@event_notices.content%></p>
+            <%= link_to @event_notices.document.url, target: :_blank do %>
+                <p><button class="confira-ja-button">Confira Já</button></p>
+            <% end %>
+        </div>
+    </section>
+
+    <section id="section-revo" class ="revolucao-session">
+        <div class="revolucao-centro">
+            <h2><%=@video.title%></h2>
+            <div class="revolucao-video" controls>
+                <%= video_tag @video.video.url, class: "revolucao-video", controls: true %>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-reali" class="realizadores-session">
+        <div class="realizadores-middle">
+            <h2><%= @event_realizers_title %></h2>
+            <div id="realizadorslider">
+                <% @event_realizers.each do |event|%>
+                    <div class="item">
+                        <%= link_to "http://#{event.link}" do %>
+                            <%= image_tag(event.image.url, alt: "logo do enec", class: "logo-enec") %>
+                        <% end %>
+                        <p><%= event.description %></p>
+                        <h3><%= event.name %></h3>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </section>
+
+<section id="section-patro" class="patrocinadores-session sections-home-table-cell">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    <div class="home-middle">
+        <h2><%=@sponsor_and_supporters_title%>  </h2>
+        <div class="logos-patrocinadores">
+            <% @sponsors_and_supporters.each do |ss| %>
+                <%= link_to "http://#{ss.link}" do %>
+                    <%= image_tag(ss.image.url, alt: "logo do patrocinador", class: "logo-patrocinador") %>
+                <% end %>
+            <%end%>
+    </section>
+
+    <section id="section-contact" class="contato-session sections-home-table-cell">
+        <div class="home-middle">
+            <h2>Contato</h2>
+            <%=form_with(url: send_contact_email_path, remote: true)  do |f| %>
+                <p><%= f.text_field :name, placeholder: "Nome", class: "input" %></p>
+                <p><%= f.text_field :email,placeholder: "E-mail",  class: "input" %></p>
+                <p><%= f.text_area :message,placeholder: "Mensagem", class: "input mensagem" %></p>
+                <input type="submit" value="Enviar" class="form-button">
+            <% end %>
+        </div>
+    </section>
+    <% if notice.present? %>
+        <script>
+            $(document).ready(function() {
+                alert("<%= notice %>");
+            });
+        </script>   
+    <% end %>
+</body>
+
+

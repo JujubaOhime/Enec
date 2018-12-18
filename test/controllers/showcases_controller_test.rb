@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ShowcasesControllerTest < ActionDispatch::IntegrationTest
+classLandingPage::ShowcasesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @showcase = showcases(:one)
   end

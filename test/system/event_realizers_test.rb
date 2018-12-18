@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class EventRealizersTest < ApplicationSystemTestCase
+class LandingPage::EventRealizersTest < ApplicationSystemTestCase
   setup do
     @event_realizer = event_realizers(:one)
   end

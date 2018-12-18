@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class TheEventsTest < ApplicationSystemTestCase
+classLandingPage::TheEventsTest < ApplicationSystemTestCase
   setup do
     @the_event = the_events(:one)
   end

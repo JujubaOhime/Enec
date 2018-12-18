@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EventNoticesControllerTest < ActionDispatch::IntegrationTest
+classLandingPage::EventNoticesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @event_notice = event_notices(:one)
   end

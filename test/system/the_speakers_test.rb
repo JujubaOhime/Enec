@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class TheSpeakersTest < ApplicationSystemTestCase
+classLandingPage::TheSpeakersTest < ApplicationSystemTestCase
   setup do
     @the_speaker = the_speakers(:one)
   end

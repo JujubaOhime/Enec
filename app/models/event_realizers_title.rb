@@ -1,2 +1,0 @@
-class EventRealizersTitle < ApplicationRecord
-end
