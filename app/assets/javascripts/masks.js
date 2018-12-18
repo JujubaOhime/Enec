@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    $('#user_cpf').mask('000.000.000-00',{placeholder: "___.___.___-__"});
+    $('#user_cpf, #subscription_cpf').mask('000.000.000-00',{placeholder: "___.___.___-__"});
     $('#user_cnpj').mask('00.000.000/0000-00',{placeholder: "___.___.___/____-__"});
-    $("#user_name").mask('Z',{
+    $("#user_name, #subscription_name").mask('Z',{
         translation: {
           'Z': { pattern: /[a-zA-Z ]/, recursive: true}
         },
@@ -37,5 +37,12 @@ function id( el ){
 window.onload = function(){
 	id('user_telephone').onkeyup = function(){
 		mascara( this, mtel );
-	}
+    }
 }
+
+window.onload = function(){
+	id('subscription_telephone').onkeyup = function(){
+		mascara( this, mtel );
+    }
+}
+

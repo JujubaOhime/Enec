@@ -23,7 +23,7 @@
       
       <div class="field">
         <p><%= f.label :Telefone %></p>
-        <%= f.text_field :telephone %>
+        <%= f.text_field :telephone, :pattern => ".{14,15}", maxlength: 15, placeholder:"(99) 99999-9999"%>
       </div>        
       
       <div class="fieldPag">
