@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TheSpeakerTest < ActiveSupport::TestCase
+classLandingPage::TheSpeakerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

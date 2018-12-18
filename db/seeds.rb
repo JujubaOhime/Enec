@@ -6,37 +6,37 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-sc = Showcase.create!(title: "Título", subtitle: "Subtítulo", phrase: "pequena frase")
+sc = LandingPage::Showcase.create!(title: "Título", subtitle: "Subtítulo", phrase: "pequena frase")
 sc.image = Rails.root.join("app/assets/images/morro_santa_teresa.jpg").open 
 sc.save!
 
-TheEvent.create!(title: "O Evento", days: "02 a 03", month: "Janeiro", locality:"Porto Alegre", content: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.")
+LandingPage::TheEvent.create!(title: "O Evento", days: "02 a 03", month: "Janeiro", locality:"Porto Alegre", content: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.")
 
-Airfare.create!(title: "Compre sua Passagem aérea aqui", phrase: "Confira os melhores preços")
+LandingPage::Airfare.create!(title: "Compre sua Passagem aérea aqui", phrase: "Confira os melhores preços")
 
-ts = TheSpeaker.create!(title: "Os palestrantes", description: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.")
+ts = LandingPage::TheSpeaker.create!(title: "Os palestrantes", description: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.")
 ts.image = Rails.root.join("app/assets/images/parque_farroupilha1.jpg").open
 ts.save!
 
-en = EventNotice.create!(title: "Editais do Evento", content: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.")
+en = LandingPage::EventNotice.create!(title: "Editais do Evento", content: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.")
 en.image = Rails.root.join("app/assets/images/parque_farroupilha2.jpg").open
 en.save!
 
-mv = MerchandisingVideo.create!(title: "Conheça a Revolução")
+mv = LandingPage::MerchandisingVideo.create!(title: "Conheça a Revolução")
 mv.video = Rails.root.join("app/assets/images/sample.mp4").open
 mv.save!
 
-EventRealizersTitle.create!(title: "Realizadores do Evento")
+LandingPage::EventRealizersTitle.create!(title: "Realizadores do Evento")
 
 4.times do
-    e = EventRealizer.create!(image: "enec2019.png" , name:"A FENEC", description: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.", link: "www.google.com" )
+    e = LandingPage::EventRealizer.create!(image: "enec2019.png" , name:"A FENEC", description: "Lorem ipsum dolor sit amet, consectur adipiscing elit. Praesent nunc elit, feugiat et tellus quis, luctus interd.", link: "www.google.com" )
     e.image = Rails.root.join("app/assets/images/enec2019.png").open
     e.save!
 end
 
-SponsorsAndSupportersTitle.create!(title: "Patrocinadores e Apoiadores")
+LandingPage::SponsorsAndSupportersTitle.create!(title: "Patrocinadores e Apoiadores")
 5.times do
-    ss = SponsorsAndSupporter.create!(image: "patrocinador.png", link: "www.google.com")
+    ss = LandingPage::SponsorsAndSupporter.create!(image: "patrocinador.png", link: "www.google.com")
     ss.image = Rails.root.join("app/assets/images/patrocinador.png").open
     ss.save!
 end

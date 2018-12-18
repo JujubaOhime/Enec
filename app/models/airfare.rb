@@ -1,2 +1,0 @@
-class Airfare < ApplicationRecord
-end

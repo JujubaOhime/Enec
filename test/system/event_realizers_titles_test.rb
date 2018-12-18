@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class EventRealizersTitlesTest < ApplicationSystemTestCase
+class LandingPage::EventRealizersTitlesTest < ApplicationSystemTestCase
   setup do
     @event_realizers_title = event_realizers_titles(:one)
   end

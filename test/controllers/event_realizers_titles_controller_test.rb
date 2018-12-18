@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EventRealizersTitlesControllerTest < ActionDispatch::IntegrationTest
+class LandingPage::EventRealizersTitlesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @event_realizers_title = event_realizers_titles(:one)
   end
@@ -16,11 +16,11 @@ class EventRealizersTitlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create event_realizers_title" do
-    assert_difference('EventRealizersTitle.count') do
+    assert_difference('LandingPage::EventRealizersTitle.count') do
       post event_realizers_titles_url, params: { event_realizers_title: { title: @event_realizers_title.title } }
     end
 
-    assert_redirected_to event_realizers_title_url(EventRealizersTitle.last)
+    assert_redirected_to event_realizers_title_url(LandingPage::EventRealizersTitle.last)
   end
 
   test "should show event_realizers_title" do
@@ -39,7 +39,7 @@ class EventRealizersTitlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy event_realizers_title" do
-    assert_difference('EventRealizersTitle.count', -1) do
+    assert_difference('LandingPage::EventRealizersTitle.count', -1) do
       delete event_realizers_title_url(@event_realizers_title)
     end
 

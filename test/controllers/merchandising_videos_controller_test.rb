@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MerchandisingVideosControllerTest < ActionDispatch::IntegrationTest
+classLandingPage::MerchandisingVideosControllerTest < ActionDispatch::IntegrationTest
   setup do
     @merchandising_video = merchandising_videos(:one)
   end

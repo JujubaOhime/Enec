@@ -1,2 +1,0 @@
-class SponsorsAndSupportersTitle < ApplicationRecord
-end

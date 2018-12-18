@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MerchandisingVideoTest < ActiveSupport::TestCase
+classLandingPage::MerchandisingVideoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

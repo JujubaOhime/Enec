@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AirfareTest < ActiveSupport::TestCase
+classLandingPage::AirfareTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

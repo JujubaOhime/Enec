@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class ShowcasesTest < ApplicationSystemTestCase
+classLandingPage::ShowcasesTest < ApplicationSystemTestCase
   setup do
     @showcase = showcases(:one)
   end
@@ -10,33 +10,33 @@ class ShowcasesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Showcases"
   end
 
-  test "creating a Showcase" do
+  test "creating aLandingPage::Showcase" do
     visit showcases_url
-    click_on "New Showcase"
+    click_on "NewLandingPage::Showcase"
 
     fill_in "Phrase", with: @showcase.phrase
     fill_in "Subtitle", with: @showcase.subtitle
     fill_in "Title", with: @showcase.title
-    click_on "Create Showcase"
+    click_on "CreateLandingPage::Showcase"
 
     assert_text "Showcase was successfully created"
     click_on "Back"
   end
 
-  test "updating a Showcase" do
+  test "updating aLandingPage::Showcase" do
     visit showcases_url
     click_on "Edit", match: :first
 
     fill_in "Phrase", with: @showcase.phrase
     fill_in "Subtitle", with: @showcase.subtitle
     fill_in "Title", with: @showcase.title
-    click_on "Update Showcase"
+    click_on "UpdateLandingPage::Showcase"
 
     assert_text "Showcase was successfully updated"
     click_on "Back"
   end
 
-  test "destroying a Showcase" do
+  test "destroying aLandingPage::Showcase" do
     visit showcases_url
     page.accept_confirm do
       click_on "Destroy", match: :first

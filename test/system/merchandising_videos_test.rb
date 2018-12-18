@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class MerchandisingVideosTest < ApplicationSystemTestCase
+classLandingPage::MerchandisingVideosTest < ApplicationSystemTestCase
   setup do
     @merchandising_video = merchandising_videos(:one)
   end

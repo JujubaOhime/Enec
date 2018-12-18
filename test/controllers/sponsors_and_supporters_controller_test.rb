@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SponsorsAndSupportersControllerTest < ActionDispatch::IntegrationTest
+classLandingPage::SponsorsAndSupportersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @sponsors_and_supporter = sponsors_and_supporters(:one)
   end

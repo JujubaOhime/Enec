@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class EventNoticesTest < ApplicationSystemTestCase
+classLandingPage::EventNoticesTest < ApplicationSystemTestCase
   setup do
     @event_notice = event_notices(:one)
   end

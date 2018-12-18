@@ -1,0 +1,3 @@
+module LandingPage::StaticPagesHelper
+
+end

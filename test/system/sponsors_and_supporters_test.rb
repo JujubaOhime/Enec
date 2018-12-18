@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class SponsorsAndSupportersTest < ApplicationSystemTestCase
+classLandingPage::SponsorsAndSupportersTest < ApplicationSystemTestCase
   setup do
     @sponsors_and_supporter = sponsors_and_supporters(:one)
   end

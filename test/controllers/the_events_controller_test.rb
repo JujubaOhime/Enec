@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TheEventsControllerTest < ActionDispatch::IntegrationTest
+classLandingPage::TheEventsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @the_event = the_events(:one)
   end
