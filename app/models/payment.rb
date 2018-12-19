@@ -3,6 +3,10 @@ class Payment < ApplicationRecord
   belongs_to :user
   has_many :parcels
 
+  validates :package_id, presence: true
+  validates :payment_option, presence: true
+  validates :parceling_option, presence: true
+
   before_create :calculate_value
 
   enum payment_option: {"boleto": 1 , "cartao": 2}
@@ -37,7 +41,7 @@ class Payment < ApplicationRecord
     def calculate_value
       self.value = value * 1.05
       quantity_parcels = parceling_option_before_type_cast.to_i
-      if payment_option == 'cartao' && quantity_parcels > 5
+      if self.valid? && payment_option == 'cartao' && quantity_parcels > 5
         self.value = value * (1 + BigDecimal.new("0.03")) ** quantity_parcels
       end
     end
