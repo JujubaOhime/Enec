@@ -22,7 +22,7 @@ class LandingPage::StaticPagesController < ApplicationController
             email: params[:email],
             message: params[:message]
           }
-          ContactMailer.contact_email(form).deliver_later
+          ContactMailer.contact_email(form).deliver_now
     end
     
     def sections_edit
