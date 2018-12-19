@@ -5,30 +5,29 @@
     <h2>Pagamento</h2>
 
     <%= form_for :subscription, url: payments_path do |f| %>
-
       <div class="field">
         <p><%= f.label :CPF %></p>
-        <%= f.text_field :cpf %>
+        <%= f.text_field :cpf, value: current_user.cpf, required: true %>
       </div>
 
       <div class="field">
         <p><%= f.label :Nome %></p>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, value: current_user.name, required: true %>
       </div>
       
       <div class="field">
         <p><%= f.label :Email %></p>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, value: current_user.email, required: true %>
       </div>      
       
       <div class="field">
         <p><%= f.label :Telefone %></p>
-        <%= f.text_field :telephone %>
+        <%= f.text_field :telephone, value: current_user.telephone, required: true %>
       </div>        
-      
+
       <div class="fieldPag">
         <p><%= f.label :Pacote %></p>
-        <%= select(:subscription, :package_id, package_select(current_user)) %>
+        <%= select(:subscription, :package_id, package_select(current_user), required: true) %>
       </div>      
       
       <div class="fieldPag">
@@ -38,13 +37,13 @@
               [ 
                  ["Selecione forma de pagamento", ""], 
                  ["Cartão de Crédito", "cartao"], ["Boleto bancário", "boleto"],
-              ], ["Selecione forma de pagamento", ""])) %>
+              ], ["Selecione forma de pagamento", ""]), required: true) %>
       </div>
       
       <div class="fieldPag">
         <p><%= f.label "Nº de parcelas" %></p>
         <%= select(:subscription, :parcelas, 
-            [ ["Selecione forma de pagamento", ""] ]) %>
+            [ ["Selecione forma de pagamento", ""] ], required: true) %>
       </div>
       
       <div class="actions">

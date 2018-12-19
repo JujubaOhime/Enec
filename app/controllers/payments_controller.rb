@@ -38,6 +38,12 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     info = params.require(:subscription).permit(:name, :cpf, :package_id, :email, :telephone, :pagamento, :parcelas)
+    info.values.each do |i|
+      if i.nil?
+        redirect_to new_payment_path, notice: "Preencha todos os campos!"
+      end
+    end
+
     package = Package.find(info[:package_id])
     payment = Payment.new(
       value: package.value,
@@ -47,6 +53,12 @@ class PaymentsController < ApplicationController
       package: package
     )
     if payment.save
+      current_user.update(
+        name: info[:name],
+        cpf: info[:cpf],
+        email: info[:email],
+        telephone: info[:telephone]
+      )
       payment.generate_parcels
       current_user.update(package_id: package.id)
       
