@@ -22,12 +22,34 @@ class LandingPage::StaticPagesController < ApplicationController
       sendgrid = SendGrid::Client.new do |c|
         c.api_key = ENV["sendgrid_api_key"]
       end
+      
+      form = {
+            name: params[:name],
+            email: params[:email],
+            message: params[:message]
+      }
 
       email = SendGrid::Mail.new do |m|
-        m.to      = 'matheus.perrut@injunior.com.br'
-        m.from    = 'fenec@fenec.com.br'
-        m.subject = 'Sending with SendGrid is Fun'
-        m.html    = 'and easy to do anywhere, even with Ruby'
+        m.to      = 'inscricaoenec@fenec.com.br'
+        m.from    = form[:email]
+        m.subject = "#{@form[:name]} entrou em contato através do seu site"
+        m.html    = 
+        "<p>Olá,</p>
+        
+         <p>#{@form[:name]} lhe enviou uma mensagem:</p>
+        
+         <p>#{@form[:message]}</p>
+        
+         <p>Email: #{@form[:email]}</p>"
+        
+        m.text    = 
+         "Olá,
+        
+          #{@form[:name]} lhe enviou uma mensagem:
+        
+          #{@form[:message]}
+        
+          Email: #{@form[:email]}"
       end
       
       sendgrid.send(email)

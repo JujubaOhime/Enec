@@ -1,4 +1,6 @@
 class PaymentsController < ApplicationController
+  require 'sendgrid-ruby'
+  
   include PaymentsHelper
   include ActionView::Helpers::NumberHelper
 
@@ -53,6 +55,10 @@ class PaymentsController < ApplicationController
       package: package
     )
     if payment.save
+      sendgrid = SendGrid::Client.new do |c|
+        c.api_key = ENV["sendgrid_api_key"]
+      end
+      
       current_user.update(
         name: info[:name],
         cpf: info[:cpf],
@@ -66,6 +72,80 @@ class PaymentsController < ApplicationController
       info[:package] = package
       PaymentMailer.notify_admin_about_payment(info).deliver_later
       PaymentMailer.notify_user_about_payment(current_user).deliver_later
+      
+      @user_info = user_info
+      @user = User.find(user_info[:id])
+      
+      email = SendGrid::Mail.new do |m|
+        m.to      = 'enec2019@enec2019.fenec.com.br'
+        m.from    = 'inscricaoenec@fenec.com.br'
+        m.subject = "#{@user.name} criou um pagamento!"
+        m.html    = 
+        "<h1>Novo Pagamento Registrado!</h1>
+
+        <p>
+            Olá! O usuário #{@user.name} preencheu o formulário de pagamento.
+        </p>
+        
+        <h2>Dados do Cliente</h2>
+        
+        <ul>
+            <li>CPF: #{info[:cpf]}</li>
+            <li>Nome: #{info[:name]}</li>
+            <li>Email: #{info[:email]}</li>
+            <li>Telefone: #{info[:telephone]}</li>
+            <li>Pacote: #{info[:package].name}</li>
+            <li>Forma de Pagamento: #{info[:pagamento]}</li>
+            <li>Número de Parcelas: #{info[:parcelas]}</li>
+        </ul>
+        
+        <p>
+            #{view_context.link_to "Clique aqui", @user} para acessar o perfil deste usuário.
+        </p>"
+        
+        m.text    = 
+         "Novo Pagamento Registrado!
+
+          
+              Olá! O usuário #{@user.name} preencheu o formulário de pagamento.
+          
+          
+          Dados do Cliente
+          
+          
+              CPF: #{info[:cpf]}
+              Nome: #{info[:name]}
+              Email: #{info[:email]}
+              Telefone: #{info[:telephone]}
+              Pacote: #{info[:package].name}
+              Forma de Pagamento: #{info[:pagamento]}
+              Número de Parcelas: #{info[:parcelas]}
+          
+          
+          
+              #{view_context.link_to "Clique aqui", @user} para acessar o perfil deste usuário.
+          "
+      end
+      
+      email_user = SendGrid::Mail.new do |m|
+        m.to      = @user.email
+        m.from    = 'inscricaoenec@fenec.com.br'
+        m.subject = "Solicitação de Pagamento registrada"
+        m.html    = 
+        "
+        <p>
+            Olá #{@user.name}. sua solicitação de pagamento foi registrada com sucesso!
+        </p>
+        "
+        
+        m.text    = 
+         "
+             Olá #{@user.name}. sua solicitação de pagamento foi registrada com sucesso!
+         "
+      end
+      
+      sendgrid.send(email)
+      sendgrid.send(email_user)
 
       redirect_to payment
     else
@@ -102,7 +182,7 @@ class PaymentsController < ApplicationController
     @result = parcelas(params[:package_id], params[:pagamento])
     
     render json: @result
-end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
