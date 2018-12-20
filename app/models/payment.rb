@@ -39,10 +39,16 @@ class Payment < ApplicationRecord
 
   private
     def calculate_value
-      self.value = value * 1.05
-      quantity_parcels = parceling_option_before_type_cast.to_i
-      if self.valid? && payment_option == 'cartao' && quantity_parcels > 5
-        self.value = value * (1 + BigDecimal.new("0.03")) ** quantity_parcels
+      if self.valid?
+        quantity_parcels = parceling_option_before_type_cast.to_i
+      
+        if payment_option == 'boleto'
+          self.value += quantity_parcels * BigDecimal.new("3.95")
+        else
+        
+        if payment_option == 'cartao' && quantity_parcels > 5
+          self.value = value * (1 + BigDecimal.new("0.03")) ** quantity_parcels
+        end
       end
     end
 end
