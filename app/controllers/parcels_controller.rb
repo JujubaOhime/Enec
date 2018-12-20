@@ -82,6 +82,8 @@ class ParcelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parcel_params
-      params.require(:parcel).permit(:payment_id, :value, :status)
+      parameters = params.require(:parcel).permit(:payment_id, :value, :status)
+      parameters[:value] = monetary_string_to_decimal(parameters[:value])
+      return parameters
     end
 end

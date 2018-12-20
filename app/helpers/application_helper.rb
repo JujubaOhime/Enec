@@ -25,4 +25,11 @@ module ApplicationHelper
             return new_payment_path
         end
     end
+
+    def monetary_string_to_decimal(string)
+        string = string.gsub('.', '')
+        string = string.gsub(',', '.')
+        string = string.remove('R$')
+        BigDecimal.new(string)
+    end
 end
