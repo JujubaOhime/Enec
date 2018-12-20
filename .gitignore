@@ -35,3 +35,6 @@
 
 # Ignore db/schema
 /db/schema.rbconfig/database.yml\nconfig/secrets.yml
+
+# Ignore application configuration
+/config/application.yml
