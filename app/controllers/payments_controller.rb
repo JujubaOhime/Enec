@@ -77,7 +77,7 @@ class PaymentsController < ApplicationController
       @user = User.find(user_info[:id])
       
       email = SendGrid::Mail.new do |m|
-        m.to      = 'enec2019@enec2019.fenec.com.br'
+        m.to      = 'inscricaoenec@fenec.com.br'
         m.from    = 'inscricaoenec@fenec.com.br'
         m.subject = "#{@user.name} criou um pagamento!"
         m.html    = 
