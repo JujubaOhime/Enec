@@ -1,7 +1,7 @@
 class Payment < ApplicationRecord
   belongs_to :package
   belongs_to :user
-  has_many :parcels
+  has_many :parcels, dependent: :destroy
 
   validates :package_id, presence: true
   validates :payment_option, presence: true
@@ -46,12 +46,13 @@ class Payment < ApplicationRecord
           self.value += quantity_parcels * BigDecimal.new("3.95")
 
         elsif payment_option == 'cartao'
+          value_without_rate = value
           self.value += value * BigDecimal.new("0.0499") 
           self.value += quantity_parcels * BigDecimal.new("0.50")
           
           if quantity_parcels > 5
-            parcel_value = (value/quantity).round(2)
-            self.value += (parcel_value * (quantity_parcels-5)) * (1 + BigDecimal.new("0.025")) ** (quantity_parcels-5)
+            parcel_value = (value_without_rate/quantity_parcels).round(2)
+            self.value += ((parcel_value * (1 + BigDecimal.new("0.025")) ** (quantity_parcels-5)) - parcel_value) * (quantity_parcels-5)
           end
         end
       end
