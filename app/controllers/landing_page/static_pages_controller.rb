@@ -32,24 +32,24 @@ class LandingPage::StaticPagesController < ApplicationController
       email = SendGrid::Mail.new do |m|
         m.to      = 'matheus.perrut@injunior.com.br'
         m.from    = form[:email]
-        m.subject = "#{@form[:name]} entrou em contato através do seu site"
+        m.subject = "#{form[:name]} entrou em contato através do seu site"
         m.html    = 
         "<p>Olá,</p>
         
-         <p>#{@form[:name]} lhe enviou uma mensagem:</p>
+         <p>#{form[:name]} lhe enviou uma mensagem:</p>
         
-         <p>#{@form[:message]}</p>
+         <p>#{form[:message]}</p>
         
-         <p>Email: #{@form[:email]}</p>"
+         <p>Email: #{form[:email]}</p>"
         
         m.text    = 
          "Olá,
         
-          #{@form[:name]} lhe enviou uma mensagem:
+          #{form[:name]} lhe enviou uma mensagem:
         
-          #{@form[:message]}
+          #{form[:message]}
         
-          Email: #{@form[:email]}"
+          Email: #{form[:email]}"
       end
       
       sendgrid.send(email)
