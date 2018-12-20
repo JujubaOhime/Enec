@@ -15,25 +15,60 @@ class Payment < ApplicationRecord
   def generate_parcels
     quantity = parceling_option_before_type_cast
 
-    parcel_general_value = (value/quantity).round(2)
-    total_value = value
-    quantity.times do |i|
-      @parcel = Parcel.create(
-        value: parcel_general_value,
-        payment: self,
-        status: 4
-        )
-        total_value -= parcel_general_value
-    end
+    if !(payment_option == 'cartao' && quantity > 5)
 
-    # Se na hora de dividir o valor das parcelas der um valor
-    # negativo no valor do pagamento, quer dizer que as parcelas
-    # estão cobrando, ao todo, um valor maior que o pagamento previsto.
-    # Por isso, isso é checado e tratado fazendo a última parcela ter
-    # valor um pouco menor, nesse tipo de caso.
+      parcel_general_value = (value/quantity).round(2)
+      total_value = value
+      quantity.times do |i|
+        @parcel = Parcel.create(
+          value: parcel_general_value,
+          payment: self,
+          status: 4
+          )
+          total_value -= parcel_general_value
+      end
 
-    if total_value != 0
-      @parcel.update(value: (@parcel.value + total_value).round(2))
+      # Se na hora de dividir o valor das parcelas der um valor
+      # negativo no valor do pagamento, quer dizer que as parcelas
+      # estão cobrando, ao todo, um valor maior que o pagamento previsto.
+      # Por isso, isso é checado e tratado fazendo a última parcela ter
+      # valor um pouco menor, nesse tipo de caso.
+
+      if total_value != 0
+        @parcel.update(value: (@parcel.value + total_value).round(2))
+      end
+
+    else  # Com Juros compostos, a parcela tem que ser calculada por partes.
+      base_value = package.value
+      parcel_base_value = (base_value/quantity).round(2)
+      parcel_base_value += (parcel_base_value * BigDecimal.new("0.0499")) + BigDecimal.new("0.50")
+
+      total_value = value
+
+      5.times do |i|
+        parcel = Parcel.create(
+          value: parcel_base_value,
+          payment: self,
+          status: 4
+          )
+          total_value -= parcel_base_value
+      end
+
+      parcel_compound_value = (total_value/(quantity-5)).round(2)
+
+      (quantity-5).times do |i|
+        @parcel = Parcel.create(
+          value: parcel_compound_value,
+          payment: self,
+          status: 4
+          )
+          total_value -= parcel_compound_value
+      end
+      
+      # Veja explicação para esse if no bloco de comentário acima.
+      if total_value != 0
+        @parcel.update(value: (@parcel.value + total_value).round(2))
+      end
     end
   end
 
