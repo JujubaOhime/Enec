@@ -199,6 +199,18 @@
     width: 300px !important;
 }
 
+.campos-cadastro select{
+    font-family: 'Palanquin Dark', sans-serif;
+    color: var(--white);
+    font-size: 1.3em;
+    border-radius: 15px;
+    padding: 0px 0px;
+    background: var(--green-input);
+    border: 2px solid var(--green-input-stroke);
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
 .campos-cadastro .voltar-new-session{
     background: var(--yellow);
     border: 0px;

@@ -312,6 +312,9 @@
         color: var(--green-input);
     }
     .form-edit-section{
+        #package_lot_id{
+            margin-bottom: 0px;
+        }
         p{
             width: 315px;
             border: 2px solid var(--green-input-stroke);

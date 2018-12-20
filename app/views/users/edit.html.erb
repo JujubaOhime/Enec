@@ -124,7 +124,11 @@
       </div>
       <div class="actions">
         <%= form.submit "Terminar"%>
-        <%= link_to 'Voltar', users_path %>
+        <%if admin_user_logged?%>
+          <%= link_to 'Voltar', users_path %>
+        <% else %>
+          <%= link_to 'Voltar', user_path(@user) %>
+        <% end %>
       </div>
     <% end %>
   </section>
