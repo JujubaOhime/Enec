@@ -12,7 +12,7 @@
       <table>
         <thead>
           <tr>
-            <th>Lot</th>
+            <th>Lote</th>
             <th>Nome</th>
             <th>Valor</th>
             <th>Descrição</th>
@@ -25,7 +25,7 @@
             <tr>
               <td><%= package.lot.name %></td>
               <td><%= package.name %></td>
-              <td><%= package.value %></td>
+              <td> <%=number_to_currency(package.value, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
               <td><%= package.description %></td>
               <td class="td-ações td-editar"><%= link_to 'Ver', package %></td>
               <td class="td-ações td-editar"><%= link_to 'Editar', edit_package_path(package) %></td>
