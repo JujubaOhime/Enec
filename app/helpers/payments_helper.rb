@@ -29,22 +29,22 @@ module PaymentsHelper
         package = Package.find(package_id)
         
         # todos os pagamentos contam com uma taxa base de 5%
-        valor_com_taxa = package.value * 1.05
-        
-        valor_monetario_com_taxa = number_to_currency(valor_com_taxa, :unit => "R$ ", 
+        valor = package.value
+        valor_boleto = BigDecimal.new("3.95")
+        valor_monetario = number_to_currency(valor, :unit => "R$ ", 
                                             :separator => ",",
                                             :delimiter => ".")
         
         parcelas_simples = [
-            { parcelas: 1, detalhes: "1x de #{ valor_monetario_com_taxa }, total: #{ valor_monetario_com_taxa }" },
-            { parcelas: 2, detalhes: "2x de #{ valor_monetario_parcelado(valor_com_taxa, 2) },
-            total: #{ valor_monetario_com_taxa }" },
-            { parcelas: 3, detalhes: "3x de #{ valor_monetario_parcelado(valor_com_taxa, 3) },
-            total: #{ valor_monetario_com_taxa }" },
-            { parcelas: 4, detalhes: "4x de #{ valor_monetario_parcelado(valor_com_taxa, 4) },
-            total: #{ valor_monetario_com_taxa }" },
-            { parcelas: 5, detalhes: "5x de #{ valor_monetario_parcelado(valor_com_taxa, 5) },
-            total: #{ valor_monetario_com_taxa }" },
+            { parcelas: 1, detalhes: "1x de #{ package.value + valor_boleto}, total: #{ package.value + valor_boleto }" },
+            { parcelas: 2, detalhes: "2x de #{ valor_monetario_parcelado(valor + 2*valor_boleto, 2) },
+            total: #{ package.value + 2*valor_boleto }" },
+            { parcelas: 3, detalhes: "3x de #{ valor_monetario_parcelado(valor + 3*valor_boleto, 3) },
+            total: #{ package.value + 3*valor_boleto }" },
+            { parcelas: 4, detalhes: "4x de #{ valor_monetario_parcelado(valor + 4*valor_boleto, 4) },
+            total: #{ package.value + 4*valor_boleto }" },
+            { parcelas: 5, detalhes: "5x de #{ valor_monetario_parcelado(valor + 5*valor_boleto, 5) },
+            total: #{ package.value + 5*valor_boleto }" },
             ]
         
         if pagamento == "boleto"
