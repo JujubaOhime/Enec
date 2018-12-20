@@ -30,7 +30,7 @@ class LandingPage::StaticPagesController < ApplicationController
       }
 
       email = SendGrid::Mail.new do |m|
-        m.to      = 'matheus.perrut@injunior.com.br'
+        m.to      = 'inscricaoenec@fenec.com.br'
         m.from    = form[:email]
         m.subject = "#{form[:name]} entrou em contato através do seu site"
         m.html    = 
