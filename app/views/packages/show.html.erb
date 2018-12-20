@@ -1,24 +1,60 @@
-<p id="notice"><%= notice %></p>
+<!--
+<body class="sessions">
+  <section class="container-sessions">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Lot:</strong>
-  <%= @package.lot %>
-</p>
+    <div class="boxLoteShow">
+      <h3>Lote:</h3>
+      <p><%= @package.lot.name %></p>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @package.name %>
-</p>
+    <div class="boxLoteShow">
+      <h3>Name:</h3>
+      <p><%= @package.name  %></p>
+    </div>
 
-<p>
-  <strong>Value:</strong>
-  <%= @package.value %>
-</p>
+    <div class="boxLoteShow">
+      <h3>Value:</h3>
+      <p><%= @package.value %></p>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @package.description %>
-</p>
+    <div class="boxLoteShow">
+      <h3>Description:</h3>
+      <p><%= @package.description %></p>
+    </div>
+    <div class="actions">
+      <%= link_to 'Editar', edit_package_path(@package) %> 
+      <%= link_to 'Voltar', packages_path %>
+    </div>
+  </section>
+</body>
+-->
+<section class="edit-sections">
+  <div class="container-table">
+    <h1><%= @package.lot.name %></h1>
+    <div class="form-edit-section">
 
-<%= link_to 'Edit', edit_package_path(@package) %> |
-<%= link_to 'Back', packages_path %>
+      <div class="field">
+        <label>Nome</label>
+        <p><%= @package.name  %></p>
+      </div>
+
+      <div class="field">
+        <label>Valor</label>
+        <p><%= @package.value %></p>
+      </div>
+
+      <div class="field">
+        <label>Descrição</label>
+        <%if @package.description? %>
+          <p><%= @package.description %></p>
+        <% else %>
+          <p>Sem descrição</p>
+        <% end %>
+      </div>
+      <br><br>
+      <%= link_to 'Voltar',packages_path, class:"link-show-section" %>
+    </div>
+  </div>
+</section>
+

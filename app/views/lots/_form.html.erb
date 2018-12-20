@@ -12,32 +12,35 @@
   <% end %>
   
 
-<div class="campos-cadastro">
+
   
 
   <div class="field">
-    <p><%= form.label :Nome %></p>
-    <%= form.text_field :name %>
+    <%= form.label :Nome %>
+    <%= form.text_field :name, class: "input-texto"  %>
   </div>
 
   <div class="field">
-    <p><%= form.label :status %></p>
-    <%= form.number_field :status %>
+    <%= form.label :status %>
+    <%= form.number_field :status, class: "input-texto"  %>
   </div>
 
-  <div class="fieldTermo">
-    <p><%= form.label :Termo %></p>
-    <%= form.file_field :term %>
+  <div class="field send-file" id="file_field">
+    <%= form.file_field :term, id:"term_label" %>
+    <label for="term_label">Enviar Termo</label>
+    <%= form.hidden_field :file_cache %>
   </div>
-
+  
   <div class="field">
-    <p><%= form.label :link, "Link (sem http://)" %></p>
-    <%= form.text_field :link %>
+    <%= form.label :link, "Link (sem http://)" %>
+    <%= form.text_field :link, class: "input-texto" %>
   </div>
 
   <div class="actions">
     <%= form.submit "Cadastrar" %>
+    <%= link_to 'Voltar', lots_path %>
   </div>
-</div>
+
   
 <% end %>
+

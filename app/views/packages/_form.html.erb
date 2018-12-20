@@ -13,25 +13,26 @@
 
   <div class="field">
     <%= form.label :lot_id %>
-    <%= form.text_field :lot_id %>
+    <%= form.text_field :lot_id, class: "input-texto"  %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :Nome %>
+    <%= form.text_field :name, class: "input-texto" %>
   </div>
 
   <div class="field">
-    <%= form.label :value %>
-    <%= form.text_field :value %>
+    <%= form.label :Valor %>
+    <%= form.text_field :value, class: "input-texto" %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :Descrição %>
+    <%= form.text_area :description, class: "input-textarea" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Cadastrar" %>
+    <%= link_to 'Voltar', packages_path %>
   </div>
 <% end %>

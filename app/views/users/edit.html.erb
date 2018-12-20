@@ -15,83 +15,83 @@
       <div class="campos-cadastro">
         <div class="session-esquerda">
           <div class="field">
-            <p><%= form.label :"Nome" %></p>
+           <%= form.label :"Nome" %>
             <%= form.text_field :name, placeholder:"Nome" %>
           </div>
 
           <div class="field">
-            <p><%= form.label :Email %></p>
+            <%= form.label :Email %>
             <%= form.text_field :email, placeholder:"E-mail" %>
           </div>
 
           <div class="field">
-            <p><%= form.label :Telefone %></p>
+            <%= form.label :Telefone %>
             <%= form.text_field :telephone, :pattern => ".{14,15}", maxlength: 15, placeholder:"(99) 99999-9999" %>
           </div>
 
           <div class="field">
-            <p><%= form.label :Delegação %></p>
+            <%= form.label :Delegação %>
             <%= form.text_field :delegation %>
           </div>
 
 
           <div class="field">
-            <p><%= form.label :CPF %></p>
+            <%= form.label :CPF %>
             <%= form.text_field :cpf, placeholder: "___.___.___-__",  :pattern => ".{14,14}", maxlength: 14 %>
           </div>
 
           <div class="field">
-            <p><%= form.label :RG %></p>
+            <%= form.label :RG %>
             <%= form.text_field :rg %>
           </div>
 
           <div class="field">
-            <p><%= form.label :"Orgão Emissor" %></p>
+            <%= form.label :"Orgão Emissor" %>
             <%= form.text_field :rg_issuing_body %>
           </div>
 
           <div class="field">
-            <p><%= form.label :"Data de Nascimento" %></p>
+            <%= form.label :"Data de Nascimento" %>
             <%= form.date_field :birth_date %>
           </div>
 
           <div class="field">
-            <p><%= form.label :Gênero %></p>
+            <%= form.label :Gênero %>
             <%= form.select :gender, User.genders.keys, {include_blank: true}%>
           </div>
         </div>
         <div class="session-direita">
           <div class="field">
-            <p><%= form.label :Endereço %></p>
+            <%= form.label :Endereço %>
             <%= form.text_field :address %>
           </div>
 
           <div class="field">
-            <p><%= form.label :Cidade %></p>
+            <%= form.label :Cidade %>
             <%= form.text_field :city %>
           </div>
 
           <div class="field">
-            <p><%= form.label :Estado %></p>
+            <%= form.label :Estado %>
             <%= form.text_field :state %>
           </div>  
 
           <div class="field">
-            <p><%= form.label :IES %></p>
+            <%= form.label :IES %>
             <%= form.select :IES_id, options_from_collection_for_select(@ies, 'id', 'name'),{include_blank: true} %>
           </div>
           <div class="field">
-            <p><%= form.label :Curso %></p>
+            <%= form.label :Curso %>
             <%= form.text_field :course %>
           </div> 
 
           <div class="field">
-            <p><%= form.label :Período %></p>
+            <%= form.label :Período %>
             <%= form.text_field :period %>
           </div>
 
           <div class="field">
-            <p><label>foto do perfil</label></p>
+            <label>foto do perfil</label>
             <div class="field send-file" id="file_field">
               <%= form.file_field :image, id:"image_label" %>
               <label for="image_label">Enviar Arquivo</label>
@@ -100,7 +100,7 @@
           </div>  
             
           <div>
-            <p><label>comprovante de matricula</label></p>
+            <label>comprovante de matricula</label>
             <div class="field send-file" id="file_field">
               <%= form.file_field :registration_proof, id:"file_label" %>
               <label for="file_label">Enviar Arquivo</label>
@@ -116,7 +116,7 @@
         -->
           <% if current_user.admin? %>
             <div class="fieldcheck">
-              <p><%= form.label :subscribe_status, "Inscrito?" %><span class="checkInscrito"><%= form.check_box :subscribe_status %></span></p>
+              <%= form.label :subscribe_status, "Inscrito?" %><span class="checkInscrito"><%= form.check_box :subscribe_status %></span>
             </div>
           <% end %>
 
@@ -124,7 +124,7 @@
       </div>
       <div class="actions">
         <%= form.submit "Terminar"%>
-        <%= link_to 'Voltar', user_path(@user) %>
+        <%= link_to 'Voltar', users_path %>
       </div>
     <% end %>
   </section>

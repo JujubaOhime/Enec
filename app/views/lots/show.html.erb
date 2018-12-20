@@ -1,29 +1,56 @@
-<body class="sessions">
+<!--<body class="sessions">
   <section class="container-sessions">
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<div class="boxLoteShow">
-  <h3>Lote:</h3>
-  <p><%= @lot.name %></p>
-</div>
+  <div class="boxLoteShow">
+    <h3>Lote:</h3>
+    <p><%= @lot.name %></p>
+  </div>
 
-<div class="boxLoteShow">
-  <h3>Link do Google Form:</h3>
-  <p><%= @lot.link %></p>
-</div>
+  <div class="boxLoteShow">
+    <h3>Link do Google Form:</h3>
+    <p><%= @lot.link %></p>
+  </div>
 
-<div class="boxLoteShow">
-  <h3>Status:</h3>
-  <p><%= @lot.status %></p>
-</div>
+  <div class="boxLoteShow">
+    <h3>Status:</h3>
+    <p><%= @lot.status %></p>
+  </div>
 
-<div class="boxLoteShow">
-  <h3>Termos e Condições:</h3>
-  <p><%= link_to 'PDF', @lot.term.url, target: :_blank %></p>
-</div>
+  <div class="boxLoteShow">
+    <h3>Termos e Condições:</h3>
+    <p><%= link_to 'PDF', @lot.term.url, target: :_blank %></p>
+  </div>
 
 
 
-</section>
+  </section>
 </body>
+-->
+<section class="edit-sections">
+  <div class="container-table">
+    <p id="notice"><%= notice %></p>
+    <h1><%= @lot.name %></h1>
+    <div class="form-edit-section">
+
+      <div class="field">
+        <label>Link do Google Form</label>
+        <p><%= @lot.link %></p>
+      </div>
+
+      <div class="field">
+        <label>Status</label>
+        <p><%= @lot.status %></p>
+      </div>
+
+      <div class="field">
+        <label>Termos e Condições:</label>
+        <%= link_to 'PDF', @lot.term.url, target: :_blank, class:"link-field" %>
+      </div>
+
+      <br><br>
+      <%= link_to 'Voltar', lots_path, class:"link-show-section" %>
+    </div>
+  </div>
+</section>
