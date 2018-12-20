@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :lot_id %>
-    <%= form.text_field :lot_id, class: "input-texto"  %>
+  <div class="fieldPag">
+    <%= form.label :lot_id, "Lote" %>
+    <%= form.select :lot_id, lot_options, class: "input-texto"  %>
   </div>
 
   <div class="field">
