@@ -41,7 +41,7 @@
 
       <div class="field">
         <label>Valor</label>
-        <p><%= @package.value %></p>
+        <p><%= number_to_currency(@package.value, :unit => "R$ ", :separator => ",", :delimiter => ".") %></p>
       </div>
 
       <div class="field">
