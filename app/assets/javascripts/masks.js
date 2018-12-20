@@ -13,6 +13,8 @@ $(document).ready(function(){
     });
     $('#usuario_cep').mask('00000-000', {placeholder: "_____-___"});
     $('#user_period').mask('00');
+    $('.valor-field').maskMoney({showSymbol:true, symbol:"R$", decimal:",", thousands:"."});
+
 
 });
 

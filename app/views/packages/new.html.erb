@@ -1,5 +1,14 @@
-<h1>New Package</h1>
+<!-- 
+    <% if false %>
+        <% render 'form', package: @package %>
+    <% end %> 
+-->
 
-<%= render 'form', package: @package %>
-
-<%= link_to 'Back', packages_path %>
+<body class="sessions">
+  <section class="container-sessions">
+    <div class="campos-cadastro">
+        <h2>Novo pacote</h2>
+        <%= render 'form', package: @package %>
+    </div>
+  </section>
+</body>    

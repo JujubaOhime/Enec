@@ -1,6 +1,10 @@
-<h1>Editing Package</h1>
-
-<%= render 'form', package: @package %>
-
-<%= link_to 'Show', @package %> |
-<%= link_to 'Back', packages_path %>
+<section class="edit-sections">
+  <div class="container-table">
+    <h1>Edição de Pacotes</h1>
+    <div class="form-edit-section">
+        <%= render 'form', package: @package  %>
+        <!--<button><%= link_to 'Voltar',packages_path %></button>-->
+    </div>
+  </div>
+</section>
+<!--<%= link_to 'Show', @package %> -->

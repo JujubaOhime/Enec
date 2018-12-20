@@ -172,6 +172,72 @@
     height: calc(100vh - 230px);
 }
 
+.campos-cadastro label{
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0 4px 4px 0px #00000061;
+    color: var(--white);
+}
+
+.campos-cadastro textarea{
+    border-radius: 15px;
+    padding: 0px 0px 0px 10px;
+    background: var(--green-input);
+    border: 2px solid var(--green-input-stroke);
+    margin: 0px 0px 20px;
+    height: 97px;
+    overflow: hidden;
+    font-family: "Palanquin Dark", sans-serif;
+    color: var(--white);
+    font-size: 1.3em;
+    max-height: 180px;
+    min-height: 100px;
+    width: 300px !important;
+}
+
+.campos-cadastro select{
+    font-family: 'Palanquin Dark', sans-serif;
+    color: var(--white);
+    font-size: 1.3em;
+    border-radius: 15px;
+    padding: 0px 0px;
+    background: var(--green-input);
+    border: 2px solid var(--green-input-stroke);
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.campos-cadastro .voltar-new-session{
+    background: var(--yellow);
+    border: 0px;
+    text-align: center;
+    border-radius: 100px;
+    color: var(--white);
+    padding: 6px 0px;
+    width: 148px;
+    font-size: 1.125em;
+    font-family: 'Palanquin Dark', sans-serif;
+    box-shadow: 0 4px 4px 0px #00000061;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    float: right;
+}
+
+.campos-cadastro .voltar-new-session:hover{
+    box-shadow: 0 0px 0px 0px #00000061;
+    transition: 0.3s;
+}
+.campos-cadastro .voltar-new-session a{
+    text-decoration: none;
+    color: var(--white);
+}
 .session-esquerda{
     float: left;
     margin-right: 20px;

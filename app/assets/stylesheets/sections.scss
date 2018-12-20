@@ -211,6 +211,9 @@
         padding-left: 30px;
         border-bottom: 3px solid var(--green-footer);
         text-align: center;
+        max-width: 250px;
+        word-break: break-word;
+        vertical-align: middle;
     }
     //td{
     //    border-bottom: 0px;
@@ -246,6 +249,51 @@
     height: calc(100vh - 95px - 135px);
     display: table;
     margin: 0 auto;
+    .link-show-section{
+        display: block;
+        background: var(--yellow);
+        border: 0px;
+        border-radius: 100px;
+        color: var(--white);
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        font-family: 'Palanquin Dark', sans-serif;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 4px #00000061;
+        font-size: 1.125em;
+        cursor: pointer;
+        width: 140px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .link-show-section:hover{
+        box-shadow: 0 0px 0px #00000061;
+        transition: 0.3s;
+    }
+
+    .link-field{
+        display: block;
+        background: var(--dark-green);
+        border: 0px;
+        border-radius: 100px;
+        color: var(--white);
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        font-family: 'Palanquin Dark', sans-serif;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 4px #00000061;
+        font-size: 1.125em;
+        cursor: pointer;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .link-field :hover{
+        box-shadow: 0 0px 0px #00000061;
+        transition: 0.3s;
+    }
     h1{
         font-size: 2.75em;
         color: var(--green-input);
@@ -264,6 +312,31 @@
         color: var(--green-input);
     }
     .form-edit-section{
+        #package_lot_id{
+            margin-bottom: 0px;
+        }
+        p{
+            width: 315px;
+            border: 2px solid var(--green-input-stroke);
+            box-sizing: border-box;
+            border-radius: 10px;
+            letter-spacing: 0px;
+            background: none;
+            text-transform: none;
+            box-shadow: 0 0 0 #000000;
+            margin-left: 0px;
+            font-family: 'Palanquin', sans-serif;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 1.125em;
+            text-align: justify;
+            color: var(--green-input-stroke);
+            max-height: 400px;
+            word-break: break-all;
+        }
         .send-file{
             #image_field {
                 width: 100%;
@@ -313,15 +386,21 @@
             text-transform: none;
             box-shadow: 0 0 0 #000000;
             margin-left: 0px;
+            font-family: 'Palanquin', sans-serif;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 1.125em;
+            text-align: justify;
+            color: var(--green-input-stroke);
         }
         .actions {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin: 20px auto;
         }
         .actions input{
             background: var(--yellow);
-            float: left;
             border: 0px;
             border-radius: 100px;
             color: var(--white);
@@ -333,11 +412,33 @@
             box-shadow: 0 4px 4px #00000061;
             font-size: 1.125em;
             cursor: pointer;
-            width: 170px;
+            width: 140px;
             margin-left: 10px;
         }
         .actions input:hover{
             box-shadow: 0 0 0 #00000061;
+            transition: 0.3s;
+        }
+
+        .actions a{
+            background: var(--yellow);
+            border: 0px;
+            border-radius: 100px;
+            color: var(--white);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.125em;
+            font-family: 'Palanquin Dark', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 4px #00000061;
+            font-size: 1.125em;
+            cursor: pointer;
+            padding: 1px 33px;
+            margin-left: 10px;
+        }
+
+        .actions a:hover{
+            box-shadow: 0px 0px 0px #00000061;
             transition: 0.3s;
         }
         input[type=text], select{
