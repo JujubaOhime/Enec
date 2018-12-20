@@ -44,10 +44,15 @@ class Payment < ApplicationRecord
       
         if payment_option == 'boleto'
           self.value += quantity_parcels * BigDecimal.new("3.95")
-        else
-        
-        if payment_option == 'cartao' && quantity_parcels > 5
-          self.value = value * (1 + BigDecimal.new("0.03")) ** quantity_parcels
+
+        elsif payment_option == 'cartao'
+          self.value += value * BigDecimal.new("0.0499") 
+          self.value += quantity_parcels * BigDecimal.new("0.50")
+          
+          if quantity_parcels > 5
+            parcel_value = (value/quantity).round(2)
+            self.value += (parcel_value * (quantity_parcels-5)) * (1 + BigDecimal.new("0.025")) ** (quantity_parcels-5)
+          end
         end
       end
     end
